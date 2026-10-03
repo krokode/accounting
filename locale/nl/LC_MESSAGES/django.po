@@ -1,0 +1,1627 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 23:00+0000\n"
+"PO-Revision-Date: 2026-10-02 23:00+0000\n"
+"Last-Translator: Antigravity AI\n"
+"Language-Team: nl\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Accounting & Agent"
+msgstr "Boekhouding & AI-Agent"
+
+msgid "Collapse Sidebar"
+msgstr "Zijbalk inklappen"
+
+msgid "Expand Sidebar"
+msgstr "Zijbalk uitklappen"
+
+msgid "Close Sidebar"
+msgstr "Zijbalk sluiten"
+
+msgid "Scan Receipt with AI"
+msgstr "Bon scannen met AI"
+
+msgid "View Scanned Receipts"
+msgstr "Gescande bonnen bekijken"
+
+msgid "View all scanned receipts in Scanned Records"
+msgstr "Bekijk alle gescande bonnen in Gescande Documenten"
+
+msgid "Scan Source"
+msgstr "Scanbron"
+
+msgid "AI Verified Scan"
+msgstr "AI-geverifieerde scan"
+
+msgid "Manual Entry"
+msgstr "Handmatige invoer"
+
+msgid "View original scan and AI extracted details"
+msgstr "Bekijk originele scan en door AI geëxtraheerde gegevens"
+
+msgid "Receipt & Expense Voucher Mode"
+msgstr "Modus Bonnen & Onkostennota's"
+
+msgid ""
+"AI will extract merchant name, receipt date, expense category, VAT/tax, and "
+"totals directly into your accounting ledgers."
+msgstr ""
+"AI extraheert de naam van de handelaar, ontvangstdatum, onkostencategorie, "
+"btw en totalen direct in uw grootboek."
+
+msgid "Expense Category *"
+msgstr "Onkostencategorie *"
+
+msgid "e.g. Office Supplies, Fuel, Travel"
+msgstr "bijv. kantoorartikelen, brandstof, reizen"
+
+msgid "Travel & Transportation"
+msgstr "Reizen en vervoer"
+
+msgid "Meals & Entertainment"
+msgstr "Maaltijden en representatie"
+
+msgid "Fuel & Vehicle"
+msgstr "Brandstof en voertuigen"
+
+msgid "Utilities & Telecom"
+msgstr "Nutsvoorzieningen en telecom"
+
+msgid "Software & IT"
+msgstr "Software en IT"
+
+msgid "Repairs & Maintenance"
+msgstr "Reparaties en onderhoud"
+
+msgid "General / Other"
+msgstr "Algemeen / Overig"
+
+msgid "View in Receipts Ledger"
+msgstr "Bekijken in het bonnenoverzicht"
+
+msgid "View Invoices"
+msgstr "Facturen bekijken"
+
+msgid ""
+"Reminders check triggered! Generated %(total)s active alert(s) (Payables: "
+"%(payables)s, Receivables: %(receivables)s, Overdue: %(overdue)s, Contracts:"
+" %(contracts)s, Stock: %(stock)s)."
+msgstr ""
+"Herinneringencontrole uitgevoerd! %(total)s actieve meldingen gegenereerd "
+"(Crediteuren: %(payables)s, Debiteuren: %(receivables)s, Achterstallig: "
+"%(overdue)s, Contracten: %(contracts)s, Voorraad: %(stock)s)."
+
+msgid ""
+"Full payment of %(amount)s %(currency)s recorded! Invoice #%(number)s is now"
+" marked as Paid, and the calendar task is completed."
+msgstr ""
+"Volledige betaling van %(amount)s %(currency)s geregistreerd! Factuur "
+"#%(number)s is gemarkeerd als betaald en de kalendertaak is voltooid."
+
+msgid ""
+"Partial payment of %(amount)s %(currency)s recorded. Remaining: "
+"%(remaining)s %(currency)s."
+msgstr ""
+"Gedeeltelijke betaling van %(amount)s %(currency)s geregistreerd. Resterend:"
+" %(remaining)s %(currency)s."
+
+msgid "Expense receipt for €%(amount)s recorded."
+msgstr "Onkostenbon voor €%(amount)s geregistreerd."
+
+msgid "Contract '%(title)s' registered."
+msgstr "Contract '%(title)s' geregistreerd."
+
+msgid ""
+"Scanned file '%(name)s' successfully processed by AI! Please review "
+"extracted data."
+msgstr ""
+"Gescand bestand '%(name)s' succesvol verwerkt door AI! Controleer de "
+"geëxtraheerde gegevens."
+
+msgid "Extraction failed: %(error)s"
+msgstr "Extractie mislukt: %(error)s"
+
+msgid ""
+"Document #%(number)s confirmed! Created ledger records & scheduled calendar "
+"tasks."
+msgstr ""
+"Document #%(number)s bevestigd! Grootboekrecords en kalendertaken "
+"aangemaakt."
+
+msgid "Error saving records: %(error)s"
+msgstr "Fout bij opslaan van records: %(error)s"
+
+msgid "Re-extraction failed: %(error)s"
+msgstr "Opnieuw extraheren mislukt: %(error)s"
+
+msgid "Product with SKU '%(sku)s' already exists."
+msgstr "Product met SKU '%(sku)s' bestaat al."
+
+msgid "Product '%(name)s' [%(sku)s] created successfully."
+msgstr "Product '%(name)s' [%(sku)s] succesvol aangemaakt."
+
+msgid ""
+"Consignment #%(number)s received! Warehouse stock levels automatically "
+"updated."
+msgstr ""
+"Zending #%(number)s ontvangen! Magazijnvoorraad automatisch bijgewerkt."
+
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "Documents & AI"
+msgstr "Documenten & AI"
+
+msgid "AI Provider Settings"
+msgstr "AI-providerinstellingen"
+
+msgid "AI & LLM Configuration"
+msgstr "AI & LLM-configuratie"
+
+msgid "AI & LLM Provider Configuration"
+msgstr "Configuratie van AI & LLM-providers"
+
+msgid ""
+"Select and configure your preferred multimodal AI engine for document "
+"extraction and Copilot intelligence."
+msgstr ""
+"Selecteer en configureer uw gewenste multimodale AI-engine voor "
+"documentextractie en Copilot."
+
+msgid "Active"
+msgstr "Actief"
+
+msgid ""
+"High-speed multimodal AI by Google. Supports native PDF and photo scans with"
+" precision extraction."
+msgstr ""
+"Snelle multimodale AI van Google. Ondersteunt native PDF en scans met "
+"nauwkeurige extractie."
+
+msgid "Gemini API Key"
+msgstr "Gemini API-sleutel"
+
+msgid ""
+"Industry standard GPT-4o models with multimodal document inspection and "
+"structured JSON schemas."
+msgstr ""
+"Standaard GPT-4o modellen met multimodale documentinspectie en "
+"gestructureerde JSON-schema's."
+
+msgid "OpenAI API Key"
+msgstr "OpenAI API-sleutel"
+
+msgid ""
+"Deep reasoning and native PDF contract analysis with state-of-the-art "
+"accuracy and nuanced understanding."
+msgstr ""
+"Geavanceerde logica en native PDF-contractanalyse met ongeëvenaarde "
+"precisie."
+
+msgid "Anthropic API Key"
+msgstr "Anthropic API-sleutel"
+
+msgid ""
+"Cost-effective, powerful reasoning model (DeepSeek-V3 / R1) for intelligent "
+"ledger automation."
+msgstr ""
+"Kosteneffectief en krachtig redeneermodel (DeepSeek-V3 / R1) voor slimme "
+"boekhouding."
+
+msgid "DeepSeek API Key"
+msgstr "DeepSeek API-sleutel"
+
+msgid ""
+"Enterprise Alibaba Cloud DashScope platform with excellent multilingual and "
+"vision capabilities."
+msgstr ""
+"Enterprise Alibaba Cloud DashScope-platform met uitstekende meertalige en "
+"visuele mogelijkheden."
+
+msgid "DashScope API Key"
+msgstr "DashScope API-sleutel"
+
+msgid ""
+"100% private, on-premise AI via Ollama, LM Studio, vLLM, or OpenRouter. "
+"Keeps financial data on local hardware."
+msgstr ""
+"100% privé, lokale AI via Ollama, LM Studio, vLLM of OpenRouter. Houdt "
+"financiële gegevens op eigen hardware."
+
+msgid "API Key (Optional for Ollama)"
+msgstr "API-sleutel (optioneel voor Ollama)"
+
+msgid "Model Name"
+msgstr "Modelnaam"
+
+msgid "Endpoint Base URL"
+msgstr "Endpoint Base URL"
+
+msgid "Test Ping"
+msgstr "Test Ping"
+
+msgid "Settings are saved to both database and .env configuration file."
+msgstr ""
+"Instellingen worden opgeslagen in zowel de database als het .env-"
+"configuratiebestand."
+
+msgid "Save & Apply AI Settings"
+msgstr "AI-instellingen Opslaan & Toepassen"
+
+msgid "AI Configuration successfully updated!"
+msgstr "AI-configuratie succesvol bijgewerkt!"
+
+msgid "AI configuration and active provider updated successfully!"
+msgstr "AI-configuratie en actieve provider succesvol bijgewerkt!"
+
+msgid "AI Configuration Required"
+msgstr "AI-configuratie Vereist"
+
+msgid "Open AI Settings"
+msgstr "Open AI-instellingen"
+
+msgid "Rate Limit Exceeded"
+msgstr "Aanvraaglimiet Overschreden"
+
+msgid "Switch Provider in AI Settings"
+msgstr "Wissel van Provider in AI-instellingen"
+
+msgid "AI Provider Offline / Unreachable"
+msgstr "AI-provider Offline / Onbereikbaar"
+
+msgid "Check Endpoint in AI Settings"
+msgstr "Controleer Endpoint in AI-instellingen"
+
+msgid "Authentication Failed"
+msgstr "Authenticatie Mislukt"
+
+msgid "Update API Key in AI Settings"
+msgstr "Werk API-sleutel bij in AI-instellingen"
+
+msgid "AI Execution Failed"
+msgstr "AI-uitvoering Mislukt"
+
+msgid "AI Document Extraction Alert"
+msgstr "Melding AI-documentextractie"
+
+msgid "Configure AI Settings"
+msgstr "AI-instellingen Configureren"
+
+msgid "Or run in terminal:"
+msgstr "Of voer uit in de terminal:"
+
+msgid "Documents"
+msgstr "Documenten"
+
+msgid "Scanned Records"
+msgstr "Gescande Documenten"
+
+msgid "Scanned Records Management"
+msgstr "Beheer van Gescande Documenten"
+
+msgid "Upload & Ingest"
+msgstr "Uploaden & Verwerken"
+
+msgid "Upload"
+msgstr "Uploaden"
+
+msgid "Accounting"
+msgstr "Boekhouding"
+
+msgid "Invoices (AP/AR)"
+msgstr "Facturen (Crediteuren/Debiteuren)"
+
+msgid "Invoices"
+msgstr "Facturen"
+
+msgid "Invoice"
+msgstr "Factuur"
+
+msgid "Invoices & Payments"
+msgstr "Facturen & Betalingen"
+
+msgid "Invoices & Payments (AP/AR)"
+msgstr "Facturen & Betalingen (Crediteuren/Debiteuren)"
+
+msgid "Accounts Payable & Receivable"
+msgstr "Crediteuren en Debiteuren"
+
+msgid "Receipts & Expenses"
+msgstr "Bonnetjes & Uitgaven"
+
+msgid "Receipts & Petty Cash"
+msgstr "Bonnetjes & Kleine Kas"
+
+msgid "Operations & Admin"
+msgstr "Operaties & Beheer"
+
+msgid "Operations"
+msgstr "Operaties"
+
+msgid "Administration"
+msgstr "Beheer"
+
+msgid "Calendar & Tasks"
+msgstr "Agenda & Taken"
+
+msgid "Company Calendar & Tasks"
+msgstr "Bedrijfsagenda & Taken"
+
+msgid "Operational & Financial Calendar"
+msgstr "Operationele & Financiële Agenda"
+
+msgid "Warehouse & Stock"
+msgstr "Magazijn & Voorraad"
+
+msgid "Warehouse & Inventory"
+msgstr "Magazijn & Voorraad"
+
+msgid "Warehouse Inventory"
+msgstr "Magazijnvoorraad"
+
+msgid "Warehouse & Inventory Management"
+msgstr "Magazijn- & Voorraadbeheer"
+
+msgid "Consignments"
+msgstr "Leveringen & Vrachtbrieven"
+
+msgid "Consignment"
+msgstr "Levering"
+
+msgid "Consignments & Waybills"
+msgstr "Leveringen en Vrachtbrieven"
+
+msgid "Consignments & Delivery Slips"
+msgstr "Leveringen en Afleverbonnen"
+
+msgid "Counterparties"
+msgstr "Relaties / Tegenpartijen"
+
+msgid "Counterparties Directory"
+msgstr "Relatieoverzicht"
+
+msgid "Counterparties & Vendors Directory"
+msgstr "Overzicht van Relaties & Leveranciers"
+
+msgid "Contracts"
+msgstr "Contracten"
+
+msgid "Contracts Registry"
+msgstr "Contractenregister"
+
+msgid "Contracts & Agreements Registry"
+msgstr "Register van Contracten & Overeenkomsten"
+
+msgid "Alerts"
+msgstr "Meldingen"
+
+msgid "Notifications"
+msgstr "Notificaties"
+
+msgid "Proactive Reminders & Notifications"
+msgstr "Proactieve Herinneringen & Notificaties"
+
+msgid "Proactive Reminders & Alerts"
+msgstr "Proactieve Herinneringen & Meldingen"
+
+msgid "AI Copilot Assistant"
+msgstr "AI Copilot Assistent"
+
+msgid "ERP AI Copilot"
+msgstr "ERP AI Copilot"
+
+msgid "Real-time ledger & calendar intelligence"
+msgstr "Realtime inzicht in grootboek en agenda"
+
+msgid "Check Reminders"
+msgstr "Herinneringen Controleren"
+
+msgid "Proactive Alerts"
+msgstr "Proactieve Meldingen"
+
+msgid "View All"
+msgstr "Alles Bekijken"
+
+msgid "Take Action"
+msgstr "Actie Ondernemen"
+
+msgid "ago"
+msgstr "geleden"
+
+msgid "Upload Scan"
+msgstr "Scan Uploaden"
+
+msgid "Upload New Scan"
+msgstr "Nieuwe Scan Uploaden"
+
+msgid "Upload Scanned Record"
+msgstr "Gescand Document Uploaden"
+
+msgid "Upload Scanned Document"
+msgstr "Gescand Document Uploaden"
+
+msgid "Company Operational Dashboard"
+msgstr "Operationeel Bedrijfsdashboard"
+
+msgid ""
+"Autonomous records management, invoice tracking, warehouse stock, and "
+"calendar automation."
+msgstr ""
+"Autonoom documentbeheer, factuuropvolging, magazijnvoorraad en agenda-"
+"automatisering."
+
+msgid "Consult AI Copilot"
+msgstr "Raadpleeg AI Copilot"
+
+msgid "Urgent: Invoice(s) Overdue"
+msgstr "Urgent: Vervallen Factu(u)r(en)"
+
+msgid ""
+"There are overdue obligations requiring immediate payment or collection "
+"action."
+msgstr ""
+"Er zijn achterstallige verplichtingen die onmiddellijke betaling of incasso "
+"vereisen."
+
+msgid "View All Overdue"
+msgstr "Bekijk Alle Achterstallige"
+
+msgid "Outgoing Payables"
+msgstr "Te Betalen Facturen (Crediteuren)"
+
+msgid "Outgoing Payables (We Owe)"
+msgstr "Te Betalen (Uitgaand)"
+
+msgid "Track vendor bills"
+msgstr "Leveranciersfacturen opvolgen"
+
+msgid "Expected Receivables"
+msgstr "Verwachte Ontvangsten (Debiteuren)"
+
+msgid "Expected Receivables (Incoming)"
+msgstr "Verwachte Ontvangsten (Inkomend)"
+
+msgid "Customer payments"
+msgstr "Klantbetalingen"
+
+msgid "Customer payments expected"
+msgstr "Verwachte klantbetalingen"
+
+msgid "Net Position"
+msgstr "Netto Positie"
+
+msgid "Projected balance"
+msgstr "Verwachte marge"
+
+msgid "Expected cash margin"
+msgstr "Verwachte cashmarge"
+
+msgid "Low Stock SKUs"
+msgstr "Lage Voorraad Artikelen"
+
+msgid "Low Stock Warnings"
+msgstr "Waarschuwingen Lage Voorraad"
+
+msgid "Check inventory"
+msgstr "Voorraad controleren"
+
+msgid "Scanned Records Awaiting Review"
+msgstr "Documenten die Wachten op Goedkeuring"
+
+msgid "View All Documents"
+msgstr "Alle Documenten Weergeven"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Uploaded"
+msgstr "Geüpload"
+
+msgid "Review & Commit"
+msgstr "Controleren & Opslaan"
+
+msgid "No documents awaiting review. All uploaded scans have been confirmed!"
+msgstr "Geen documenten ter beoordeling. Alle geüploade scans zijn bevestigd!"
+
+msgid "Upcoming Tasks & Payments (Next 7 Days)"
+msgstr "Aankomende Taken & Betalingen (Komende 7 Dagen)"
+
+msgid "Open Full Calendar"
+msgstr "Volledige Agenda Openen"
+
+msgid "Due"
+msgstr "Vervaldatum"
+
+msgid "Due Date"
+msgstr "Vervaldatum"
+
+msgid "Amount"
+msgstr "Bedrag"
+
+msgid "View Bill"
+msgstr "Factuur Bekijken"
+
+msgid "No tasks due in the next 7 days."
+msgstr "Geen taken gepland voor de komende 7 dagen."
+
+msgid "Quick Actions"
+msgstr "Snelle Acties"
+
+msgid "Calendar Sync"
+msgstr "Agenda Synchronisatie"
+
+msgid "Inventory Stock"
+msgstr "Magazijnvoorraad"
+
+msgid "Ask ERP AI Copilot"
+msgstr "Vraag de ERP AI Copilot"
+
+msgid ""
+"Ask questions in natural language. The AI agent scans company ledgers, "
+"calendars, and warehouse stock in real-time."
+msgstr ""
+"Stel vragen in natuurlijke taal. De AI-agent controleert grootboeken, "
+"agenda's en voorraad in realtime."
+
+msgid "What bills are due this week?"
+msgstr "Welke rekeningen vervallen deze week?"
+
+msgid "Show low stock inventory items"
+msgstr "Toon artikelen met lage voorraad"
+
+msgid "What are our expected receivables?"
+msgstr "Welke betalingen verwachten we?"
+
+msgid "Summarize company financial status"
+msgstr "Vat de financiële status van het bedrijf samen"
+
+msgid "Hello!"
+msgstr "Hallo!"
+
+msgid ""
+"I am your Sole Enterprise Orchestrator assistant. Ask me anything about your"
+" records, such as:"
+msgstr ""
+"Ik ben uw Sole Enterprise Orchestrator-assistent. Vraag me gerust iets over "
+"uw administratie, zoals:"
+
+msgid "Ask about invoices, stock, contracts..."
+msgstr "Vraag over facturen, voorraad, contracten..."
+
+msgid "All caught up! No unread payment or contract alerts."
+msgstr ""
+"Helemaal bijgewerkt! Geen ongelezen betalings- of contractwaarschuwingen."
+
+msgid "Scan upcoming payments and trigger proactive reminders"
+msgstr "Aankomende betalingen scannen en proactieve herinneringen aanmaken"
+
+msgid "All"
+msgstr "Alle"
+
+msgid "Needs Review"
+msgstr "Beoordeling Nodig"
+
+msgid "Vendor Invoices"
+msgstr "Leveranciersfacturen"
+
+msgid "Document"
+msgstr "Document"
+
+msgid "Detected Type"
+msgstr "Gedetecteerd Type"
+
+msgid "AI Status"
+msgstr "AI Status"
+
+msgid "Actions"
+msgstr "Acties"
+
+msgid "Synced to Ledgers"
+msgstr "Gesynchroniseerd met Grootboek"
+
+msgid "Ready for Review"
+msgstr "Klaar voor Beoordeling"
+
+msgid "AI Analyzing..."
+msgstr "AI Analyseert..."
+
+msgid "Error"
+msgstr "Fout"
+
+msgid "Inspect"
+msgstr "Inspecteren"
+
+msgid "No scanned documents found matching your filter."
+msgstr "Geen gescande documenten gevonden die aan uw filter voldoen."
+
+msgid "Upload your first document"
+msgstr "Upload uw eerste document"
+
+msgid "Click to upload or drag & drop"
+msgstr "Klik om te uploaden of sleep bestanden hierheen"
+
+msgid "PDF, PNG, JPG, or WEBP (Scans, contracts, receipts)"
+msgstr "PDF, PNG, JPG of WEBP (scans, contracten, bonnen)"
+
+msgid "Multimodal AI"
+msgstr "Multimodale AI"
+
+msgid "Accurate reading of tables, totals, IBANs, and handwritten stamps."
+msgstr "Nauwkeurige herkenning van tabellen, totalen, IBANs en stempels."
+
+msgid "Auto Task Creation"
+msgstr "Automatische Takencreatie"
+
+msgid ""
+"Schedules payment due dates and contract renewals directly into your "
+"calendar."
+msgstr "Plant betalingstermijnen en contractverlengingen direct in uw agenda."
+
+msgid "Reminds your team before payments are due and flags overdue bills."
+msgstr ""
+"Herinnert uw team voor de vervaldatum en markeert achterstallige facturen."
+
+msgid "Cancel"
+msgstr "Annuleren"
+
+msgid "Process with AI"
+msgstr "Verwerken met AI"
+
+msgid "Verify Document"
+msgstr "Document Verifiëren"
+
+msgid "Verify & Review"
+msgstr "Verifiëren & Beoordelen"
+
+msgid "Confirmed & Committed"
+msgstr "Bevestigd & Opgeslagen"
+
+msgid "Verification Required"
+msgstr "Verificatie Vereist"
+
+msgid "Re-run AI extraction"
+msgstr "AI-extractie opnieuw uitvoeren"
+
+msgid "Re-Extract"
+msgstr "Opnieuw Extraheren"
+
+msgid "Original Scanned Document"
+msgstr "Origineel Gescand Document"
+
+msgid "Open Fullscreen"
+msgstr "Volledig Scherm Openen"
+
+msgid "Extracted Structured Record"
+msgstr "Geëxtraheerde Gestructureerde Gegevens"
+
+msgid "Review AI extracted details before committing to company ledgers."
+msgstr ""
+"Controleer de door AI geëxtraheerde gegevens voordat u ze opslaat in het "
+"grootboek."
+
+msgid "Locked & Synced"
+msgstr "Vergrendeld & Gesynchroniseerd"
+
+msgid "Document Type"
+msgstr "Documenttype"
+
+msgid "Vendor Invoice (Outgoing Payment)"
+msgstr "Leveranciersfactuur (Uitgaande Betaling)"
+
+msgid "Customer Invoice (Incoming Payment)"
+msgstr "Klantfactuur (Inkomende Betaling)"
+
+msgid "Contract / Agreement"
+msgstr "Contract / Overeenkomst"
+
+msgid "Consignment / Delivery Note"
+msgstr "Leveringsbon / Vrachtbrief"
+
+msgid "Expense Receipt / Petty Cash"
+msgstr "Uitgavenbon / Kleine Kas"
+
+msgid "General Document"
+msgstr "Algemeen Document"
+
+msgid "Document / Invoice Number"
+msgstr "Document- / Factuurnummer"
+
+msgid "Counterparty Details"
+msgstr "Gegevens van de Relatie"
+
+msgid "Vendor / Supplier"
+msgstr "Leverancier"
+
+msgid "Customer / Client"
+msgstr "Klant"
+
+msgid "Business Partner"
+msgstr "Zakenpartner"
+
+msgid "Logistics / Carrier"
+msgstr "Logistiek / Vervoerder"
+
+msgid "Company / Entity Name"
+msgstr "Bedrijfsnaam"
+
+msgid "Tax / VAT ID"
+msgstr "BTW-nummer"
+
+msgid "Bank IBAN"
+msgstr "IBAN Bankrekening"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Phone"
+msgstr "Telefoon"
+
+msgid "Issue Date"
+msgstr "Uitgiftedatum"
+
+msgid "Payment Due Date *"
+msgstr "Vervaldatum van Betaling *"
+
+msgid "Contract End / Renewal *"
+msgstr "Contracteinde / Verlenging *"
+
+msgid "Expected Delivery Date *"
+msgstr "Verwachte Leverdatum *"
+
+msgid "Notice / Grace Period (Days)"
+msgstr "Opzegtermijn (Dagen)"
+
+msgid "Currency"
+msgstr "Valuta"
+
+msgid "Subtotal"
+msgstr "Subtotaal"
+
+msgid "Tax / VAT"
+msgstr "BTW / Belasting"
+
+msgid "Total Amount"
+msgstr "Totaalbedrag"
+
+msgid "Line Items / Products"
+msgstr "Factuurregels / Producten"
+
+msgid "Add Item"
+msgstr "Regel Toevoegen"
+
+msgid "Description"
+msgstr "Omschrijving"
+
+msgid "SKU / Code"
+msgstr "SKU / Code"
+
+msgid "Qty"
+msgstr "Aantal"
+
+msgid "Price"
+msgstr "Prijs"
+
+msgid "Line Total"
+msgstr "Regeltotaal"
+
+msgid "Calendar Task & Reminder Automation"
+msgstr "Automatisering van Agendataken & Herinneringen"
+
+msgid ""
+"Approving this record will automatically create a scheduled event on your "
+"calendar and dispatch proactive payment reminders."
+msgstr ""
+"Het goedkeuren van dit document maakt automatisch een agendataak aan en "
+"verstuurt proactieve herinneringen."
+
+msgid "Task Title"
+msgstr "Taaktitel"
+
+msgid "Scheduled Due Date"
+msgstr "Geplande Vervaldatum"
+
+msgid "Back to List"
+msgstr "Terug naar Lijst"
+
+msgid "Confirm & Commit to Ledgers"
+msgstr "Bevestigen & Opslaan in Grootboek"
+
+msgid "Scan New Bill / Invoice"
+msgstr "Nieuwe Factuur Scannen"
+
+msgid "Unpaid vendor bills"
+msgstr "Onbetaalde leveranciersfacturen"
+
+msgid "All Invoices"
+msgstr "Alle Facturen"
+
+msgid "Outgoing Payables (Vendor Bills)"
+msgstr "Te Betalen Facturen (Leveranciers)"
+
+msgid "Incoming Receivables (Customers)"
+msgstr "Te Ontvangen Facturen (Klanten)"
+
+msgid "Overdue Only"
+msgstr "Alleen Vervallen"
+
+msgid "Unpaid"
+msgstr "Niet Betaald"
+
+msgid "Settled / Paid"
+msgstr "Betaald / Voldaan"
+
+msgid "Invoice #"
+msgstr "Factuurnummer"
+
+msgid "Direction"
+msgstr "Richting"
+
+msgid "Counterparty"
+msgstr "Tegenpartij"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Outgoing Bill"
+msgstr "Uitgaande Factuur"
+
+msgid "Incoming"
+msgstr "Inkomend"
+
+msgid "Overdue!"
+msgstr "Vervallen!"
+
+msgid "Paid"
+msgstr "Betaald"
+
+msgid "Partially Paid"
+msgstr "Gedeeltelijk Betaald"
+
+msgid "View Details"
+msgstr "Details Bekijken"
+
+msgid "No invoices found."
+msgstr "Geen facturen gevonden."
+
+msgid "Outgoing Bill (We Owe)"
+msgstr "Te Betalen Factuur (Wij Moeten Betalen)"
+
+msgid "Incoming Receivable"
+msgstr "Inkomende Vorderingen"
+
+msgid "Paid in Full"
+msgstr "Volledig Betaald"
+
+msgid "View Source Scan"
+msgstr "Originele Scan Bekijken"
+
+msgid "Invoice Line Items"
+msgstr "Factuurregels"
+
+msgid "item(s)"
+msgstr "item(s)"
+
+msgid "Standard single line invoice"
+msgstr "Standaard factuur met één regel"
+
+msgid "Payment History"
+msgstr "Betalingsgeschiedenis"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Method"
+msgstr "Methode"
+
+msgid "Reference"
+msgstr "Referentie"
+
+msgid "No payments recorded yet for this invoice."
+msgstr "Nog geen betalingen geregistreerd voor deze factuur."
+
+msgid "Financial Breakdown"
+msgstr "Financiële Uitsplitsing"
+
+msgid "Total Invoiced"
+msgstr "Totaal Gefactureerd"
+
+msgid "Total Paid"
+msgstr "Totaal Betaald"
+
+msgid "Remaining Due"
+msgstr "Resterend Bedrag"
+
+msgid "Record a Settlement Payment"
+msgstr "Betaling Registreren"
+
+msgid "Amount to Pay (€)"
+msgstr "Te Betalen Bedrag (€)"
+
+msgid "Payment Method"
+msgstr "Betaalmethode"
+
+msgid "Bank Transfer / Wire"
+msgstr "Bankoverschrijving"
+
+msgid "Credit / Debit Card"
+msgstr "Creditcard / Betaalpas"
+
+msgid "Direct Debit"
+msgstr "Automatische Incasso"
+
+msgid "Cash"
+msgstr "Contant"
+
+msgid "Other"
+msgstr "Overig"
+
+msgid "Transaction Ref / Cheque No."
+msgstr "Transactiereferentie / Chequenummer"
+
+msgid "Notes (optional)"
+msgstr "Notities (optioneel)"
+
+msgid "Save Payment Record"
+msgstr "Betaling Opslaan"
+
+msgid "Expense Receipts & Petty Cash"
+msgstr "Bonnetjes & Kleine Kas"
+
+msgid "Receipts & Expense Vouchers"
+msgstr "Bonnen & Uitgavenbewijzen"
+
+msgid ""
+"Petty cash receipts, office supplies, travel expenses, and small "
+"disbursements."
+msgstr "Kassabonnen, kantoorbenodigdheden, reiskosten en kleine uitgaven."
+
+msgid "Total Recorded Expenses"
+msgstr "Totaal Geregistreerde Uitgaven"
+
+msgid "Category"
+msgstr "Categorie"
+
+msgid "Counterparty / Vendor"
+msgstr "Relatie / Leverancier"
+
+msgid "No expense receipts recorded yet."
+msgstr "Nog geen bonnetjes geregistreerd."
+
+msgid "Record Cash Expense"
+msgstr "Contante Uitgave Registreren"
+
+msgid "Expense Category"
+msgstr "Uitgavencategorie"
+
+msgid "Total Amount (€)"
+msgstr "Totaalbedrag (€)"
+
+msgid "Tax Amount (€)"
+msgstr "BTW-bedrag (€)"
+
+msgid "Vendor / Counterparty (optional)"
+msgstr "Leverancier / Relatie (optioneel)"
+
+msgid "None / General Store"
+msgstr "Geen / Algemene Winkel"
+
+msgid "Notes"
+msgstr "Notities"
+
+msgid "Add Expense Record"
+msgstr "Uitgave Toevoegen"
+
+msgid "Add Product SKU"
+msgstr "Product-SKU Toevoegen"
+
+msgid "Total Product SKUs"
+msgstr "Totaal Product-SKUs"
+
+msgid "Product Name"
+msgstr "Productnaam"
+
+msgid "Cost / Sale"
+msgstr "Inkoop / Verkoop"
+
+msgid "On Hand"
+msgstr "Op Voorraad"
+
+msgid "Stock Status"
+msgstr "Voorraadstatus"
+
+msgid "Reorder Needed"
+msgstr "Nabestelling Nodig"
+
+msgid "In Stock"
+msgstr "Op Voorraad"
+
+msgid "No products found in warehouse inventory."
+msgstr "Geen producten gevonden in het magazijn."
+
+msgid "Add New Inventory Product"
+msgstr "Nieuw Product Toevoegen aan Magazijn"
+
+msgid "SKU Code *"
+msgstr "SKU-code *"
+
+msgid "Unit of Measure"
+msgstr "Eenheid"
+
+msgid "Product / Item Name *"
+msgstr "Product- / Artikelnaam *"
+
+msgid "Cost Price (€)"
+msgstr "Inkoopprijs (€)"
+
+msgid "Sale Price (€)"
+msgstr "Verkoopprijs (€)"
+
+msgid "Initial Stock"
+msgstr "Initiële Voorraad"
+
+msgid "Reorder Point"
+msgstr "Bestelniveau"
+
+msgid "Save Product"
+msgstr "Product Opslaan"
+
+msgid "Waybill / Consignment #"
+msgstr "Vrachtbrief- / Leveringsnummer"
+
+msgid "Carrier"
+msgstr "Vervoerder"
+
+msgid "Delivery Date"
+msgstr "Leverdatum"
+
+msgid "Scan Waybill / Delivery Note"
+msgstr "Vrachtbrief / Afleverbon Scannen"
+
+msgid "No consignments recorded."
+msgstr "Geen leveringen geregistreerd."
+
+msgid "From"
+msgstr "Van"
+
+msgid "Scheduled Date"
+msgstr "Geplande Datum"
+
+msgid "Confirm & Stock In"
+msgstr "Bevestigen & Inboeken"
+
+msgid "Manifest Items"
+msgstr "Goederenlijst"
+
+msgid "Expected Qty"
+msgstr "Verwachte Hoeveelheid"
+
+msgid "Received Qty"
+msgstr "Ontvangen Hoeveelheid"
+
+msgid "No items listed."
+msgstr "Geen artikelen vermeld."
+
+msgid "Inventory Stock Movements Log"
+msgstr "Voorraadmutatieoverzicht"
+
+msgid "Timestamp"
+msgstr "Tijdstip"
+
+msgid "Product"
+msgstr "Product"
+
+msgid "Qty Adjusted"
+msgstr "Aangepaste Hoeveelheid"
+
+msgid "New Balance"
+msgstr "Nieuw Saldo"
+
+msgid "Live iCalendar (.ics) Sync Feed"
+msgstr "Live iCalendar (.ics) Synchronisatielink"
+
+msgid "Copy URL"
+msgstr "Link Kopiëren"
+
+msgid "Copied!"
+msgstr "Gekopieerd!"
+
+msgid "Download .ics"
+msgstr ".ics Downloaden"
+
+msgid "Legend:"
+msgstr "Legenda:"
+
+msgid "Outgoing Payment Due"
+msgstr "Uitgaande Betaling Vervalt"
+
+msgid "Expected Incoming Payment"
+msgstr "Verwachte Inkomende Betaling"
+
+msgid "Contract Renewal / Notice"
+msgstr "Contractverlenging / Kennisgeving"
+
+msgid "Consignment Delivery"
+msgstr "Levering van Goederen"
+
+msgid "Admin Task"
+msgstr "Administratieve Taak"
+
+msgid "Pending Action Tasks"
+msgstr "Openstaande Taken"
+
+msgid "Mark as completed"
+msgstr "Als voltooid markeren"
+
+msgid "No pending tasks. Everything is up to date!"
+msgstr "Geen openstaande taken. Alles is bijgewerkt!"
+
+msgid "Add Counterparty"
+msgstr "Relatie Toevoegen"
+
+msgid "Company Name"
+msgstr "Bedrijfsnaam"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "No counterparties registered yet."
+msgstr "Nog geen relaties geregistreerd."
+
+msgid "Entity Name *"
+msgstr "Bedrijfsnaam *"
+
+msgid "Tax / VAT Number"
+msgstr "BTW-nummer"
+
+msgid "Bank Name"
+msgstr "Banknaam"
+
+msgid "Billing / Physical Address"
+msgstr "Factuur- / Vestigingsadres"
+
+msgid "Save Counterparty"
+msgstr "Relatie Opslaan"
+
+msgid "Register Contract"
+msgstr "Contract Registreren"
+
+msgid "Contract Title / #"
+msgstr "Contracttitel / -nummer"
+
+msgid "Period (Start &rarr; End)"
+msgstr "Looptijd (Begin &rarr; Einde)"
+
+msgid "Renewal Terms"
+msgstr "Verlengingsvoorwaarden"
+
+msgid "Auto-renews"
+msgstr "Automatisch verlengd"
+
+msgid "notice"
+msgstr "kennisgeving"
+
+msgid "Fixed Term"
+msgstr "Vaste Looptijd"
+
+msgid "No contracts registered yet."
+msgstr "Nog geen contracten geregistreerd."
+
+msgid "Register New Contract"
+msgstr "Nieuw Contract Registreren"
+
+msgid "Contract Title *"
+msgstr "Contracttitel *"
+
+msgid "Counterparty *"
+msgstr "Tegenpartij *"
+
+msgid "Start Date"
+msgstr "Ingangsdatum"
+
+msgid "End / Expiry Date"
+msgstr "Eind- / Vervaldatum"
+
+msgid "Notice Period (Days)"
+msgstr "Opzegtermijn (Dagen)"
+
+msgid "Auto-renews?"
+msgstr "Automatisch verlengen?"
+
+msgid "Save Contract"
+msgstr "Contract Opslaan"
+
+msgid "Mark All as Read"
+msgstr "Alles als Gelezen Markeren"
+
+msgid "View Record"
+msgstr "Record Bekijken"
+
+msgid "No reminders or alerts recorded yet."
+msgstr "Nog geen herinneringen of meldingen geregistreerd."
+
+msgid "No address registered"
+msgstr "Geen adres geregistreerd"
+
+msgid "Ongoing"
+msgstr "Doorlopend"
+
+msgid "Direct"
+msgstr "Direct"
+
+msgid "General Store / Cash"
+msgstr "Winkel / Contant"
+
+msgid "General"
+msgstr "Algemeen"
+
+msgid "Payment amount must be greater than zero."
+msgstr "Het betalingsbedrag moet groter zijn dan nul."
+
+msgid "Invalid payment amount."
+msgstr "Ongeldig betalingsbedrag."
+
+msgid "Please select a scanned PDF or image document."
+msgstr "Selecteer een gescand PDF- of afbeeldingsdocument."
+
+msgid "AI extraction re-run complete!"
+msgstr "AI-extractie opnieuw uitgevoerd!"
+
+msgid "All notifications marked as read."
+msgstr "Alle meldingen gemarkeerd als gelezen."
+
+msgid ""
+"Reminders check complete. All payments, contracts, and inventory are in "
+"order!"
+msgstr ""
+"Herinneringencontrole voltooid. Alle betalingen, contracten en voorraad zijn"
+" in orde!"
+
+msgid "This consignment has already been received and stocked."
+msgstr "Deze zending is al ontvangen en op voorraad genomen."
+
+msgid ""
+"Track product inventory levels, consignment deliveries, and automated stock "
+"movements."
+msgstr ""
+"Volg voorraadniveaus, leveringen van zendingen en automatische "
+"voorraadmutaties."
+
+msgid "Manage delivery receipts, waybills, and stock intake operations."
+msgstr ""
+"Beheer leveringsbonnen, vrachtbrieven en inslagoperaties in het magazijn."
+
+msgid ""
+"Unified operational schedule with payment deadlines, contract renewals, and "
+"delivery waybills."
+msgstr ""
+"Geïntegreerde operationele planning met betalingstermijnen, "
+"contractverlengingen en vrachtbrieven."
+
+msgid ""
+"Master registry of vendors, customers, contractors, banking IBANs, and tax "
+"details."
+msgstr ""
+"Centraal register van leveranciers, klanten, aannemers, IBAN-rekeningen en "
+"fiscale gegevens."
+
+msgid ""
+"Track key commercial agreements, auto-renewals, and required notice decision"
+" deadlines."
+msgstr ""
+"Volg belangrijke commerciële overeenkomsten, automatische verlengingen en "
+"opzegtermijnen."
+
+msgid ""
+"Payment due dates, contract renewals, overdue bills, and inventory warnings."
+msgstr ""
+"Vervaldatums van betalingen, contractverlengingen, achterstallige facturen "
+"en voorraadwaarschuwingen."
+
+msgid ""
+"Track outgoing supplier bills, incoming customer invoices, and payment "
+"statuses."
+msgstr ""
+"Volg uitgaande leveranciersfacturen, inkomende klantfacturen en "
+"betalingsstatussen."
+
+msgid ""
+"Ingest, analyze with Multimodal AI, verify, and automatically schedule into "
+"ledgers."
+msgstr ""
+"Inlezen, analyseren met multimodale AI, verifiëren en automatisch inboeken "
+"in de administratie."
+
+msgid ""
+"Upload incoming invoices, contracts, receipts, or consignment slips. The AI "
+"agent will extract structured data and prepare calendar tasks."
+msgstr ""
+"Upload facturen, contracten, bonnen of vrachtbrieven. De AI-agent extraheert"
+" gestructureerde gegevens en maakt agendataken aan."
+
+msgid "Executive Overview & Agent Dashboard"
+msgstr "Directieoverzicht & Agent Dashboard"
+
+msgid "Scanned Documents & AI Ingestion"
+msgstr "Gescande Documenten & AI-Verwerking"
+
+msgid "Unit Price"
+msgstr "Eenheidsprijs"
+
+msgid "SKU"
+msgstr "SKU"
+
+msgid "Vendor Invoice (Payable)"
+msgstr "Inkoopfactuur (Te Betalen)"
+
+msgid "Customer Invoice (Receivable)"
+msgstr "Verkoopfactuur (Te Ontvangen)"
+
+msgid "General / Unclassified"
+msgstr "Algemeen / Niet Geclassificeerd"
+
+msgid "Receipt / Expense Voucher"
+msgstr "Kassabon / Uitgavenbewijs"
+
+msgid "Confirmed & Synced"
+msgstr "Bevestigd en Gesynchroniseerd"
+
+msgid "Processing Failed"
+msgstr "Verwerking Mislukt"
+
+msgid "Processing with AI"
+msgstr "AI-verwerking Bezig"
+
+msgid "Vendor Bill (Outgoing Payment)"
+msgstr "Inkoopfactuur (Uitgaande Betaling)"
+
+msgid "Overdue"
+msgstr "Achterstallig"
+
+msgid "Disputed"
+msgstr "Betwist"
+
+msgid "Inward Receipt (Supplier Delivery)"
+msgstr "Inkomende Levering (Levering van Leverancier)"
+
+msgid "Outward Dispatch (Customer Delivery)"
+msgstr "Uitgaande Verzending (Levering aan Klant)"
+
+msgid "Expected / In Transit"
+msgstr "Verwacht / Onderweg"
+
+msgid "Received & Stocked"
+msgstr "Ontvangen en Opgeslagen"
+
+msgid "Discrepancy Noted"
+msgstr "Afwijking Opgemerkt"
+
+msgid "Rejected"
+msgstr "Afgewezen"
+
+msgid "Purchase Receipt / Inward"
+msgstr "Inkoopontvangst / Inkomend"
+
+msgid "Sales Shipment / Outward"
+msgstr "Verkoopverzending / Uitgaand"
+
+msgid "Stock Count / Adjustment"
+msgstr "Voorraadtelling / Correctie"
+
+msgid "Return to Supplier / Customer Return"
+msgstr "Retour naar Leverancier / Klantretour"
+
+msgid "Bank / Financial Institution"
+msgstr "Bank / Financiële Instelling"
+
+msgid "Draft"
+msgstr "Concept"
+
+msgid "Pending Renewal"
+msgstr "Verlenging In Afwachting"
+
+msgid "Expired"
+msgstr "Verlopen"
+
+msgid "Terminated"
+msgstr "Beëindigd"
+
+msgid "Outgoing Payment Due (Payable)"
+msgstr "Uitgaande Betaling Vervallen (Te Betalen)"
+
+msgid "Expected Payment (Receivable)"
+msgstr "Verwachte Betaling (Te Ontvangen)"
+
+msgid "Consignment / Delivery Due"
+msgstr "Zending / Levering Verwacht"
+
+msgid "Administrative Task"
+msgstr "Administratieve Taak"
+
+msgid "Low"
+msgstr "Laag"
+
+msgid "Medium"
+msgstr "Gemiddeld"
+
+msgid "High"
+msgstr "Hoog"
+
+msgid "Urgent"
+msgstr "Urgent"
+
+msgid "Pending"
+msgstr "In Afwachting"
+
+msgid "In Progress"
+msgstr "In Uitvoering"
+
+msgid "Completed"
+msgstr "Voltooid"
+
+msgid "Cancelled"
+msgstr "Geannuleerd"
+
+msgid "Info"
+msgstr "Informatie"
+
+msgid "Warning"
+msgstr "Waarschuwing"
+
+msgid "Critical / Urgent"
+msgstr "Kritiek / Urgent"
+
+msgid "Success"
+msgstr "Succes"
+
+msgid "Upcoming Payment Due"
+msgstr "Aankomende Betalingsdeadline"
+
+msgid "Overdue Payment"
+msgstr "Achterstallige Betaling"
+
+msgid "Contract Renewal"
+msgstr "Contractverlenging"
+
+msgid "Low Stock Alert"
+msgstr "Melding Laag Voorraadniveau"
+
+msgid "Document Analyzed"
+msgstr "Document Geanalyseerd"
+
+msgid "General Alert"
+msgstr "Algemene Melding"
+
+msgid "Assistant"
+msgstr "Assistent"
+
+msgid "System"
+msgstr "Systeem"
+
+msgid "User"
+msgstr "Gebruiker"
+
+msgid "Addition"
+msgstr "Toevoeging"
+
+msgid "Change"
+msgstr "Wijziging"
+
+msgid "Deletion"
+msgstr "Verwijdering"
+
+msgid "New %(doc_type)s Processed"
+msgstr "Nieuw %(doc_type)s Verwerkt"
+
+msgid "Low Stock Alert: %(product)s"
+msgstr "Melding Laag Voorraadniveau: %(product)s"
+
+msgid "OVERDUE: %(kind)s #%(number)s"
+msgstr "ACHTERSTALLIG: %(kind)s #%(number)s"
+
+msgid "Payment Due in %(days)s day(s): #%(number)s"
+msgstr "Betaling Vervalt over %(days)s dag(en): #%(number)s"
+
+msgid "Payment Due TODAY: #%(number)s"
+msgstr "Betaling VANDAAG Vervallen: #%(number)s"
+
+msgid "Contract Renewal Decision: %(counterparty)s"
+msgstr "Beslissing Contractverlenging: %(counterparty)s"
+
+msgid "Consignment Delivery Expected: #%(number)s"
+msgstr "Verwachte Levering Zending: #%(number)s"
+
+msgid "Incoming Payment"
+msgstr "Inkomende Betaling"
+
+msgid "%(counterparty)s - #%(number)s confirmed and scheduled into calendar."
+msgstr "%(counterparty)s - #%(number)s bevestigd en ingepland in de agenda."
+
+msgid ""
+"We owe %(counterparty)s %(amount)s %(currency)s. Due date was %(date)s "
+"(%(days)s days ago)."
+msgstr ""
+"We zijn %(counterparty)s %(amount)s %(currency)s verschuldigd. Vervaldatum "
+"was %(date)s (%(days)s dagen geleden)."
+
+msgid ""
+"Expected from %(counterparty)s %(amount)s %(currency)s. Due date was "
+"%(date)s (%(days)s days ago)."
+msgstr ""
+"Verwacht van %(counterparty)s %(amount)s %(currency)s. Vervaldatum was "
+"%(date)s (%(days)s dagen geleden)."
+
+msgid ""
+"Scheduled payment to %(counterparty)s for %(amount)s %(currency)s on "
+"%(date)s."
+msgstr ""
+"Geplande betaling aan %(counterparty)s van %(amount)s %(currency)s op "
+"%(date)s."
+
+msgid ""
+"Expected incoming payment from %(counterparty)s for %(amount)s %(currency)s "
+"on %(date)s."
+msgstr ""
+"Verwachte betaling van %(counterparty)s van %(amount)s %(currency)s op "
+"%(date)s."
+
+msgid ""
+"Stock for '%(name)s' [%(sku)s] is down to %(qty)s %(uom)s (Reorder "
+"threshold: %(threshold)s)."
+msgstr ""
+"Voorraad van '%(name)s' [%(sku)s] is gedaald naar %(qty)s %(uom)s "
+"(Drempelwaarde: %(threshold)s)."
+
+msgid ""
+"Contract '%(title)s' expires on %(end_date)s. Notice deadline is "
+"%(notice_date)s (%(days)s days left)."
+msgstr ""
+"Contract '%(title)s' verloopt op %(end_date)s. Kennisgevingstermijn is "
+"%(notice_date)s (nog %(days)s dagen)."
+
+msgid "Expected delivery from %(counterparty)s scheduled for %(date)s."
+msgstr "Verwachte levering van %(counterparty)s gepland op %(date)s."
+
+msgid "Pay Bill #%(number)s to %(counterparty)s"
+msgstr "Betaal Factuur #%(number)s aan %(counterparty)s"
+
+msgid "OVERDUE: Pay Bill #%(number)s to %(counterparty)s"
+msgstr "ACHTERSTALLIG: Betaal Factuur #%(number)s aan %(counterparty)s"
+
+msgid "Expected Incoming Payment #%(number)s from %(counterparty)s"
+msgstr "Verwachte Betaling #%(number)s van %(counterparty)s"
+
+msgid "Inspect Incoming Delivery #%(number)s at Dock"
+msgstr "Controleer Inkomende Levering #%(number)s aan het Dok"
+
+msgid "pcs"
+msgstr "stuks"
+
+msgid "Edit"
+msgstr "Bewerken"
+
+msgid "Edit Counterparty"
+msgstr "Relatie Bewerken"
+
+msgid "Save Changes"
+msgstr "Wijzigingen Opslaan"
+
+msgid "Registration Number"
+msgstr "Registratienummer"
+
+msgid "SWIFT / BIC"
+msgstr "SWIFT / BIC"
+
+msgid "Payment Terms (Days)"
+msgstr "Betalingstermijn (Dagen)"
+
+msgid "Counterparty '%(name)s' updated successfully."
+msgstr "Relatie '%(name)s' succesvol bijgewerkt."
+
+msgid "Counterparty '%(name)s' created successfully."
+msgstr "Relatie '%(name)s' succesvol aangemaakt."

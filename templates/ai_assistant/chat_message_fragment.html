@@ -1,0 +1,15 @@
+<!-- User Message -->
+<div class="flex justify-end">
+  <div class="bg-blue-600 text-white rounded-xl rounded-tr-none px-4 py-2.5 max-w-[85%] text-xs shadow-sm">
+    <p>{{ prompt }}</p>
+  </div>
+</div>
+
+<!-- Copilot Response -->
+<div class="flex justify-start">
+  <div class="bg-white border border-slate-200 text-slate-800 rounded-xl rounded-tl-none p-3.5 max-w-[90%] text-xs shadow-sm space-y-2">
+    <div class="prose prose-xs max-w-none text-slate-700 leading-relaxed">
+      {{ response_text|linebreaks }}
+    </div>
+  </div>
+</div>

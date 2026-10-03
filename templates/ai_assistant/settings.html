@@ -1,0 +1,314 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "AI & LLM Configuration" %} - Sole Enterprise Orchestrator{% endblock %}
+
+{% block breadcrumbs %}
+  <span>{% trans "Documents & AI" %}</span> / <span class="text-slate-800 font-medium">{% trans "AI Provider Settings" %}</span>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto space-y-6">
+
+  <!-- Header Card -->
+  <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div class="flex items-center gap-4">
+      <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
+        <i class="fa-solid fa-brain text-xl"></i>
+      </div>
+      <div>
+        <h2 class="text-xl font-bold text-slate-900 leading-tight">{% trans "AI & LLM Provider Configuration" %}</h2>
+        <p class="text-xs text-slate-500 mt-1">{% trans "Select and configure your preferred multimodal AI engine for document extraction and Copilot intelligence." %}</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <div class="px-3 py-1.5 rounded-lg bg-blue-50 border border-blue-200 text-blue-800 text-xs font-semibold flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+        <span>{% trans "Active" %}: {{ setting.get_active_provider_display }}</span>
+      </div>
+      <span class="text-xs text-slate-500 font-mono hidden sm:inline-block bg-slate-100 px-2 py-1 rounded">
+        python setup_llm.py
+      </span>
+    </div>
+  </div>
+
+  <form method="post" action="{% url 'ai_assistant:settings' %}" class="space-y-6">
+    {% csrf_token %}
+
+    <!-- Provider Selection Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" x-data="{ selected: '{{ setting.active_provider }}' }">
+
+      <!-- 1. Google Gemini -->
+      <label class="relative flex flex-col p-5 bg-white rounded-xl border-2 cursor-pointer transition shadow-sm hover:border-blue-400"
+             :class="selected === 'gemini' ? 'border-blue-600 ring-2 ring-blue-500/20 bg-blue-50/20' : 'border-slate-200'">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-sm">G</span>
+            <div>
+              <span class="font-bold text-slate-900 text-sm block">Google Gemini</span>
+              <span class="text-[11px] text-slate-500">gemini-2.5-flash / pro</span>
+            </div>
+          </div>
+          <input type="radio" name="active_provider" value="gemini" x-model="selected" class="text-blue-600 focus:ring-blue-500 h-4 w-4">
+        </div>
+        <p class="mt-3 text-xs text-slate-600 leading-relaxed">
+          {% trans "High-speed multimodal AI by Google. Supports native PDF and photo scans with precision extraction." %}
+        </p>
+        <div class="mt-4 pt-3 border-t border-slate-100 space-y-2">
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-0.5">{% trans "Gemini API Key" %}</label>
+            <input type="password" name="gemini_api_key" value="{{ setting.gemini_api_key }}" placeholder="AIzaSy..."
+                   class="w-full text-xs rounded-lg border-slate-300 focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-0.5">{% trans "Model" %}</label>
+            <input type="text" name="gemini_model" value="{{ setting.gemini_model }}" placeholder="gemini-2.5-flash"
+                   class="w-full text-xs rounded-lg border-slate-300 focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div class="pt-2 flex items-center justify-between">
+            <button type="button" hx-post="{% url 'ai_assistant:test_connection' %}" hx-target="#test-result-gemini"
+                    hx-vals='{"provider": "gemini"}' hx-include="closest label"
+                    class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition">
+              <i class="fa-solid fa-plug mr-1"></i> {% trans "Test Ping" %}
+            </button>
+            <div id="test-result-gemini"></div>
+          </div>
+        </div>
+      </label>
+
+      <!-- 2. OpenAI / ChatGPT -->
+      <label class="relative flex flex-col p-5 bg-white rounded-xl border-2 cursor-pointer transition shadow-sm hover:border-blue-400"
+             :class="selected === 'openai' ? 'border-blue-600 ring-2 ring-blue-500/20 bg-blue-50/20' : 'border-slate-200'">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">AI</span>
+            <div>
+              <span class="font-bold text-slate-900 text-sm block">OpenAI / ChatGPT</span>
+              <span class="text-[11px] text-slate-500">gpt-4o / gpt-4o-mini</span>
+            </div>
+          </div>
+          <input type="radio" name="active_provider" value="openai" x-model="selected" class="text-blue-600 focus:ring-blue-500 h-4 w-4">
+        </div>
+        <p class="mt-3 text-xs text-slate-600 leading-relaxed">
+          {% trans "Industry standard GPT-4o models with multimodal document inspection and structured JSON schemas." %}
+        </p>
+        <div class="mt-4 pt-3 border-t border-slate-100 space-y-2">
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-0.5">{% trans "OpenAI API Key" %}</label>
+            <input type="password" name="openai_api_key" value="{{ setting.openai_api_key }}" placeholder="sk-proj-..."
+                   class="w-full text-xs rounded-lg border-slate-300 focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-700 mb-0.5">{% trans "Model" %}</label>
+              <input type="text" name="openai_model" value="{{ setting.openai_model }}" placeholder="gpt-4o"
+                     class="w-full text-xs rounded-lg border-slate-300 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-700 mb-0.5">{% trans "Base URL" %}</label>
+              <input type="text" name="openai_base_url" value="{{ setting.openai_base_url }}" placeholder="https://api.openai.com/v1"
+                     class="w-full text-xs rounded-lg border-slate-300 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+          </div>
+          <div class="pt-2 flex items-center justify-between">
+            <button type="button" hx-post="{% url 'ai_assistant:test_connection' %}" hx-target="#test-result-openai"
+                    hx-vals='{"provider": "openai"}' hx-include="closest label"
+                    class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition">
+              <i class="fa-solid fa-plug mr-1"></i> {% trans "Test Ping" %}
+            </button>
+            <div id="test-result-openai"></div>
+          </div>
+        </div>
+      </label>
+
+      <!-- 3. Anthropic Claude -->
+      <label class="relative flex flex-col p-5 bg-white rounded-xl border-2 cursor-pointer transition shadow-sm hover:border-blue-400"
+             :class="selected === 'claude' ? 'border-blue-600 ring-2 ring-blue-500/20 bg-blue-50/20' : 'border-slate-200'">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="w-8 h-8 rounded-lg bg-orange-100 text-orange-700 flex items-center justify-center font-bold text-sm">C</span>
+            <div>
+              <span class="font-bold text-slate-900 text-sm block">Anthropic Claude</span>
+              <span class="text-[11px] text-slate-500">claude-3-7-sonnet</span>
+            </div>
+          </div>
+          <input type="radio" name="active_provider" value="claude" x-model="selected" class="text-blue-600 focus:ring-blue-500 h-4 w-4">
+        </div>
+        <p class="mt-3 text-xs text-slate-600 leading-relaxed">
+          {% trans "Deep reasoning and native PDF contract analysis with state-of-the-art accuracy and nuanced understanding." %}
+        </p>
+        <div class="mt-4 pt-3 border-t border-slate-100 space-y-2">
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-0.5">{% trans "Anthropic API Key" %}</label>
+            <input type="password" name="claude_api_key" value="{{ setting.claude_api_key }}" placeholder="sk-ant-..."
+                   class="w-full text-xs rounded-lg border-slate-300 focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-0.5">{% trans "Model" %}</label>
+            <input type="text" name="claude_model" value="{{ setting.claude_model }}" placeholder="claude-3-7-sonnet-20250219"
+                   class="w-full text-xs rounded-lg border-slate-300 focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div class="pt-2 flex items-center justify-between">
+            <button type="button" hx-post="{% url 'ai_assistant:test_connection' %}" hx-target="#test-result-claude"
+                    hx-vals='{"provider": "claude"}' hx-include="closest label"
+                    class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition">
+              <i class="fa-solid fa-plug mr-1"></i> {% trans "Test Ping" %}
+            </button>
+            <div id="test-result-claude"></div>
+          </div>
+        </div>
+      </label>
+
+      <!-- 4. DeepSeek -->
+      <label class="relative flex flex-col p-5 bg-white rounded-xl border-2 cursor-pointer transition shadow-sm hover:border-blue-400"
+             :class="selected === 'deepseek' ? 'border-blue-600 ring-2 ring-blue-500/20 bg-blue-50/20' : 'border-slate-200'">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="w-8 h-8 rounded-lg bg-sky-100 text-sky-700 flex items-center justify-center font-bold text-sm">D</span>
+            <div>
+              <span class="font-bold text-slate-900 text-sm block">DeepSeek</span>
+              <span class="text-[11px] text-slate-500">deepseek-chat / reasoner</span>
+            </div>
+          </div>
+          <input type="radio" name="active_provider" value="deepseek" x-model="selected" class="text-blue-600 focus:ring-blue-500 h-4 w-4">
+        </div>
+        <p class="mt-3 text-xs text-slate-600 leading-relaxed">
+          {% trans "Cost-effective, powerful reasoning model (DeepSeek-V3 / R1) for intelligent ledger automation." %}
+        </p>
+        <div class="mt-4 pt-3 border-t border-slate-100 space-y-2">
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-0.5">{% trans "DeepSeek API Key" %}</label>
+            <input type="password" name="deepseek_api_key" value="{{ setting.deepseek_api_key }}" placeholder="sk-..."
+                   class="w-full text-xs rounded-lg border-slate-300 focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-700 mb-0.5">{% trans "Model" %}</label>
+              <input type="text" name="deepseek_model" value="{{ setting.deepseek_model }}" placeholder="deepseek-chat"
+                     class="w-full text-xs rounded-lg border-slate-300 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-700 mb-0.5">{% trans "Base URL" %}</label>
+              <input type="text" name="deepseek_base_url" value="{{ setting.deepseek_base_url }}" placeholder="https://api.deepseek.com"
+                     class="w-full text-xs rounded-lg border-slate-300 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+          </div>
+          <div class="pt-2 flex items-center justify-between">
+            <button type="button" hx-post="{% url 'ai_assistant:test_connection' %}" hx-target="#test-result-deepseek"
+                    hx-vals='{"provider": "deepseek"}' hx-include="closest label"
+                    class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition">
+              <i class="fa-solid fa-plug mr-1"></i> {% trans "Test Ping" %}
+            </button>
+            <div id="test-result-deepseek"></div>
+          </div>
+        </div>
+      </label>
+
+      <!-- 5. Alibaba Qwen -->
+      <label class="relative flex flex-col p-5 bg-white rounded-xl border-2 cursor-pointer transition shadow-sm hover:border-blue-400"
+             :class="selected === 'qwen' ? 'border-blue-600 ring-2 ring-blue-500/20 bg-blue-50/20' : 'border-slate-200'">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm">Q</span>
+            <div>
+              <span class="font-bold text-slate-900 text-sm block">Alibaba Qwen (通义千问)</span>
+              <span class="text-[11px] text-slate-500">qwen-plus / qwen-vl-max</span>
+            </div>
+          </div>
+          <input type="radio" name="active_provider" value="qwen" x-model="selected" class="text-blue-600 focus:ring-blue-500 h-4 w-4">
+        </div>
+        <p class="mt-3 text-xs text-slate-600 leading-relaxed">
+          {% trans "Enterprise Alibaba Cloud DashScope platform with excellent multilingual and vision capabilities." %}
+        </p>
+        <div class="mt-4 pt-3 border-t border-slate-100 space-y-2">
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-0.5">{% trans "DashScope API Key" %}</label>
+            <input type="password" name="qwen_api_key" value="{{ setting.qwen_api_key }}" placeholder="sk-..."
+                   class="w-full text-xs rounded-lg border-slate-300 focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-700 mb-0.5">{% trans "Model" %}</label>
+              <input type="text" name="qwen_model" value="{{ setting.qwen_model }}" placeholder="qwen-plus"
+                     class="w-full text-xs rounded-lg border-slate-300 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-700 mb-0.5">{% trans "Base URL" %}</label>
+              <input type="text" name="qwen_base_url" value="{{ setting.qwen_base_url }}" placeholder="https://dashscope-intl.aliyuncs.com/compatible-mode/v1"
+                     class="w-full text-xs rounded-lg border-slate-300 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+          </div>
+          <div class="pt-2 flex items-center justify-between">
+            <button type="button" hx-post="{% url 'ai_assistant:test_connection' %}" hx-target="#test-result-qwen"
+                    hx-vals='{"provider": "qwen"}' hx-include="closest label"
+                    class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition">
+              <i class="fa-solid fa-plug mr-1"></i> {% trans "Test Ping" %}
+            </button>
+            <div id="test-result-qwen"></div>
+          </div>
+        </div>
+      </label>
+
+      <!-- 6. Custom / Local (Ollama, vLLM, OpenRouter) -->
+      <label class="relative flex flex-col p-5 bg-white rounded-xl border-2 cursor-pointer transition shadow-sm hover:border-blue-400"
+             :class="selected === 'custom' ? 'border-blue-600 ring-2 ring-blue-500/20 bg-blue-50/20' : 'border-slate-200'">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="w-8 h-8 rounded-lg bg-zinc-200 text-zinc-800 flex items-center justify-center font-bold text-sm"><i class="fa-solid fa-server"></i></span>
+            <div>
+              <span class="font-bold text-slate-900 text-sm block">Custom / Local (Ollama)</span>
+              <span class="text-[11px] text-slate-500">Private On-Premise LLM</span>
+            </div>
+          </div>
+          <input type="radio" name="active_provider" value="custom" x-model="selected" class="text-blue-600 focus:ring-blue-500 h-4 w-4">
+        </div>
+        <p class="mt-3 text-xs text-slate-600 leading-relaxed">
+          {% trans "100% private, on-premise AI via Ollama, LM Studio, vLLM, or OpenRouter. Keeps financial data on local hardware." %}
+        </p>
+        <div class="mt-4 pt-3 border-t border-slate-100 space-y-2">
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-700 mb-0.5">{% trans "API Key (Optional for Ollama)" %}</label>
+            <input type="password" name="custom_api_key" value="{{ setting.custom_api_key }}" placeholder="Optional or Bearer token"
+                   class="w-full text-xs rounded-lg border-slate-300 focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-700 mb-0.5">{% trans "Model Name" %}</label>
+              <input type="text" name="custom_model" value="{{ setting.custom_model }}" placeholder="llama3.3"
+                     class="w-full text-xs rounded-lg border-slate-300 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-700 mb-0.5">{% trans "Endpoint Base URL" %}</label>
+              <input type="text" name="custom_base_url" value="{{ setting.custom_base_url }}" placeholder="http://localhost:11434/v1"
+                     class="w-full text-xs rounded-lg border-slate-300 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+          </div>
+          <div class="pt-2 flex items-center justify-between">
+            <button type="button" hx-post="{% url 'ai_assistant:test_connection' %}" hx-target="#test-result-custom"
+                    hx-vals='{"provider": "custom"}' hx-include="closest label"
+                    class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition">
+              <i class="fa-solid fa-plug mr-1"></i> {% trans "Test Ping" %}
+            </button>
+            <div id="test-result-custom"></div>
+          </div>
+        </div>
+      </label>
+
+    </div>
+
+    <!-- Submit Action Bar -->
+    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+      <div class="text-xs text-slate-500">
+        <i class="fa-solid fa-circle-info mr-1 text-blue-500"></i>
+        <span>{% trans "Settings are saved to both database and .env configuration file." %}</span>
+      </div>
+      <button type="submit" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold shadow-sm transition flex items-center gap-2">
+        <i class="fa-solid fa-floppy-disk"></i>
+        <span>{% trans "Save & Apply AI Settings" %}</span>
+      </button>
+    </div>
+
+  </form>
+
+</div>
+{% endblock %}

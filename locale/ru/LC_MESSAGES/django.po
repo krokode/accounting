@@ -1,0 +1,1624 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 23:00+0000\n"
+"PO-Revision-Date: 2026-10-02 23:00+0000\n"
+"Last-Translator: Antigravity AI\n"
+"Language-Team: ru\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Accounting & Agent"
+msgstr "Бухгалтерия и AI-агент"
+
+msgid "Collapse Sidebar"
+msgstr "Свернуть боковую панель"
+
+msgid "Expand Sidebar"
+msgstr "Развернуть боковую панель"
+
+msgid "Close Sidebar"
+msgstr "Закрыть боковую панель"
+
+msgid "Scan Receipt with AI"
+msgstr "Сканировать чек с помощью ИИ"
+
+msgid "View Scanned Receipts"
+msgstr "Смотреть отсканированные чеки"
+
+msgid "View all scanned receipts in Scanned Records"
+msgstr "Смотреть все отсканированные чеки в журнале документов"
+
+msgid "Scan Source"
+msgstr "Источник скана"
+
+msgid "AI Verified Scan"
+msgstr "Проверено ИИ"
+
+msgid "Manual Entry"
+msgstr "Ручной ввод"
+
+msgid "View original scan and AI extracted details"
+msgstr "Просмотреть исходный скан и данные, извлеченные ИИ"
+
+msgid "Receipt & Expense Voucher Mode"
+msgstr "Режим чеков и расходных ордеров"
+
+msgid ""
+"AI will extract merchant name, receipt date, expense category, VAT/tax, and "
+"totals directly into your accounting ledgers."
+msgstr ""
+"ИИ автоматически извлечет название поставщика, дату, категорию расходов, НДС"
+" и итоговую сумму в бухгалтерский журнал."
+
+msgid "Expense Category *"
+msgstr "Категория расходов *"
+
+msgid "e.g. Office Supplies, Fuel, Travel"
+msgstr "напр., канцтовары, топливо, командировочные"
+
+msgid "Travel & Transportation"
+msgstr "Командировки и транспорт"
+
+msgid "Meals & Entertainment"
+msgstr "Питание и представительские"
+
+msgid "Fuel & Vehicle"
+msgstr "ГСМ и автотранспорт"
+
+msgid "Utilities & Telecom"
+msgstr "Коммунальные и связь"
+
+msgid "Software & IT"
+msgstr "ПО и IT-услуги"
+
+msgid "Repairs & Maintenance"
+msgstr "Ремонт и обслуживание"
+
+msgid "General / Other"
+msgstr "Прочие расходы"
+
+msgid "View in Receipts Ledger"
+msgstr "Перейти в журнал чеков"
+
+msgid "View Invoices"
+msgstr "Смотреть счета"
+
+msgid ""
+"Reminders check triggered! Generated %(total)s active alert(s) (Payables: "
+"%(payables)s, Receivables: %(receivables)s, Overdue: %(overdue)s, Contracts:"
+" %(contracts)s, Stock: %(stock)s)."
+msgstr ""
+"Проверка напоминаний выполнена! Создано %(total)s активных оповещений "
+"(Кредиторы: %(payables)s, Дебиторы: %(receivables)s, Просрочено: "
+"%(overdue)s, Договоры: %(contracts)s, Склад: %(stock)s)."
+
+msgid ""
+"Full payment of %(amount)s %(currency)s recorded! Invoice #%(number)s is now"
+" marked as Paid, and the calendar task is completed."
+msgstr ""
+"Полная оплата %(amount)s %(currency)s зарегистрирована! Счет №%(number)s "
+"отмечен как оплаченный, задача в календаре завершена."
+
+msgid ""
+"Partial payment of %(amount)s %(currency)s recorded. Remaining: "
+"%(remaining)s %(currency)s."
+msgstr ""
+"Частичная оплата %(amount)s %(currency)s зарегистрирована. Остаток: "
+"%(remaining)s %(currency)s."
+
+msgid "Expense receipt for €%(amount)s recorded."
+msgstr "Расходный чек на сумму €%(amount)s зарегистрирован."
+
+msgid "Contract '%(title)s' registered."
+msgstr "Договор '%(title)s' успешно зарегистрирован."
+
+msgid ""
+"Scanned file '%(name)s' successfully processed by AI! Please review "
+"extracted data."
+msgstr "Файл '%(name)s' успешно обработан ИИ! Проверьте извлеченные данные."
+
+msgid "Extraction failed: %(error)s"
+msgstr "Ошибка извлечения: %(error)s"
+
+msgid ""
+"Document #%(number)s confirmed! Created ledger records & scheduled calendar "
+"tasks."
+msgstr ""
+"Документ №%(number)s подтвержден! Созданы бухгалтерские записи и задачи в "
+"календаре."
+
+msgid "Error saving records: %(error)s"
+msgstr "Ошибка сохранения записей: %(error)s"
+
+msgid "Re-extraction failed: %(error)s"
+msgstr "Повторное извлечение не удалось: %(error)s"
+
+msgid "Product with SKU '%(sku)s' already exists."
+msgstr "Товар с артикулом '%(sku)s' уже существует."
+
+msgid "Product '%(name)s' [%(sku)s] created successfully."
+msgstr "Товар '%(name)s' [%(sku)s] успешно создан."
+
+msgid ""
+"Consignment #%(number)s received! Warehouse stock levels automatically "
+"updated."
+msgstr ""
+"Партия №%(number)s принята! Складские остатки автоматически обновлены."
+
+msgid "Dashboard"
+msgstr "Панель управления"
+
+msgid "Documents & AI"
+msgstr "Документы и ИИ"
+
+msgid "AI Provider Settings"
+msgstr "Настройки AI-провайдеров"
+
+msgid "AI & LLM Configuration"
+msgstr "Конфигурация AI и LLM"
+
+msgid "AI & LLM Provider Configuration"
+msgstr "Настройка провайдеров AI и LLM"
+
+msgid ""
+"Select and configure your preferred multimodal AI engine for document "
+"extraction and Copilot intelligence."
+msgstr ""
+"Выберите и настройте мультимодальный AI-движок для анализа документов и "
+"работы Copilot."
+
+msgid "Active"
+msgstr "Действующий"
+
+msgid ""
+"High-speed multimodal AI by Google. Supports native PDF and photo scans with"
+" precision extraction."
+msgstr ""
+"Высокоскоростной мультимодальный ИИ от Google. Прямой анализ PDF и фото с "
+"высокой точностью."
+
+msgid "Gemini API Key"
+msgstr "API-ключ Gemini"
+
+msgid ""
+"Industry standard GPT-4o models with multimodal document inspection and "
+"structured JSON schemas."
+msgstr ""
+"Модели GPT-4o с мультимодальным анализом документов и строгими схемами JSON."
+
+msgid "OpenAI API Key"
+msgstr "API-ключ OpenAI"
+
+msgid ""
+"Deep reasoning and native PDF contract analysis with state-of-the-art "
+"accuracy and nuanced understanding."
+msgstr ""
+"Глубокая логика и нативный анализ PDF-договоров с высочайшей точностью и "
+"пониманием нюансов."
+
+msgid "Anthropic API Key"
+msgstr "API-ключ Anthropic"
+
+msgid ""
+"Cost-effective, powerful reasoning model (DeepSeek-V3 / R1) for intelligent "
+"ledger automation."
+msgstr ""
+"Экономичная и мощная модель рассуждений (DeepSeek-V3 / R1) для автоматизации"
+" учета."
+
+msgid "DeepSeek API Key"
+msgstr "API-ключ DeepSeek"
+
+msgid ""
+"Enterprise Alibaba Cloud DashScope platform with excellent multilingual and "
+"vision capabilities."
+msgstr ""
+"Корпоративная платформа Alibaba Cloud DashScope с отличными возможностями "
+"мультиязычности и распознавания."
+
+msgid "DashScope API Key"
+msgstr "API-ключ DashScope"
+
+msgid ""
+"100% private, on-premise AI via Ollama, LM Studio, vLLM, or OpenRouter. "
+"Keeps financial data on local hardware."
+msgstr ""
+"100% приватный локальный ИИ через Ollama, LM Studio, vLLM или OpenRouter. "
+"Финансовые данные остаются на вашем сервере."
+
+msgid "API Key (Optional for Ollama)"
+msgstr "API-ключ (необязательно для Ollama)"
+
+msgid "Model Name"
+msgstr "Название модели"
+
+msgid "Endpoint Base URL"
+msgstr "Базовый URL эндпоинта"
+
+msgid "Test Ping"
+msgstr "Тест связи"
+
+msgid "Settings are saved to both database and .env configuration file."
+msgstr "Настройки сохраняются в базу данных и в конфигурационный файл .env."
+
+msgid "Save & Apply AI Settings"
+msgstr "Сохранить и применить настройки ИИ"
+
+msgid "AI Configuration successfully updated!"
+msgstr "Конфигурация ИИ успешно обновлена!"
+
+msgid "AI configuration and active provider updated successfully!"
+msgstr "Конфигурация ИИ и активный провайдер успешно обновлены!"
+
+msgid "AI Configuration Required"
+msgstr "Требуется настройка ИИ"
+
+msgid "Open AI Settings"
+msgstr "Открыть настройки ИИ"
+
+msgid "Rate Limit Exceeded"
+msgstr "Превышен лимит запросов"
+
+msgid "Switch Provider in AI Settings"
+msgstr "Сменить провайдера в настройках ИИ"
+
+msgid "AI Provider Offline / Unreachable"
+msgstr "AI-сервис отключен или недоступен"
+
+msgid "Check Endpoint in AI Settings"
+msgstr "Проверить эндпоинт в настройках ИИ"
+
+msgid "Authentication Failed"
+msgstr "Ошибка аутентификации"
+
+msgid "Update API Key in AI Settings"
+msgstr "Обновить API-ключ в настройках ИИ"
+
+msgid "AI Execution Failed"
+msgstr "Ошибка выполнения ИИ"
+
+msgid "AI Document Extraction Alert"
+msgstr "Оповещение об извлечении документа через ИИ"
+
+msgid "Configure AI Settings"
+msgstr "Настроить параметры ИИ"
+
+msgid "Or run in terminal:"
+msgstr "Или выполните в терминале:"
+
+msgid "Documents"
+msgstr "Документы"
+
+msgid "Scanned Records"
+msgstr "Скан-копии документов"
+
+msgid "Scanned Records Management"
+msgstr "Управление отсканированными документами"
+
+msgid "Upload & Ingest"
+msgstr "Загрузка и обработка"
+
+msgid "Upload"
+msgstr "Загрузить"
+
+msgid "Accounting"
+msgstr "Бухгалтерия"
+
+msgid "Invoices (AP/AR)"
+msgstr "Счета (Кредиторка/Дебиторка)"
+
+msgid "Invoices"
+msgstr "Счета"
+
+msgid "Invoice"
+msgstr "Счет"
+
+msgid "Invoices & Payments"
+msgstr "Счета и платежи"
+
+msgid "Invoices & Payments (AP/AR)"
+msgstr "Счета и платежи (Кредиторка/Дебиторка)"
+
+msgid "Accounts Payable & Receivable"
+msgstr "Кредиторская и дебиторская задолженность"
+
+msgid "Receipts & Expenses"
+msgstr "Чеки и расходы"
+
+msgid "Receipts & Petty Cash"
+msgstr "Чеки и мелкие расходы"
+
+msgid "Operations & Admin"
+msgstr "Операции и управление"
+
+msgid "Operations"
+msgstr "Операции"
+
+msgid "Administration"
+msgstr "Управление"
+
+msgid "Calendar & Tasks"
+msgstr "Календарь и задачи"
+
+msgid "Company Calendar & Tasks"
+msgstr "Календарь компании и задачи"
+
+msgid "Operational & Financial Calendar"
+msgstr "Операционный и финансовый календарь"
+
+msgid "Warehouse & Stock"
+msgstr "Склад и запасы"
+
+msgid "Warehouse & Inventory"
+msgstr "Склад и инвентарь"
+
+msgid "Warehouse Inventory"
+msgstr "Складские запасы"
+
+msgid "Warehouse & Inventory Management"
+msgstr "Управление складом и запасами"
+
+msgid "Consignments"
+msgstr "Накладные"
+
+msgid "Consignment"
+msgstr "Накладная"
+
+msgid "Consignments & Waybills"
+msgstr "Накладные и транспортные листы"
+
+msgid "Consignments & Delivery Slips"
+msgstr "Накладные и квитанции о доставке"
+
+msgid "Counterparties"
+msgstr "Контрагенты"
+
+msgid "Counterparties Directory"
+msgstr "Справочник контрагентов"
+
+msgid "Counterparties & Vendors Directory"
+msgstr "Справочник поставщиков и клиентов"
+
+msgid "Contracts"
+msgstr "Договоры"
+
+msgid "Contracts Registry"
+msgstr "Реестр договоров"
+
+msgid "Contracts & Agreements Registry"
+msgstr "Реестр договоров и соглашений"
+
+msgid "Alerts"
+msgstr "Уведомления"
+
+msgid "Notifications"
+msgstr "Уведомления"
+
+msgid "Proactive Reminders & Notifications"
+msgstr "Упреждающие напоминания и уведомления"
+
+msgid "Proactive Reminders & Alerts"
+msgstr "Упреждающие напоминания и оповещения"
+
+msgid "AI Copilot Assistant"
+msgstr "AI-ассистент Copilot"
+
+msgid "ERP AI Copilot"
+msgstr "ERP AI Copilot"
+
+msgid "Real-time ledger & calendar intelligence"
+msgstr "Интеллектуальный анализ учета и календаря в реальном времени"
+
+msgid "Check Reminders"
+msgstr "Проверить напоминания"
+
+msgid "Proactive Alerts"
+msgstr "Упреждающие уведомления"
+
+msgid "View All"
+msgstr "Смотреть все"
+
+msgid "Take Action"
+msgstr "Принять меры"
+
+msgid "ago"
+msgstr "назад"
+
+msgid "Upload Scan"
+msgstr "Загрузить скан"
+
+msgid "Upload New Scan"
+msgstr "Загрузить новый скан"
+
+msgid "Upload Scanned Record"
+msgstr "Загрузить скан документа"
+
+msgid "Upload Scanned Document"
+msgstr "Загрузка отсканированного документа"
+
+msgid "Company Operational Dashboard"
+msgstr "Операционная панель управления компании"
+
+msgid ""
+"Autonomous records management, invoice tracking, warehouse stock, and "
+"calendar automation."
+msgstr ""
+"Автономное управление документами, отслеживание счетов, складских остатков и"
+" автоматизация задач."
+
+msgid "Consult AI Copilot"
+msgstr "Консультация с AI Copilot"
+
+msgid "Urgent: Invoice(s) Overdue"
+msgstr "Срочно: Просрочены счета"
+
+msgid ""
+"There are overdue obligations requiring immediate payment or collection "
+"action."
+msgstr ""
+"Есть просроченные обязательства, требующие немедленной оплаты или взыскания."
+
+msgid "View All Overdue"
+msgstr "Все просроченные"
+
+msgid "Outgoing Payables"
+msgstr "К оплате поставщикам"
+
+msgid "Outgoing Payables (We Owe)"
+msgstr "Исходящие платежи (наш долг)"
+
+msgid "Track vendor bills"
+msgstr "Счета поставщиков"
+
+msgid "Expected Receivables"
+msgstr "Ожидаемые поступления"
+
+msgid "Expected Receivables (Incoming)"
+msgstr "Ожидаемая дебиторка (входящие)"
+
+msgid "Customer payments"
+msgstr "Платежи клиентов"
+
+msgid "Customer payments expected"
+msgstr "Ожидаемые платежи клиентов"
+
+msgid "Net Position"
+msgstr "Чистая позиция"
+
+msgid "Projected balance"
+msgstr "Прогнозный баланс"
+
+msgid "Expected cash margin"
+msgstr "Ожидаемая денежная маржа"
+
+msgid "Low Stock SKUs"
+msgstr "Товары с низким остатком"
+
+msgid "Low Stock Warnings"
+msgstr "Предупреждения о низком запасе"
+
+msgid "Check inventory"
+msgstr "Проверить остатки"
+
+msgid "Scanned Records Awaiting Review"
+msgstr "Сканы, ожидающие подтверждения"
+
+msgid "View All Documents"
+msgstr "Все документы"
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Uploaded"
+msgstr "Загружено"
+
+msgid "Review & Commit"
+msgstr "Проверить и сохранить"
+
+msgid "No documents awaiting review. All uploaded scans have been confirmed!"
+msgstr "Нет документов на проверку. Все загруженные сканы подтверждены!"
+
+msgid "Upcoming Tasks & Payments (Next 7 Days)"
+msgstr "Ближайшие задачи и платежи (следующие 7 дней)"
+
+msgid "Open Full Calendar"
+msgstr "Открыть весь календарь"
+
+msgid "Due"
+msgstr "Срок"
+
+msgid "Due Date"
+msgstr "Срок оплаты"
+
+msgid "Amount"
+msgstr "Сумма"
+
+msgid "View Bill"
+msgstr "Смотреть счет"
+
+msgid "No tasks due in the next 7 days."
+msgstr "Нет запланированных задач на ближайшие 7 дней."
+
+msgid "Quick Actions"
+msgstr "Быстрые действия"
+
+msgid "Calendar Sync"
+msgstr "Синхронизация календаря"
+
+msgid "Inventory Stock"
+msgstr "Складские запасы"
+
+msgid "Ask ERP AI Copilot"
+msgstr "Спросить ERP AI Copilot"
+
+msgid ""
+"Ask questions in natural language. The AI agent scans company ledgers, "
+"calendars, and warehouse stock in real-time."
+msgstr ""
+"Задавайте вопросы на обычном языке. ИИ-агент сканирует бухгалтерские книги, "
+"календарь и остатки на складе."
+
+msgid "What bills are due this week?"
+msgstr "Какие счета нужно оплатить на этой неделе?"
+
+msgid "Show low stock inventory items"
+msgstr "Показать товары с низким остатком"
+
+msgid "What are our expected receivables?"
+msgstr "Какие платежи мы ожидаем получить?"
+
+msgid "Summarize company financial status"
+msgstr "Составить сводку о финансовом состоянии компании"
+
+msgid "Hello!"
+msgstr "Здравствуйте!"
+
+msgid ""
+"I am your Sole Enterprise Orchestrator assistant. Ask me anything about your"
+" records, such as:"
+msgstr ""
+"Я ваш ассистент Sole Enterprise Orchestrator. Спросите меня о чем угодно, "
+"например:"
+
+msgid "Ask about invoices, stock, contracts..."
+msgstr "Спросите о счетах, складе, договорах..."
+
+msgid "All caught up! No unread payment or contract alerts."
+msgstr "Все проверено! Нет непрочитанных уведомлений по платежам и договорам."
+
+msgid "Scan upcoming payments and trigger proactive reminders"
+msgstr "Просканировать предстоящие платежи и создать напоминания"
+
+msgid "All"
+msgstr "Все"
+
+msgid "Needs Review"
+msgstr "Требуют проверки"
+
+msgid "Vendor Invoices"
+msgstr "Счета поставщиков"
+
+msgid "Document"
+msgstr "Документ"
+
+msgid "Detected Type"
+msgstr "Определенный тип"
+
+msgid "AI Status"
+msgstr "Статус ИИ"
+
+msgid "Actions"
+msgstr "Действия"
+
+msgid "Synced to Ledgers"
+msgstr "Синхронизировано с учетом"
+
+msgid "Ready for Review"
+msgstr "Готово к проверке"
+
+msgid "AI Analyzing..."
+msgstr "ИИ анализирует..."
+
+msgid "Error"
+msgstr "Ошибка"
+
+msgid "Inspect"
+msgstr "Просмотр"
+
+msgid "No scanned documents found matching your filter."
+msgstr "Нет отсканированных документов, соответствующих вашему фильтру."
+
+msgid "Upload your first document"
+msgstr "Загрузите ваш первый документ"
+
+msgid "Click to upload or drag & drop"
+msgstr "Нажмите для загрузки или перетащите файл"
+
+msgid "PDF, PNG, JPG, or WEBP (Scans, contracts, receipts)"
+msgstr "PDF, PNG, JPG или WEBP (сканы, договоры, чеки)"
+
+msgid "Multimodal AI"
+msgstr "Мультимодальный ИИ"
+
+msgid "Accurate reading of tables, totals, IBANs, and handwritten stamps."
+msgstr "Точное считывание таблиц, сумм, IBAN и рукописных штампов."
+
+msgid "Auto Task Creation"
+msgstr "Автоматическое создание задач"
+
+msgid ""
+"Schedules payment due dates and contract renewals directly into your "
+"calendar."
+msgstr "Планирует сроки оплаты и продления договоров прямо в вашем календаре."
+
+msgid "Reminds your team before payments are due and flags overdue bills."
+msgstr ""
+"Напоминает вашей команде до наступления срока оплаты и отмечает просроченные"
+" счета."
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Process with AI"
+msgstr "Обработать с помощью ИИ"
+
+msgid "Verify Document"
+msgstr "Проверить документ"
+
+msgid "Verify & Review"
+msgstr "Проверка и согласование"
+
+msgid "Confirmed & Committed"
+msgstr "Подтверждено и сохранено"
+
+msgid "Verification Required"
+msgstr "Требуется проверка"
+
+msgid "Re-run AI extraction"
+msgstr "Повторить извлечение данных с помощью ИИ"
+
+msgid "Re-Extract"
+msgstr "Извлечь заново"
+
+msgid "Original Scanned Document"
+msgstr "Оригинал отсканированного документа"
+
+msgid "Open Fullscreen"
+msgstr "Открыть на весь экран"
+
+msgid "Extracted Structured Record"
+msgstr "Извлеченные структурированные данные"
+
+msgid "Review AI extracted details before committing to company ledgers."
+msgstr ""
+"Проверьте данные, извлеченные ИИ, перед внесением в бухгалтерские книги "
+"компании."
+
+msgid "Locked & Synced"
+msgstr "Зафиксировано и синхронизировано"
+
+msgid "Document Type"
+msgstr "Тип документа"
+
+msgid "Vendor Invoice (Outgoing Payment)"
+msgstr "Счет поставщика (исходящий платеж)"
+
+msgid "Customer Invoice (Incoming Payment)"
+msgstr "Счет клиенту (входящий платеж)"
+
+msgid "Contract / Agreement"
+msgstr "Договор / Соглашение"
+
+msgid "Consignment / Delivery Note"
+msgstr "Накладная / Доставка"
+
+msgid "Expense Receipt / Petty Cash"
+msgstr "Чек на расходы / Мелкая касса"
+
+msgid "General Document"
+msgstr "Общий документ"
+
+msgid "Document / Invoice Number"
+msgstr "Номер документа / счета"
+
+msgid "Counterparty Details"
+msgstr "Реквизиты контрагента"
+
+msgid "Vendor / Supplier"
+msgstr "Поставщик / Подрядчик"
+
+msgid "Customer / Client"
+msgstr "Клиент / Покупатель"
+
+msgid "Business Partner"
+msgstr "Деловой партнер"
+
+msgid "Logistics / Carrier"
+msgstr "Логистика / Перевозчик"
+
+msgid "Company / Entity Name"
+msgstr "Название компании / организации"
+
+msgid "Tax / VAT ID"
+msgstr "ИНН / НДС"
+
+msgid "Bank IBAN"
+msgstr "Банковский счет IBAN"
+
+msgid "Email"
+msgstr "Эл. почта"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Issue Date"
+msgstr "Дата выставления"
+
+msgid "Payment Due Date *"
+msgstr "Срок оплаты *"
+
+msgid "Contract End / Renewal *"
+msgstr "Окончание / продление договора *"
+
+msgid "Expected Delivery Date *"
+msgstr "Ожидаемая дата доставки *"
+
+msgid "Notice / Grace Period (Days)"
+msgstr "Срок уведомления (дни)"
+
+msgid "Currency"
+msgstr "Валюта"
+
+msgid "Subtotal"
+msgstr "Подитог"
+
+msgid "Tax / VAT"
+msgstr "НДС / Налог"
+
+msgid "Total Amount"
+msgstr "Итоговая сумма"
+
+msgid "Line Items / Products"
+msgstr "Позиции счета / товары"
+
+msgid "Add Item"
+msgstr "Добавить позицию"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "SKU / Code"
+msgstr "Артикул / Код"
+
+msgid "Qty"
+msgstr "Кол-во"
+
+msgid "Price"
+msgstr "Цена"
+
+msgid "Line Total"
+msgstr "Сумма по строке"
+
+msgid "Calendar Task & Reminder Automation"
+msgstr "Автоматизация задач календаря и напоминаний"
+
+msgid ""
+"Approving this record will automatically create a scheduled event on your "
+"calendar and dispatch proactive payment reminders."
+msgstr ""
+"Подтверждение этой записи автоматически создаст запланированное событие в "
+"календаре и настроит упреждающие напоминания об оплате."
+
+msgid "Task Title"
+msgstr "Название задачи"
+
+msgid "Scheduled Due Date"
+msgstr "Запланированный срок"
+
+msgid "Back to List"
+msgstr "Назад к списку"
+
+msgid "Confirm & Commit to Ledgers"
+msgstr "Подтвердить и занести в учет"
+
+msgid "Scan New Bill / Invoice"
+msgstr "Сканировать новый счет"
+
+msgid "Unpaid vendor bills"
+msgstr "Неоплаченные счета поставщиков"
+
+msgid "All Invoices"
+msgstr "Все счета"
+
+msgid "Outgoing Payables (Vendor Bills)"
+msgstr "Исходящие счета (поставщики)"
+
+msgid "Incoming Receivables (Customers)"
+msgstr "Входящие счета (клиенты)"
+
+msgid "Overdue Only"
+msgstr "Только просроченные"
+
+msgid "Unpaid"
+msgstr "Не оплачено"
+
+msgid "Settled / Paid"
+msgstr "Оплачено / Закрыто"
+
+msgid "Invoice #"
+msgstr "Номер счета"
+
+msgid "Direction"
+msgstr "Направление"
+
+msgid "Counterparty"
+msgstr "Контрагент"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Outgoing Bill"
+msgstr "Исходящий счет"
+
+msgid "Incoming"
+msgstr "Входящий"
+
+msgid "Overdue!"
+msgstr "Просрочено!"
+
+msgid "Paid"
+msgstr "Оплачено"
+
+msgid "Partially Paid"
+msgstr "Частично оплачено"
+
+msgid "View Details"
+msgstr "Подробнее"
+
+msgid "No invoices found."
+msgstr "Счета не найдены."
+
+msgid "Outgoing Bill (We Owe)"
+msgstr "Счет к оплате (наш долг)"
+
+msgid "Incoming Receivable"
+msgstr "Входящая дебиторка"
+
+msgid "Paid in Full"
+msgstr "Оплачено полностью"
+
+msgid "View Source Scan"
+msgstr "Открыть скан документа"
+
+msgid "Invoice Line Items"
+msgstr "Позиции счета"
+
+msgid "item(s)"
+msgstr "поз."
+
+msgid "Standard single line invoice"
+msgstr "Стандартный однострочный счет"
+
+msgid "Payment History"
+msgstr "История платежей"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Method"
+msgstr "Способ"
+
+msgid "Reference"
+msgstr "Номер операции"
+
+msgid "No payments recorded yet for this invoice."
+msgstr "По этому счету еще не записано ни одного платежа."
+
+msgid "Financial Breakdown"
+msgstr "Финансовая сводка"
+
+msgid "Total Invoiced"
+msgstr "Всего выставлено"
+
+msgid "Total Paid"
+msgstr "Всего оплачено"
+
+msgid "Remaining Due"
+msgstr "Остаток к оплате"
+
+msgid "Record a Settlement Payment"
+msgstr "Записать платеж"
+
+msgid "Amount to Pay (€)"
+msgstr "Сумма платежа (€)"
+
+msgid "Payment Method"
+msgstr "Способ оплаты"
+
+msgid "Bank Transfer / Wire"
+msgstr "Банковский перевод"
+
+msgid "Credit / Debit Card"
+msgstr "Банковская карта"
+
+msgid "Direct Debit"
+msgstr "Прямое списание"
+
+msgid "Cash"
+msgstr "Наличные"
+
+msgid "Other"
+msgstr "Другое"
+
+msgid "Transaction Ref / Cheque No."
+msgstr "Номер транзакции / чека"
+
+msgid "Notes (optional)"
+msgstr "Примечания (необязательно)"
+
+msgid "Save Payment Record"
+msgstr "Сохранить запись о платеже"
+
+msgid "Expense Receipts & Petty Cash"
+msgstr "Чеки расходов и мелкая касса"
+
+msgid "Receipts & Expense Vouchers"
+msgstr "Чеки и квитанции расходов"
+
+msgid ""
+"Petty cash receipts, office supplies, travel expenses, and small "
+"disbursements."
+msgstr ""
+"Чеки мелкой кассы, канцелярские товары, командировочные расходы и мелкие "
+"выплаты."
+
+msgid "Total Recorded Expenses"
+msgstr "Всего записанных расходов"
+
+msgid "Category"
+msgstr "Категория"
+
+msgid "Counterparty / Vendor"
+msgstr "Контрагент / Поставщик"
+
+msgid "No expense receipts recorded yet."
+msgstr "Чеки расходов еще не записаны."
+
+msgid "Record Cash Expense"
+msgstr "Записать расход"
+
+msgid "Expense Category"
+msgstr "Категория расходов"
+
+msgid "Total Amount (€)"
+msgstr "Итоговая сумма (€)"
+
+msgid "Tax Amount (€)"
+msgstr "Сумма налога (€)"
+
+msgid "Vendor / Counterparty (optional)"
+msgstr "Поставщик / Контрагент (необязательно)"
+
+msgid "None / General Store"
+msgstr "Нет / Общий магазин"
+
+msgid "Notes"
+msgstr "Примечания"
+
+msgid "Add Expense Record"
+msgstr "Добавить запись расхода"
+
+msgid "Add Product SKU"
+msgstr "Добавить товар (SKU)"
+
+msgid "Total Product SKUs"
+msgstr "Всего артикулов (SKU)"
+
+msgid "Product Name"
+msgstr "Наименование товара"
+
+msgid "Cost / Sale"
+msgstr "Закупка / Продажа"
+
+msgid "On Hand"
+msgstr "В наличии"
+
+msgid "Stock Status"
+msgstr "Статус запасов"
+
+msgid "Reorder Needed"
+msgstr "Требуется дозаказ"
+
+msgid "In Stock"
+msgstr "В наличии"
+
+msgid "No products found in warehouse inventory."
+msgstr "Товары на складе не найдены."
+
+msgid "Add New Inventory Product"
+msgstr "Добавить новый товар на склад"
+
+msgid "SKU Code *"
+msgstr "Код SKU *"
+
+msgid "Unit of Measure"
+msgstr "Единица измерения"
+
+msgid "Product / Item Name *"
+msgstr "Название товара / позиции *"
+
+msgid "Cost Price (€)"
+msgstr "Цена закупки (€)"
+
+msgid "Sale Price (€)"
+msgstr "Цена продажи (€)"
+
+msgid "Initial Stock"
+msgstr "Начальный остаток"
+
+msgid "Reorder Point"
+msgstr "Точка дозаказа"
+
+msgid "Save Product"
+msgstr "Сохранить товар"
+
+msgid "Waybill / Consignment #"
+msgstr "Номер накладной / рейса"
+
+msgid "Carrier"
+msgstr "Перевозчик"
+
+msgid "Delivery Date"
+msgstr "Дата доставки"
+
+msgid "Scan Waybill / Delivery Note"
+msgstr "Сканировать накладную"
+
+msgid "No consignments recorded."
+msgstr "Накладные не зарегистрированы."
+
+msgid "From"
+msgstr "Отправитель"
+
+msgid "Scheduled Date"
+msgstr "Запланированная дата"
+
+msgid "Confirm & Stock In"
+msgstr "Подтвердить и оприходовать"
+
+msgid "Manifest Items"
+msgstr "Товарные позиции манифеста"
+
+msgid "Expected Qty"
+msgstr "Ожидаемое кол-во"
+
+msgid "Received Qty"
+msgstr "Полученное кол-во"
+
+msgid "No items listed."
+msgstr "Товары не указаны."
+
+msgid "Inventory Stock Movements Log"
+msgstr "Журнал перемещения запасов"
+
+msgid "Timestamp"
+msgstr "Время записи"
+
+msgid "Product"
+msgstr "Товар"
+
+msgid "Qty Adjusted"
+msgstr "Изменение кол-ва"
+
+msgid "New Balance"
+msgstr "Новый остаток"
+
+msgid "Live iCalendar (.ics) Sync Feed"
+msgstr "Прямая ссылка синхронизации iCalendar (.ics)"
+
+msgid "Copy URL"
+msgstr "Скопировать ссылку"
+
+msgid "Copied!"
+msgstr "Скопировано!"
+
+msgid "Download .ics"
+msgstr "Скачать .ics"
+
+msgid "Legend:"
+msgstr "Обозначения:"
+
+msgid "Outgoing Payment Due"
+msgstr "Срок исходящего платежа"
+
+msgid "Expected Incoming Payment"
+msgstr "Ожидаемый входящий платеж"
+
+msgid "Contract Renewal / Notice"
+msgstr "Продление / уведомление по договору"
+
+msgid "Consignment Delivery"
+msgstr "Доставка по накладной"
+
+msgid "Admin Task"
+msgstr "Административная задача"
+
+msgid "Pending Action Tasks"
+msgstr "Задачи, ожидающие выполнения"
+
+msgid "Mark as completed"
+msgstr "Отметить как выполненное"
+
+msgid "No pending tasks. Everything is up to date!"
+msgstr "Нет ожидающих задач. Все дела выполнены!"
+
+msgid "Add Counterparty"
+msgstr "Добавить контрагента"
+
+msgid "Company Name"
+msgstr "Название компании"
+
+msgid "Contact"
+msgstr "Контакты"
+
+msgid "No counterparties registered yet."
+msgstr "Контрагенты еще не зарегистрированы."
+
+msgid "Entity Name *"
+msgstr "Название организации *"
+
+msgid "Tax / VAT Number"
+msgstr "Номер ИНН / НДС"
+
+msgid "Bank Name"
+msgstr "Название банка"
+
+msgid "Billing / Physical Address"
+msgstr "Юридический / фактический адрес"
+
+msgid "Save Counterparty"
+msgstr "Сохранить контрагента"
+
+msgid "Register Contract"
+msgstr "Зарегистрировать договор"
+
+msgid "Contract Title / #"
+msgstr "Название договора / №"
+
+msgid "Period (Start &rarr; End)"
+msgstr "Срок (Начало &rarr; Окончание)"
+
+msgid "Renewal Terms"
+msgstr "Условия продления"
+
+msgid "Auto-renews"
+msgstr "Автопродление"
+
+msgid "notice"
+msgstr "уведомление"
+
+msgid "Fixed Term"
+msgstr "Фиксированный срок"
+
+msgid "No contracts registered yet."
+msgstr "Договоры еще не зарегистрированы."
+
+msgid "Register New Contract"
+msgstr "Регистрация нового договора"
+
+msgid "Contract Title *"
+msgstr "Название договора *"
+
+msgid "Counterparty *"
+msgstr "Контрагент *"
+
+msgid "Start Date"
+msgstr "Дата начала"
+
+msgid "End / Expiry Date"
+msgstr "Дата окончания / истечения"
+
+msgid "Notice Period (Days)"
+msgstr "Срок уведомления (дни)"
+
+msgid "Auto-renews?"
+msgstr "Автопродление?"
+
+msgid "Save Contract"
+msgstr "Сохранить договор"
+
+msgid "Mark All as Read"
+msgstr "Отметить все как прочитанные"
+
+msgid "View Record"
+msgstr "Перейти к записи"
+
+msgid "No reminders or alerts recorded yet."
+msgstr "Напоминаний и уведомлений пока нет."
+
+msgid "No address registered"
+msgstr "Адрес не указан"
+
+msgid "Ongoing"
+msgstr "Бессрочный"
+
+msgid "Direct"
+msgstr "Прямая поставка"
+
+msgid "General Store / Cash"
+msgstr "Розничный магазин / Наличные"
+
+msgid "General"
+msgstr "Основная"
+
+msgid "Payment amount must be greater than zero."
+msgstr "Сумма платежа должна быть больше нуля."
+
+msgid "Invalid payment amount."
+msgstr "Недопустимая сумма платежа."
+
+msgid "Please select a scanned PDF or image document."
+msgstr "Пожалуйста, выберите отсканированный PDF или изображение."
+
+msgid "AI extraction re-run complete!"
+msgstr "Повторное извлечение данных ИИ завершено!"
+
+msgid "All notifications marked as read."
+msgstr "Все уведомления помечены как прочитанные."
+
+msgid ""
+"Reminders check complete. All payments, contracts, and inventory are in "
+"order!"
+msgstr ""
+"Проверка напоминаний завершена. Все платежи, контракты и складские запасы в "
+"порядке!"
+
+msgid "This consignment has already been received and stocked."
+msgstr "Эта партия уже принята и оприходована на складе."
+
+msgid ""
+"Track product inventory levels, consignment deliveries, and automated stock "
+"movements."
+msgstr ""
+"Контроль остатков на складе, поставок по накладным и автоматических движений"
+" товаров."
+
+msgid "Manage delivery receipts, waybills, and stock intake operations."
+msgstr ""
+"Управление товарными накладными, путевыми листами и операциями оприходования"
+" на склад."
+
+msgid ""
+"Unified operational schedule with payment deadlines, contract renewals, and "
+"delivery waybills."
+msgstr ""
+"Единый операционный график со сроками платежей, продления договоров и "
+"поставок."
+
+msgid ""
+"Master registry of vendors, customers, contractors, banking IBANs, and tax "
+"details."
+msgstr ""
+"Главный реестр поставщиков, клиентов, подрядчиков, банковских IBAN и "
+"налоговых данных."
+
+msgid ""
+"Track key commercial agreements, auto-renewals, and required notice decision"
+" deadlines."
+msgstr ""
+"Отслеживание ключевых коммерческих договоров, автопродлений и сроков "
+"уведомлений."
+
+msgid ""
+"Payment due dates, contract renewals, overdue bills, and inventory warnings."
+msgstr ""
+"Сроки платежей, продление договоров, просроченные счета и предупреждения по "
+"складу."
+
+msgid ""
+"Track outgoing supplier bills, incoming customer invoices, and payment "
+"statuses."
+msgstr ""
+"Отслеживание исходящих счетов поставщиков, входящих счетов клиентов и "
+"статусов оплат."
+
+msgid ""
+"Ingest, analyze with Multimodal AI, verify, and automatically schedule into "
+"ledgers."
+msgstr ""
+"Загрузка, анализ мультимодальным ИИ, проверка и автоматическое внесение в "
+"регистры."
+
+msgid ""
+"Upload incoming invoices, contracts, receipts, or consignment slips. The AI "
+"agent will extract structured data and prepare calendar tasks."
+msgstr ""
+"Загрузите счета, договоры, чеки или накладные. ИИ-агент извлечет данные и "
+"создаст задачи в календаре."
+
+msgid "Executive Overview & Agent Dashboard"
+msgstr "Обзор руководства и панель агента"
+
+msgid "Scanned Documents & AI Ingestion"
+msgstr "Скан-копии документов и обработка ИИ"
+
+msgid "Unit Price"
+msgstr "Цена за ед."
+
+msgid "SKU"
+msgstr "Артикул"
+
+msgid "Vendor Invoice (Payable)"
+msgstr "Счет поставщика (К оплате)"
+
+msgid "Customer Invoice (Receivable)"
+msgstr "Счет клиенту (К получению)"
+
+msgid "General / Unclassified"
+msgstr "Общий / Не классифицирован"
+
+msgid "Receipt / Expense Voucher"
+msgstr "Чек / Квитанция о расходах"
+
+msgid "Confirmed & Synced"
+msgstr "Подтверждено и синхронизировано"
+
+msgid "Processing Failed"
+msgstr "Ошибка обработки"
+
+msgid "Processing with AI"
+msgstr "Обработка с помощью ИИ"
+
+msgid "Vendor Bill (Outgoing Payment)"
+msgstr "Счет от поставщика (Исходящий платеж)"
+
+msgid "Overdue"
+msgstr "Просрочено"
+
+msgid "Disputed"
+msgstr "Оспаривается"
+
+msgid "Inward Receipt (Supplier Delivery)"
+msgstr "Входящая поставка (Приемка от поставщика)"
+
+msgid "Outward Dispatch (Customer Delivery)"
+msgstr "Исходящая отгрузка (Доставка клиенту)"
+
+msgid "Expected / In Transit"
+msgstr "Ожидается / В пути"
+
+msgid "Received & Stocked"
+msgstr "Получено и оприходовано"
+
+msgid "Discrepancy Noted"
+msgstr "Выявлены расхождения"
+
+msgid "Rejected"
+msgstr "Отклонено"
+
+msgid "Purchase Receipt / Inward"
+msgstr "Поступление от закупки / Приход"
+
+msgid "Sales Shipment / Outward"
+msgstr "Отгрузка продаж / Расход"
+
+msgid "Stock Count / Adjustment"
+msgstr "Инвентаризация / Корректировка"
+
+msgid "Return to Supplier / Customer Return"
+msgstr "Возврат поставщику / Возврат от покупателя"
+
+msgid "Bank / Financial Institution"
+msgstr "Банк / Финансовая организация"
+
+msgid "Draft"
+msgstr "Черновик"
+
+msgid "Pending Renewal"
+msgstr "Ожидает продления"
+
+msgid "Expired"
+msgstr "Истек"
+
+msgid "Terminated"
+msgstr "Расторгнут"
+
+msgid "Outgoing Payment Due (Payable)"
+msgstr "Срок исходящего платежа (Кредиторка)"
+
+msgid "Expected Payment (Receivable)"
+msgstr "Ожидаемый платеж (Дебиторка)"
+
+msgid "Consignment / Delivery Due"
+msgstr "Срок поставки / отгрузки"
+
+msgid "Administrative Task"
+msgstr "Административная задача"
+
+msgid "Low"
+msgstr "Низкий"
+
+msgid "Medium"
+msgstr "Средний"
+
+msgid "High"
+msgstr "Высокий"
+
+msgid "Urgent"
+msgstr "Срочный"
+
+msgid "Pending"
+msgstr "Ожидает"
+
+msgid "In Progress"
+msgstr "В процессе"
+
+msgid "Completed"
+msgstr "Завершено"
+
+msgid "Cancelled"
+msgstr "Отменено"
+
+msgid "Info"
+msgstr "Информация"
+
+msgid "Warning"
+msgstr "Предупреждение"
+
+msgid "Critical / Urgent"
+msgstr "Критический / Срочный"
+
+msgid "Success"
+msgstr "Успешно"
+
+msgid "Upcoming Payment Due"
+msgstr "Предстоящий срок оплаты"
+
+msgid "Overdue Payment"
+msgstr "Просроченный платеж"
+
+msgid "Contract Renewal"
+msgstr "Продление договора"
+
+msgid "Low Stock Alert"
+msgstr "Предупреждение о низком остатке"
+
+msgid "Document Analyzed"
+msgstr "Документ проанализирован"
+
+msgid "General Alert"
+msgstr "Общее оповещение"
+
+msgid "Assistant"
+msgstr "Ассистент"
+
+msgid "System"
+msgstr "Система"
+
+msgid "User"
+msgstr "Пользователь"
+
+msgid "Addition"
+msgstr "Добавление"
+
+msgid "Change"
+msgstr "Изменение"
+
+msgid "Deletion"
+msgstr "Удаление"
+
+msgid "New %(doc_type)s Processed"
+msgstr "Новый документ «%(doc_type)s» обработан"
+
+msgid "Low Stock Alert: %(product)s"
+msgstr "Предупреждение о низком остатке: %(product)s"
+
+msgid "OVERDUE: %(kind)s #%(number)s"
+msgstr "ПРОСРОЧЕНО: %(kind)s #%(number)s"
+
+msgid "Payment Due in %(days)s day(s): #%(number)s"
+msgstr "Срок оплаты через %(days)s дн.: #%(number)s"
+
+msgid "Payment Due TODAY: #%(number)s"
+msgstr "Срок оплаты СЕГОДНЯ: #%(number)s"
+
+msgid "Contract Renewal Decision: %(counterparty)s"
+msgstr "Решение о продлении договора: %(counterparty)s"
+
+msgid "Consignment Delivery Expected: #%(number)s"
+msgstr "Ожидается поставка груза: #%(number)s"
+
+msgid "Incoming Payment"
+msgstr "Входящий платеж"
+
+msgid "%(counterparty)s - #%(number)s confirmed and scheduled into calendar."
+msgstr "%(counterparty)s — #%(number)s подтвержден и добавлен в календарь."
+
+msgid ""
+"We owe %(counterparty)s %(amount)s %(currency)s. Due date was %(date)s "
+"(%(days)s days ago)."
+msgstr ""
+"Задолженность перед %(counterparty)s: %(amount)s %(currency)s. Срок был "
+"%(date)s (%(days)s дн. назад)."
+
+msgid ""
+"Expected from %(counterparty)s %(amount)s %(currency)s. Due date was "
+"%(date)s (%(days)s days ago)."
+msgstr ""
+"Ожидается от %(counterparty)s: %(amount)s %(currency)s. Срок был %(date)s "
+"(%(days)s дн. назад)."
+
+msgid ""
+"Scheduled payment to %(counterparty)s for %(amount)s %(currency)s on "
+"%(date)s."
+msgstr ""
+"Запланирован платеж поставщику %(counterparty)s на сумму %(amount)s "
+"%(currency)s (дата: %(date)s)."
+
+msgid ""
+"Expected incoming payment from %(counterparty)s for %(amount)s %(currency)s "
+"on %(date)s."
+msgstr ""
+"Ожидается входящий платеж от %(counterparty)s на сумму %(amount)s "
+"%(currency)s (дата: %(date)s)."
+
+msgid ""
+"Stock for '%(name)s' [%(sku)s] is down to %(qty)s %(uom)s (Reorder "
+"threshold: %(threshold)s)."
+msgstr ""
+"Остаток товара «%(name)s» [%(sku)s] снизился до %(qty)s %(uom)s (Порог "
+"дозаказа: %(threshold)s)."
+
+msgid ""
+"Contract '%(title)s' expires on %(end_date)s. Notice deadline is "
+"%(notice_date)s (%(days)s days left)."
+msgstr ""
+"Договор «%(title)s» истекает %(end_date)s. Срок уведомления: %(notice_date)s"
+" (осталось %(days)s дн.)."
+
+msgid "Expected delivery from %(counterparty)s scheduled for %(date)s."
+msgstr "Ожидается доставка от %(counterparty)s, запланированная на %(date)s."
+
+msgid "Pay Bill #%(number)s to %(counterparty)s"
+msgstr "Оплатить счет #%(number)s контрагенту %(counterparty)s"
+
+msgid "OVERDUE: Pay Bill #%(number)s to %(counterparty)s"
+msgstr "ПРОСРОЧЕНО: Оплатить счет #%(number)s контрагенту %(counterparty)s"
+
+msgid "Expected Incoming Payment #%(number)s from %(counterparty)s"
+msgstr "Ожидаемый платеж #%(number)s от %(counterparty)s"
+
+msgid "Inspect Incoming Delivery #%(number)s at Dock"
+msgstr "Приемка и проверка доставки #%(number)s на складе"
+
+msgid "pcs"
+msgstr "шт."
+
+msgid "Edit"
+msgstr "Редактировать"
+
+msgid "Edit Counterparty"
+msgstr "Редактировать контрагента"
+
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+msgid "Registration Number"
+msgstr "Регистрационный номер"
+
+msgid "SWIFT / BIC"
+msgstr "SWIFT / BIC"
+
+msgid "Payment Terms (Days)"
+msgstr "Срок оплаты (дней)"
+
+msgid "Counterparty '%(name)s' updated successfully."
+msgstr "Контрагент «%(name)s» успешно обновлен."
+
+msgid "Counterparty '%(name)s' created successfully."
+msgstr "Контрагент «%(name)s» успешно создан."

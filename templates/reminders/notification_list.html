@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Proactive Reminders & Notifications" %} - Sole Enterprise Orchestrator{% endblock %}
+
+{% block breadcrumbs %}
+  <span>{% trans "Alerts" %}</span> / <span class="text-slate-800 font-medium">{% trans "Notifications" %}</span>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto space-y-6">
+  
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+      <h2 class="text-2xl font-bold text-slate-900 tracking-tight">{% trans "Proactive Reminders & Alerts" %}</h2>
+      <p class="text-sm text-slate-500 mt-1">{% trans "Payment due dates, contract renewals, overdue bills, and inventory warnings." %}</p>
+    </div>
+    <div class="flex gap-2">
+      <form method="post" action="{% url 'reminders:mark_all_read' %}">
+        {% csrf_token %}
+        <button type="submit" class="px-4 py-2 border border-slate-300 text-xs font-semibold text-slate-700 rounded-lg hover:bg-slate-50 transition">
+          {% trans "Mark All as Read" %}
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden divide-y divide-slate-100">
+    {% if notifications %}
+      {% for notif in notifications %}
+        <div class="p-4 sm:p-5 hover:bg-slate-50 transition flex items-start gap-4 {% if not notif.is_read %}bg-blue-50/20{% endif %}">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 
+            {% if notif.level == 'CRITICAL' %}bg-red-100 text-red-600
+            {% elif notif.level == 'WARNING' %}bg-amber-100 text-amber-600
+            {% elif notif.level == 'SUCCESS' %}bg-emerald-100 text-emerald-600
+            {% else %}bg-blue-100 text-blue-600{% endif %}">
+            {% if notif.level == 'CRITICAL' %}
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            {% elif notif.level == 'WARNING' %}
+              <i class="fa-solid fa-bell"></i>
+            {% elif notif.level == 'SUCCESS' %}
+              <i class="fa-solid fa-circle-check"></i>
+            {% else %}
+              <i class="fa-solid fa-circle-info"></i>
+            {% endif %}
+          </div>
+
+          <div class="flex-1 min-w-0">
+            <div class="flex items-baseline justify-between gap-2">
+              <h4 class="text-sm font-bold text-slate-900 leading-tight">{{ notif.display_title }}</h4>
+              <span class="text-xs text-slate-400 whitespace-nowrap">{{ notif.created_at|date:"M d, H:i" }}</span>
+            </div>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed">{{ notif.display_message }}</p>
+            {% if notif.action_url %}
+              <a href="{{ notif.action_url }}" class="inline-flex items-center gap-1 mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800">
+                <span>{% trans "View Record" %}</span>
+                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="p-12 text-center text-slate-400">
+        <i class="fa-regular fa-bell-slash text-3xl mb-2 block text-slate-300"></i>
+        {% trans "No reminders or alerts recorded yet." %}
+      </div>
+    {% endif %}
+  </div>
+
+</div>
+{% endblock %}

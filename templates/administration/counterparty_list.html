@@ -1,0 +1,291 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Counterparties Directory" %} - Sole Enterprise Orchestrator{% endblock %}
+
+{% block breadcrumbs %}
+  <span>{% trans "Administration" %}</span> / <span class="text-slate-800 font-medium">{% trans "Counterparties Directory" %}</span>
+{% endblock %}
+
+{% block content %}
+<div class="space-y-6" x-data="{ 
+  addModal: false, 
+  editModal: false, 
+  editData: {
+    id: null,
+    name: '',
+    counterparty_type: 'VENDOR',
+    tax_id: '',
+    registration_number: '',
+    iban: '',
+    bank_name: '',
+    swift_bic: '',
+    email: '',
+    phone: '',
+    address: '',
+    default_payment_terms_days: 14,
+    notes: '',
+    updateUrl: ''
+  },
+  openEdit(data) {
+    this.editData = Object.assign({}, data);
+    this.editModal = true;
+  }
+}">
+  
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+      <h2 class="text-2xl font-bold text-slate-900 tracking-tight">{% trans "Counterparties & Vendors Directory" %}</h2>
+      <p class="text-sm text-slate-500 mt-1">{% trans "Master registry of vendors, customers, contractors, banking IBANs, and tax details." %}</p>
+    </div>
+    <div>
+      <button @click="addModal = true" class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold shadow-sm transition">
+        <i class="fa-solid fa-plus"></i>
+        <span>{% trans "Add Counterparty" %}</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Counterparties Table -->
+  <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+    <table class="min-w-full divide-y divide-slate-200 text-left text-sm">
+      <thead class="bg-slate-50 text-slate-500 font-semibold text-xs uppercase tracking-wider">
+        <tr>
+          <th class="px-6 py-3.5">{% trans "Company Name" %}</th>
+          <th class="px-6 py-3.5">{% trans "Type" %}</th>
+          <th class="px-6 py-3.5">{% trans "Tax / VAT ID" %}</th>
+          <th class="px-6 py-3.5">{% trans "Bank IBAN" %}</th>
+          <th class="px-6 py-3.5">{% trans "Contact" %}</th>
+          <th class="px-6 py-3.5 text-right">{% trans "Actions" %}</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100 font-normal text-slate-700">
+        {% if counterparties %}
+          {% for cp in counterparties %}
+            <tr class="hover:bg-slate-50 transition">
+              <td class="px-6 py-4 font-semibold text-slate-900">
+                {{ cp.name }}
+                {% if cp.address %}
+                  <p class="text-xs text-slate-400 font-normal mt-0.5">{{ cp.address }}</p>
+                {% endif %}
+              </td>
+              <td class="px-6 py-4">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium 
+                  {% if cp.counterparty_type == 'VENDOR' %}bg-blue-100 text-blue-800
+                  {% elif cp.counterparty_type == 'CUSTOMER' %}bg-emerald-100 text-emerald-800
+                  {% elif cp.counterparty_type == 'CARRIER' %}bg-amber-100 text-amber-800
+                  {% elif cp.counterparty_type == 'FINANCIAL' %}bg-purple-100 text-purple-800
+                  {% else %}bg-slate-100 text-slate-800{% endif %}">
+                  {{ cp.get_counterparty_type_display }}
+                </span>
+              </td>
+              <td class="px-6 py-4 text-xs font-mono text-slate-600">
+                {{ cp.tax_id|default:"-" }}
+              </td>
+              <td class="px-6 py-4 text-xs font-mono text-slate-800">
+                {{ cp.iban|default:"-" }}
+              </td>
+              <td class="px-6 py-4 text-xs text-slate-600">
+                {{ cp.email|default:"-" }}
+                {% if cp.phone %}<span class="block text-slate-400">{{ cp.phone }}</span>{% endif %}
+              </td>
+              <td class="px-6 py-4 text-right">
+                <button type="button"
+                        @click="openEdit({
+                          id: {{ cp.pk }},
+                          name: '{{ cp.name|escapejs }}',
+                          counterparty_type: '{{ cp.counterparty_type|escapejs }}',
+                          tax_id: '{{ cp.tax_id|default:''|escapejs }}',
+                          registration_number: '{{ cp.registration_number|default:''|escapejs }}',
+                          iban: '{{ cp.iban|default:''|escapejs }}',
+                          bank_name: '{{ cp.bank_name|default:''|escapejs }}',
+                          swift_bic: '{{ cp.swift_bic|default:''|escapejs }}',
+                          email: '{{ cp.email|default:''|escapejs }}',
+                          phone: '{{ cp.phone|default:''|escapejs }}',
+                          address: '{{ cp.address|default:''|escapejs }}',
+                          default_payment_terms_days: {{ cp.default_payment_terms_days|default:14 }},
+                          notes: '{{ cp.notes|default:''|escapejs }}',
+                          updateUrl: '{% url 'administration:counterparty_update' cp.pk %}'
+                        })"
+                        class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 rounded-lg shadow-sm transition">
+                  <i class="fa-solid fa-pen-to-square text-blue-600"></i>
+                  <span>{% trans "Edit" %}</span>
+                </button>
+              </td>
+            </tr>
+          {% endfor %}
+        {% else %}
+          <tr>
+            <td colspan="6" class="px-6 py-12 text-center text-slate-400">
+              {% trans "No counterparties registered yet." %}
+            </td>
+          </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Add Modal -->
+  <div x-show="addModal" class="fixed inset-0 z-50 overflow-y-auto" x-cloak>
+    <div class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm" @click="addModal = false"></div>
+    <div class="flex min-h-full items-center justify-center p-4">
+      <div class="relative w-full max-w-lg rounded-2xl bg-white p-6 shadow-xl space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+          <h3 class="text-base font-bold text-slate-900">{% trans "Add Counterparty" %}</h3>
+          <button @click="addModal = false" class="text-slate-400 hover:text-slate-600">&times;</button>
+        </div>
+
+        <form method="post" action="{% url 'administration:counterparty_create' %}" class="space-y-3">
+          {% csrf_token %}
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "Entity Name *" %}</label>
+              <input type="text" name="name" placeholder="Acme Logistics Ltd" class="w-full text-xs rounded-lg border-slate-300" required>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "Type" %}</label>
+              <select name="counterparty_type" class="w-full text-xs rounded-lg border-slate-300">
+                <option value="VENDOR">{% trans "Vendor / Supplier" %}</option>
+                <option value="CUSTOMER">{% trans "Customer / Client" %}</option>
+                <option value="PARTNER">{% trans "Business Partner" %}</option>
+                <option value="CARRIER">{% trans "Logistics / Carrier" %}</option>
+                <option value="FINANCIAL">{% trans "Bank / Financial Institution" %}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "Tax / VAT Number" %}</label>
+              <input type="text" name="tax_id" placeholder="VAT12345678" class="w-full text-xs rounded-lg border-slate-300">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "Bank Name" %}</label>
+              <input type="text" name="bank_name" placeholder="e.g. BNP Paribas" class="w-full text-xs rounded-lg border-slate-300">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "Bank IBAN" %}</label>
+            <input type="text" name="iban" placeholder="DE89370400440532013000" class="w-full text-xs rounded-lg border-slate-300 font-mono">
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "Email" %}</label>
+              <input type="email" name="email" placeholder="billing@acme.com" class="w-full text-xs rounded-lg border-slate-300">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "Phone" %}</label>
+              <input type="text" name="phone" placeholder="+49 30 123456" class="w-full text-xs rounded-lg border-slate-300">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "Billing / Physical Address" %}</label>
+            <textarea name="address" rows="2" placeholder="Street, City, Postcode, Country" class="w-full text-xs rounded-lg border-slate-300"></textarea>
+          </div>
+
+          <div class="flex justify-end gap-2 pt-2 border-t border-slate-100">
+            <button type="button" @click="addModal = false" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-lg">{% trans "Cancel" %}</button>
+            <button type="submit" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg shadow-sm">{% trans "Save Counterparty" %}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div x-show="editModal" class="fixed inset-0 z-50 overflow-y-auto" x-cloak>
+    <div class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm" @click="editModal = false"></div>
+    <div class="flex min-h-full items-center justify-center p-4">
+      <div class="relative w-full max-w-lg rounded-2xl bg-white p-6 shadow-xl space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+          <h3 class="text-base font-bold text-slate-900">{% trans "Edit Counterparty" %}</h3>
+          <button @click="editModal = false" class="text-slate-400 hover:text-slate-600">&times;</button>
+        </div>
+
+        <form method="post" :action="editData.updateUrl" class="space-y-3">
+          {% csrf_token %}
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "Entity Name *" %}</label>
+              <input type="text" name="name" x-model="editData.name" class="w-full text-xs rounded-lg border-slate-300" required>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "Type" %}</label>
+              <select name="counterparty_type" x-model="editData.counterparty_type" class="w-full text-xs rounded-lg border-slate-300">
+                <option value="VENDOR">{% trans "Vendor / Supplier" %}</option>
+                <option value="CUSTOMER">{% trans "Customer / Client" %}</option>
+                <option value="PARTNER">{% trans "Business Partner" %}</option>
+                <option value="CARRIER">{% trans "Logistics / Carrier" %}</option>
+                <option value="FINANCIAL">{% trans "Bank / Financial Institution" %}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "Tax / VAT Number" %}</label>
+              <input type="text" name="tax_id" x-model="editData.tax_id" class="w-full text-xs rounded-lg border-slate-300 font-mono">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "Registration Number" %}</label>
+              <input type="text" name="registration_number" x-model="editData.registration_number" class="w-full text-xs rounded-lg border-slate-300 font-mono">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "Bank Name" %}</label>
+              <input type="text" name="bank_name" x-model="editData.bank_name" class="w-full text-xs rounded-lg border-slate-300">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "SWIFT / BIC" %}</label>
+              <input type="text" name="swift_bic" x-model="editData.swift_bic" class="w-full text-xs rounded-lg border-slate-300 font-mono">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "Bank IBAN" %}</label>
+            <input type="text" name="iban" x-model="editData.iban" class="w-full text-xs rounded-lg border-slate-300 font-mono">
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "Email" %}</label>
+              <input type="email" name="email" x-model="editData.email" class="w-full text-xs rounded-lg border-slate-300">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "Phone" %}</label>
+              <input type="text" name="phone" x-model="editData.phone" class="w-full text-xs rounded-lg border-slate-300">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "Billing / Physical Address" %}</label>
+            <textarea name="address" rows="2" x-model="editData.address" class="w-full text-xs rounded-lg border-slate-300"></textarea>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "Payment Terms (Days)" %}</label>
+              <input type="number" name="default_payment_terms_days" x-model="editData.default_payment_terms_days" min="0" class="w-full text-xs rounded-lg border-slate-300">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">{% trans "Notes" %}</label>
+              <input type="text" name="notes" x-model="editData.notes" class="w-full text-xs rounded-lg border-slate-300">
+            </div>
+          </div>
+
+          <div class="flex justify-end gap-2 pt-2 border-t border-slate-100">
+            <button type="button" @click="editModal = false" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-lg">{% trans "Cancel" %}</button>
+            <button type="submit" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg shadow-sm">{% trans "Save Changes" %}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

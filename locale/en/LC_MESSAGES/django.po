@@ -1,0 +1,1624 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 23:00+0000\n"
+"PO-Revision-Date: 2026-10-02 23:00+0000\n"
+"Last-Translator: Antigravity AI\n"
+"Language-Team: en\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Accounting & Agent"
+msgstr "Accounting & Agent"
+
+msgid "Collapse Sidebar"
+msgstr "Collapse Sidebar"
+
+msgid "Expand Sidebar"
+msgstr "Expand Sidebar"
+
+msgid "Close Sidebar"
+msgstr "Close Sidebar"
+
+msgid "Scan Receipt with AI"
+msgstr "Scan Receipt with AI"
+
+msgid "View Scanned Receipts"
+msgstr "View Scanned Receipts"
+
+msgid "View all scanned receipts in Scanned Records"
+msgstr "View all scanned receipts in Scanned Records"
+
+msgid "Scan Source"
+msgstr "Scan Source"
+
+msgid "AI Verified Scan"
+msgstr "AI Verified Scan"
+
+msgid "Manual Entry"
+msgstr "Manual Entry"
+
+msgid "View original scan and AI extracted details"
+msgstr "View original scan and AI extracted details"
+
+msgid "Receipt & Expense Voucher Mode"
+msgstr "Receipt & Expense Voucher Mode"
+
+msgid ""
+"AI will extract merchant name, receipt date, expense category, VAT/tax, and "
+"totals directly into your accounting ledgers."
+msgstr ""
+"AI will extract merchant name, receipt date, expense category, VAT/tax, and "
+"totals directly into your accounting ledgers."
+
+msgid "Expense Category *"
+msgstr "Expense Category *"
+
+msgid "e.g. Office Supplies, Fuel, Travel"
+msgstr "e.g. Office Supplies, Fuel, Travel"
+
+msgid "Travel & Transportation"
+msgstr "Travel & Transportation"
+
+msgid "Meals & Entertainment"
+msgstr "Meals & Entertainment"
+
+msgid "Fuel & Vehicle"
+msgstr "Fuel & Vehicle"
+
+msgid "Utilities & Telecom"
+msgstr "Utilities & Telecom"
+
+msgid "Software & IT"
+msgstr "Software & IT"
+
+msgid "Repairs & Maintenance"
+msgstr "Repairs & Maintenance"
+
+msgid "General / Other"
+msgstr "General / Other"
+
+msgid "View in Receipts Ledger"
+msgstr "View in Receipts Ledger"
+
+msgid "View Invoices"
+msgstr "View Invoices"
+
+msgid ""
+"Reminders check triggered! Generated %(total)s active alert(s) (Payables: "
+"%(payables)s, Receivables: %(receivables)s, Overdue: %(overdue)s, Contracts:"
+" %(contracts)s, Stock: %(stock)s)."
+msgstr ""
+"Reminders check triggered! Generated %(total)s active alert(s) (Payables: "
+"%(payables)s, Receivables: %(receivables)s, Overdue: %(overdue)s, Contracts:"
+" %(contracts)s, Stock: %(stock)s)."
+
+msgid ""
+"Full payment of %(amount)s %(currency)s recorded! Invoice #%(number)s is now"
+" marked as Paid, and the calendar task is completed."
+msgstr ""
+"Full payment of %(amount)s %(currency)s recorded! Invoice #%(number)s is now"
+" marked as Paid, and the calendar task is completed."
+
+msgid ""
+"Partial payment of %(amount)s %(currency)s recorded. Remaining: "
+"%(remaining)s %(currency)s."
+msgstr ""
+"Partial payment of %(amount)s %(currency)s recorded. Remaining: "
+"%(remaining)s %(currency)s."
+
+msgid "Expense receipt for €%(amount)s recorded."
+msgstr "Expense receipt for €%(amount)s recorded."
+
+msgid "Contract '%(title)s' registered."
+msgstr "Contract '%(title)s' registered."
+
+msgid ""
+"Scanned file '%(name)s' successfully processed by AI! Please review "
+"extracted data."
+msgstr ""
+"Scanned file '%(name)s' successfully processed by AI! Please review "
+"extracted data."
+
+msgid "Extraction failed: %(error)s"
+msgstr "Extraction failed: %(error)s"
+
+msgid ""
+"Document #%(number)s confirmed! Created ledger records & scheduled calendar "
+"tasks."
+msgstr ""
+"Document #%(number)s confirmed! Created ledger records & scheduled calendar "
+"tasks."
+
+msgid "Error saving records: %(error)s"
+msgstr "Error saving records: %(error)s"
+
+msgid "Re-extraction failed: %(error)s"
+msgstr "Re-extraction failed: %(error)s"
+
+msgid "Product with SKU '%(sku)s' already exists."
+msgstr "Product with SKU '%(sku)s' already exists."
+
+msgid "Product '%(name)s' [%(sku)s] created successfully."
+msgstr "Product '%(name)s' [%(sku)s] created successfully."
+
+msgid ""
+"Consignment #%(number)s received! Warehouse stock levels automatically "
+"updated."
+msgstr ""
+"Consignment #%(number)s received! Warehouse stock levels automatically "
+"updated."
+
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "Documents & AI"
+msgstr "Documents & AI"
+
+msgid "AI Provider Settings"
+msgstr "AI Provider Settings"
+
+msgid "AI & LLM Configuration"
+msgstr "AI & LLM Configuration"
+
+msgid "AI & LLM Provider Configuration"
+msgstr "AI & LLM Provider Configuration"
+
+msgid ""
+"Select and configure your preferred multimodal AI engine for document "
+"extraction and Copilot intelligence."
+msgstr ""
+"Select and configure your preferred multimodal AI engine for document "
+"extraction and Copilot intelligence."
+
+msgid "Active"
+msgstr "Active"
+
+msgid ""
+"High-speed multimodal AI by Google. Supports native PDF and photo scans with"
+" precision extraction."
+msgstr ""
+"High-speed multimodal AI by Google. Supports native PDF and photo scans with"
+" precision extraction."
+
+msgid "Gemini API Key"
+msgstr "Gemini API Key"
+
+msgid ""
+"Industry standard GPT-4o models with multimodal document inspection and "
+"structured JSON schemas."
+msgstr ""
+"Industry standard GPT-4o models with multimodal document inspection and "
+"structured JSON schemas."
+
+msgid "OpenAI API Key"
+msgstr "OpenAI API Key"
+
+msgid ""
+"Deep reasoning and native PDF contract analysis with state-of-the-art "
+"accuracy and nuanced understanding."
+msgstr ""
+"Deep reasoning and native PDF contract analysis with state-of-the-art "
+"accuracy and nuanced understanding."
+
+msgid "Anthropic API Key"
+msgstr "Anthropic API Key"
+
+msgid ""
+"Cost-effective, powerful reasoning model (DeepSeek-V3 / R1) for intelligent "
+"ledger automation."
+msgstr ""
+"Cost-effective, powerful reasoning model (DeepSeek-V3 / R1) for intelligent "
+"ledger automation."
+
+msgid "DeepSeek API Key"
+msgstr "DeepSeek API Key"
+
+msgid ""
+"Enterprise Alibaba Cloud DashScope platform with excellent multilingual and "
+"vision capabilities."
+msgstr ""
+"Enterprise Alibaba Cloud DashScope platform with excellent multilingual and "
+"vision capabilities."
+
+msgid "DashScope API Key"
+msgstr "DashScope API Key"
+
+msgid ""
+"100% private, on-premise AI via Ollama, LM Studio, vLLM, or OpenRouter. "
+"Keeps financial data on local hardware."
+msgstr ""
+"100% private, on-premise AI via Ollama, LM Studio, vLLM, or OpenRouter. "
+"Keeps financial data on local hardware."
+
+msgid "API Key (Optional for Ollama)"
+msgstr "API Key (Optional for Ollama)"
+
+msgid "Model Name"
+msgstr "Model Name"
+
+msgid "Endpoint Base URL"
+msgstr "Endpoint Base URL"
+
+msgid "Test Ping"
+msgstr "Test Ping"
+
+msgid "Settings are saved to both database and .env configuration file."
+msgstr "Settings are saved to both database and .env configuration file."
+
+msgid "Save & Apply AI Settings"
+msgstr "Save & Apply AI Settings"
+
+msgid "AI Configuration successfully updated!"
+msgstr "AI Configuration successfully updated!"
+
+msgid "AI configuration and active provider updated successfully!"
+msgstr "AI configuration and active provider updated successfully!"
+
+msgid "AI Configuration Required"
+msgstr "AI Configuration Required"
+
+msgid "Open AI Settings"
+msgstr "Open AI Settings"
+
+msgid "Rate Limit Exceeded"
+msgstr "Rate Limit Exceeded"
+
+msgid "Switch Provider in AI Settings"
+msgstr "Switch Provider in AI Settings"
+
+msgid "AI Provider Offline / Unreachable"
+msgstr "AI Provider Offline / Unreachable"
+
+msgid "Check Endpoint in AI Settings"
+msgstr "Check Endpoint in AI Settings"
+
+msgid "Authentication Failed"
+msgstr "Authentication Failed"
+
+msgid "Update API Key in AI Settings"
+msgstr "Update API Key in AI Settings"
+
+msgid "AI Execution Failed"
+msgstr "AI Execution Failed"
+
+msgid "AI Document Extraction Alert"
+msgstr "AI Document Extraction Alert"
+
+msgid "Configure AI Settings"
+msgstr "Configure AI Settings"
+
+msgid "Or run in terminal:"
+msgstr "Or run in terminal:"
+
+msgid "Documents"
+msgstr "Documents"
+
+msgid "Scanned Records"
+msgstr "Scanned Records"
+
+msgid "Scanned Records Management"
+msgstr "Scanned Records Management"
+
+msgid "Upload & Ingest"
+msgstr "Upload & Ingest"
+
+msgid "Upload"
+msgstr "Upload"
+
+msgid "Accounting"
+msgstr "Accounting"
+
+msgid "Invoices (AP/AR)"
+msgstr "Invoices (AP/AR)"
+
+msgid "Invoices"
+msgstr "Invoices"
+
+msgid "Invoice"
+msgstr "Invoice"
+
+msgid "Invoices & Payments"
+msgstr "Invoices & Payments"
+
+msgid "Invoices & Payments (AP/AR)"
+msgstr "Invoices & Payments (AP/AR)"
+
+msgid "Accounts Payable & Receivable"
+msgstr "Accounts Payable & Receivable"
+
+msgid "Receipts & Expenses"
+msgstr "Receipts & Expenses"
+
+msgid "Receipts & Petty Cash"
+msgstr "Receipts & Petty Cash"
+
+msgid "Operations & Admin"
+msgstr "Operations & Admin"
+
+msgid "Operations"
+msgstr "Operations"
+
+msgid "Administration"
+msgstr "Administration"
+
+msgid "Calendar & Tasks"
+msgstr "Calendar & Tasks"
+
+msgid "Company Calendar & Tasks"
+msgstr "Company Calendar & Tasks"
+
+msgid "Operational & Financial Calendar"
+msgstr "Operational & Financial Calendar"
+
+msgid "Warehouse & Stock"
+msgstr "Warehouse & Stock"
+
+msgid "Warehouse & Inventory"
+msgstr "Warehouse & Inventory"
+
+msgid "Warehouse Inventory"
+msgstr "Warehouse Inventory"
+
+msgid "Warehouse & Inventory Management"
+msgstr "Warehouse & Inventory Management"
+
+msgid "Consignments"
+msgstr "Consignments"
+
+msgid "Consignment"
+msgstr "Consignment"
+
+msgid "Consignments & Waybills"
+msgstr "Consignments & Waybills"
+
+msgid "Consignments & Delivery Slips"
+msgstr "Consignments & Delivery Slips"
+
+msgid "Counterparties"
+msgstr "Counterparties"
+
+msgid "Counterparties Directory"
+msgstr "Counterparties Directory"
+
+msgid "Counterparties & Vendors Directory"
+msgstr "Counterparties & Vendors Directory"
+
+msgid "Contracts"
+msgstr "Contracts"
+
+msgid "Contracts Registry"
+msgstr "Contracts Registry"
+
+msgid "Contracts & Agreements Registry"
+msgstr "Contracts & Agreements Registry"
+
+msgid "Alerts"
+msgstr "Alerts"
+
+msgid "Notifications"
+msgstr "Notifications"
+
+msgid "Proactive Reminders & Notifications"
+msgstr "Proactive Reminders & Notifications"
+
+msgid "Proactive Reminders & Alerts"
+msgstr "Proactive Reminders & Alerts"
+
+msgid "AI Copilot Assistant"
+msgstr "AI Copilot Assistant"
+
+msgid "ERP AI Copilot"
+msgstr "ERP AI Copilot"
+
+msgid "Real-time ledger & calendar intelligence"
+msgstr "Real-time ledger & calendar intelligence"
+
+msgid "Check Reminders"
+msgstr "Check Reminders"
+
+msgid "Proactive Alerts"
+msgstr "Proactive Alerts"
+
+msgid "View All"
+msgstr "View All"
+
+msgid "Take Action"
+msgstr "Take Action"
+
+msgid "ago"
+msgstr "ago"
+
+msgid "Upload Scan"
+msgstr "Upload Scan"
+
+msgid "Upload New Scan"
+msgstr "Upload New Scan"
+
+msgid "Upload Scanned Record"
+msgstr "Upload Scanned Record"
+
+msgid "Upload Scanned Document"
+msgstr "Upload Scanned Document"
+
+msgid "Company Operational Dashboard"
+msgstr "Company Operational Dashboard"
+
+msgid ""
+"Autonomous records management, invoice tracking, warehouse stock, and "
+"calendar automation."
+msgstr ""
+"Autonomous records management, invoice tracking, warehouse stock, and "
+"calendar automation."
+
+msgid "Consult AI Copilot"
+msgstr "Consult AI Copilot"
+
+msgid "Urgent: Invoice(s) Overdue"
+msgstr "Urgent: Invoice(s) Overdue"
+
+msgid ""
+"There are overdue obligations requiring immediate payment or collection "
+"action."
+msgstr ""
+"There are overdue obligations requiring immediate payment or collection "
+"action."
+
+msgid "View All Overdue"
+msgstr "View All Overdue"
+
+msgid "Outgoing Payables"
+msgstr "Outgoing Payables"
+
+msgid "Outgoing Payables (We Owe)"
+msgstr "Outgoing Payables (We Owe)"
+
+msgid "Track vendor bills"
+msgstr "Track vendor bills"
+
+msgid "Expected Receivables"
+msgstr "Expected Receivables"
+
+msgid "Expected Receivables (Incoming)"
+msgstr "Expected Receivables (Incoming)"
+
+msgid "Customer payments"
+msgstr "Customer payments"
+
+msgid "Customer payments expected"
+msgstr "Customer payments expected"
+
+msgid "Net Position"
+msgstr "Net Position"
+
+msgid "Projected balance"
+msgstr "Projected balance"
+
+msgid "Expected cash margin"
+msgstr "Expected cash margin"
+
+msgid "Low Stock SKUs"
+msgstr "Low Stock SKUs"
+
+msgid "Low Stock Warnings"
+msgstr "Low Stock Warnings"
+
+msgid "Check inventory"
+msgstr "Check inventory"
+
+msgid "Scanned Records Awaiting Review"
+msgstr "Scanned Records Awaiting Review"
+
+msgid "View All Documents"
+msgstr "View All Documents"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Uploaded"
+msgstr "Uploaded"
+
+msgid "Review & Commit"
+msgstr "Review & Commit"
+
+msgid "No documents awaiting review. All uploaded scans have been confirmed!"
+msgstr "No documents awaiting review. All uploaded scans have been confirmed!"
+
+msgid "Upcoming Tasks & Payments (Next 7 Days)"
+msgstr "Upcoming Tasks & Payments (Next 7 Days)"
+
+msgid "Open Full Calendar"
+msgstr "Open Full Calendar"
+
+msgid "Due"
+msgstr "Due"
+
+msgid "Due Date"
+msgstr "Due Date"
+
+msgid "Amount"
+msgstr "Amount"
+
+msgid "View Bill"
+msgstr "View Bill"
+
+msgid "No tasks due in the next 7 days."
+msgstr "No tasks due in the next 7 days."
+
+msgid "Quick Actions"
+msgstr "Quick Actions"
+
+msgid "Calendar Sync"
+msgstr "Calendar Sync"
+
+msgid "Inventory Stock"
+msgstr "Inventory Stock"
+
+msgid "Ask ERP AI Copilot"
+msgstr "Ask ERP AI Copilot"
+
+msgid ""
+"Ask questions in natural language. The AI agent scans company ledgers, "
+"calendars, and warehouse stock in real-time."
+msgstr ""
+"Ask questions in natural language. The AI agent scans company ledgers, "
+"calendars, and warehouse stock in real-time."
+
+msgid "What bills are due this week?"
+msgstr "What bills are due this week?"
+
+msgid "Show low stock inventory items"
+msgstr "Show low stock inventory items"
+
+msgid "What are our expected receivables?"
+msgstr "What are our expected receivables?"
+
+msgid "Summarize company financial status"
+msgstr "Summarize company financial status"
+
+msgid "Hello!"
+msgstr "Hello!"
+
+msgid ""
+"I am your Sole Enterprise Orchestrator assistant. Ask me anything about your"
+" records, such as:"
+msgstr ""
+"I am your Sole Enterprise Orchestrator assistant. Ask me anything about your"
+" records, such as:"
+
+msgid "Ask about invoices, stock, contracts..."
+msgstr "Ask about invoices, stock, contracts..."
+
+msgid "All caught up! No unread payment or contract alerts."
+msgstr "All caught up! No unread payment or contract alerts."
+
+msgid "Scan upcoming payments and trigger proactive reminders"
+msgstr "Scan upcoming payments and trigger proactive reminders"
+
+msgid "All"
+msgstr "All"
+
+msgid "Needs Review"
+msgstr "Needs Review"
+
+msgid "Vendor Invoices"
+msgstr "Vendor Invoices"
+
+msgid "Document"
+msgstr "Document"
+
+msgid "Detected Type"
+msgstr "Detected Type"
+
+msgid "AI Status"
+msgstr "AI Status"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Synced to Ledgers"
+msgstr "Synced to Ledgers"
+
+msgid "Ready for Review"
+msgstr "Ready for Review"
+
+msgid "AI Analyzing..."
+msgstr "AI Analyzing..."
+
+msgid "Error"
+msgstr "Error"
+
+msgid "Inspect"
+msgstr "Inspect"
+
+msgid "No scanned documents found matching your filter."
+msgstr "No scanned documents found matching your filter."
+
+msgid "Upload your first document"
+msgstr "Upload your first document"
+
+msgid "Click to upload or drag & drop"
+msgstr "Click to upload or drag & drop"
+
+msgid "PDF, PNG, JPG, or WEBP (Scans, contracts, receipts)"
+msgstr "PDF, PNG, JPG, or WEBP (Scans, contracts, receipts)"
+
+msgid "Multimodal AI"
+msgstr "Multimodal AI"
+
+msgid "Accurate reading of tables, totals, IBANs, and handwritten stamps."
+msgstr "Accurate reading of tables, totals, IBANs, and handwritten stamps."
+
+msgid "Auto Task Creation"
+msgstr "Auto Task Creation"
+
+msgid ""
+"Schedules payment due dates and contract renewals directly into your "
+"calendar."
+msgstr ""
+"Schedules payment due dates and contract renewals directly into your "
+"calendar."
+
+msgid "Reminds your team before payments are due and flags overdue bills."
+msgstr "Reminds your team before payments are due and flags overdue bills."
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Process with AI"
+msgstr "Process with AI"
+
+msgid "Verify Document"
+msgstr "Verify Document"
+
+msgid "Verify & Review"
+msgstr "Verify & Review"
+
+msgid "Confirmed & Committed"
+msgstr "Confirmed & Committed"
+
+msgid "Verification Required"
+msgstr "Verification Required"
+
+msgid "Re-run AI extraction"
+msgstr "Re-run AI extraction"
+
+msgid "Re-Extract"
+msgstr "Re-Extract"
+
+msgid "Original Scanned Document"
+msgstr "Original Scanned Document"
+
+msgid "Open Fullscreen"
+msgstr "Open Fullscreen"
+
+msgid "Extracted Structured Record"
+msgstr "Extracted Structured Record"
+
+msgid "Review AI extracted details before committing to company ledgers."
+msgstr "Review AI extracted details before committing to company ledgers."
+
+msgid "Locked & Synced"
+msgstr "Locked & Synced"
+
+msgid "Document Type"
+msgstr "Document Type"
+
+msgid "Vendor Invoice (Outgoing Payment)"
+msgstr "Vendor Invoice (Outgoing Payment)"
+
+msgid "Customer Invoice (Incoming Payment)"
+msgstr "Customer Invoice (Incoming Payment)"
+
+msgid "Contract / Agreement"
+msgstr "Contract / Agreement"
+
+msgid "Consignment / Delivery Note"
+msgstr "Consignment / Delivery Note"
+
+msgid "Expense Receipt / Petty Cash"
+msgstr "Expense Receipt / Petty Cash"
+
+msgid "General Document"
+msgstr "General Document"
+
+msgid "Document / Invoice Number"
+msgstr "Document / Invoice Number"
+
+msgid "Counterparty Details"
+msgstr "Counterparty Details"
+
+msgid "Vendor / Supplier"
+msgstr "Vendor / Supplier"
+
+msgid "Customer / Client"
+msgstr "Customer / Client"
+
+msgid "Business Partner"
+msgstr "Business Partner"
+
+msgid "Logistics / Carrier"
+msgstr "Logistics / Carrier"
+
+msgid "Company / Entity Name"
+msgstr "Company / Entity Name"
+
+msgid "Tax / VAT ID"
+msgstr "Tax / VAT ID"
+
+msgid "Bank IBAN"
+msgstr "Bank IBAN"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Phone"
+msgstr "Phone"
+
+msgid "Issue Date"
+msgstr "Issue Date"
+
+msgid "Payment Due Date *"
+msgstr "Payment Due Date *"
+
+msgid "Contract End / Renewal *"
+msgstr "Contract End / Renewal *"
+
+msgid "Expected Delivery Date *"
+msgstr "Expected Delivery Date *"
+
+msgid "Notice / Grace Period (Days)"
+msgstr "Notice / Grace Period (Days)"
+
+msgid "Currency"
+msgstr "Currency"
+
+msgid "Subtotal"
+msgstr "Subtotal"
+
+msgid "Tax / VAT"
+msgstr "Tax / VAT"
+
+msgid "Total Amount"
+msgstr "Total Amount"
+
+msgid "Line Items / Products"
+msgstr "Line Items / Products"
+
+msgid "Add Item"
+msgstr "Add Item"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "SKU / Code"
+msgstr "SKU / Code"
+
+msgid "Qty"
+msgstr "Qty"
+
+msgid "Price"
+msgstr "Price"
+
+msgid "Line Total"
+msgstr "Line Total"
+
+msgid "Calendar Task & Reminder Automation"
+msgstr "Calendar Task & Reminder Automation"
+
+msgid ""
+"Approving this record will automatically create a scheduled event on your "
+"calendar and dispatch proactive payment reminders."
+msgstr ""
+"Approving this record will automatically create a scheduled event on your "
+"calendar and dispatch proactive payment reminders."
+
+msgid "Task Title"
+msgstr "Task Title"
+
+msgid "Scheduled Due Date"
+msgstr "Scheduled Due Date"
+
+msgid "Back to List"
+msgstr "Back to List"
+
+msgid "Confirm & Commit to Ledgers"
+msgstr "Confirm & Commit to Ledgers"
+
+msgid "Scan New Bill / Invoice"
+msgstr "Scan New Bill / Invoice"
+
+msgid "Unpaid vendor bills"
+msgstr "Unpaid vendor bills"
+
+msgid "All Invoices"
+msgstr "All Invoices"
+
+msgid "Outgoing Payables (Vendor Bills)"
+msgstr "Outgoing Payables (Vendor Bills)"
+
+msgid "Incoming Receivables (Customers)"
+msgstr "Incoming Receivables (Customers)"
+
+msgid "Overdue Only"
+msgstr "Overdue Only"
+
+msgid "Unpaid"
+msgstr "Unpaid"
+
+msgid "Settled / Paid"
+msgstr "Settled / Paid"
+
+msgid "Invoice #"
+msgstr "Invoice #"
+
+msgid "Direction"
+msgstr "Direction"
+
+msgid "Counterparty"
+msgstr "Counterparty"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Outgoing Bill"
+msgstr "Outgoing Bill"
+
+msgid "Incoming"
+msgstr "Incoming"
+
+msgid "Overdue!"
+msgstr "Overdue!"
+
+msgid "Paid"
+msgstr "Paid"
+
+msgid "Partially Paid"
+msgstr "Partially Paid"
+
+msgid "View Details"
+msgstr "View Details"
+
+msgid "No invoices found."
+msgstr "No invoices found."
+
+msgid "Outgoing Bill (We Owe)"
+msgstr "Outgoing Bill (We Owe)"
+
+msgid "Incoming Receivable"
+msgstr "Incoming Receivable"
+
+msgid "Paid in Full"
+msgstr "Paid in Full"
+
+msgid "View Source Scan"
+msgstr "View Source Scan"
+
+msgid "Invoice Line Items"
+msgstr "Invoice Line Items"
+
+msgid "item(s)"
+msgstr "item(s)"
+
+msgid "Standard single line invoice"
+msgstr "Standard single line invoice"
+
+msgid "Payment History"
+msgstr "Payment History"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Method"
+msgstr "Method"
+
+msgid "Reference"
+msgstr "Reference"
+
+msgid "No payments recorded yet for this invoice."
+msgstr "No payments recorded yet for this invoice."
+
+msgid "Financial Breakdown"
+msgstr "Financial Breakdown"
+
+msgid "Total Invoiced"
+msgstr "Total Invoiced"
+
+msgid "Total Paid"
+msgstr "Total Paid"
+
+msgid "Remaining Due"
+msgstr "Remaining Due"
+
+msgid "Record a Settlement Payment"
+msgstr "Record a Settlement Payment"
+
+msgid "Amount to Pay (€)"
+msgstr "Amount to Pay (€)"
+
+msgid "Payment Method"
+msgstr "Payment Method"
+
+msgid "Bank Transfer / Wire"
+msgstr "Bank Transfer / Wire"
+
+msgid "Credit / Debit Card"
+msgstr "Credit / Debit Card"
+
+msgid "Direct Debit"
+msgstr "Direct Debit"
+
+msgid "Cash"
+msgstr "Cash"
+
+msgid "Other"
+msgstr "Other"
+
+msgid "Transaction Ref / Cheque No."
+msgstr "Transaction Ref / Cheque No."
+
+msgid "Notes (optional)"
+msgstr "Notes (optional)"
+
+msgid "Save Payment Record"
+msgstr "Save Payment Record"
+
+msgid "Expense Receipts & Petty Cash"
+msgstr "Expense Receipts & Petty Cash"
+
+msgid "Receipts & Expense Vouchers"
+msgstr "Receipts & Expense Vouchers"
+
+msgid ""
+"Petty cash receipts, office supplies, travel expenses, and small "
+"disbursements."
+msgstr ""
+"Petty cash receipts, office supplies, travel expenses, and small "
+"disbursements."
+
+msgid "Total Recorded Expenses"
+msgstr "Total Recorded Expenses"
+
+msgid "Category"
+msgstr "Category"
+
+msgid "Counterparty / Vendor"
+msgstr "Counterparty / Vendor"
+
+msgid "No expense receipts recorded yet."
+msgstr "No expense receipts recorded yet."
+
+msgid "Record Cash Expense"
+msgstr "Record Cash Expense"
+
+msgid "Expense Category"
+msgstr "Expense Category"
+
+msgid "Total Amount (€)"
+msgstr "Total Amount (€)"
+
+msgid "Tax Amount (€)"
+msgstr "Tax Amount (€)"
+
+msgid "Vendor / Counterparty (optional)"
+msgstr "Vendor / Counterparty (optional)"
+
+msgid "None / General Store"
+msgstr "None / General Store"
+
+msgid "Notes"
+msgstr "Notes"
+
+msgid "Add Expense Record"
+msgstr "Add Expense Record"
+
+msgid "Add Product SKU"
+msgstr "Add Product SKU"
+
+msgid "Total Product SKUs"
+msgstr "Total Product SKUs"
+
+msgid "Product Name"
+msgstr "Product Name"
+
+msgid "Cost / Sale"
+msgstr "Cost / Sale"
+
+msgid "On Hand"
+msgstr "On Hand"
+
+msgid "Stock Status"
+msgstr "Stock Status"
+
+msgid "Reorder Needed"
+msgstr "Reorder Needed"
+
+msgid "In Stock"
+msgstr "In Stock"
+
+msgid "No products found in warehouse inventory."
+msgstr "No products found in warehouse inventory."
+
+msgid "Add New Inventory Product"
+msgstr "Add New Inventory Product"
+
+msgid "SKU Code *"
+msgstr "SKU Code *"
+
+msgid "Unit of Measure"
+msgstr "Unit of Measure"
+
+msgid "Product / Item Name *"
+msgstr "Product / Item Name *"
+
+msgid "Cost Price (€)"
+msgstr "Cost Price (€)"
+
+msgid "Sale Price (€)"
+msgstr "Sale Price (€)"
+
+msgid "Initial Stock"
+msgstr "Initial Stock"
+
+msgid "Reorder Point"
+msgstr "Reorder Point"
+
+msgid "Save Product"
+msgstr "Save Product"
+
+msgid "Waybill / Consignment #"
+msgstr "Waybill / Consignment #"
+
+msgid "Carrier"
+msgstr "Carrier"
+
+msgid "Delivery Date"
+msgstr "Delivery Date"
+
+msgid "Scan Waybill / Delivery Note"
+msgstr "Scan Waybill / Delivery Note"
+
+msgid "No consignments recorded."
+msgstr "No consignments recorded."
+
+msgid "From"
+msgstr "From"
+
+msgid "Scheduled Date"
+msgstr "Scheduled Date"
+
+msgid "Confirm & Stock In"
+msgstr "Confirm & Stock In"
+
+msgid "Manifest Items"
+msgstr "Manifest Items"
+
+msgid "Expected Qty"
+msgstr "Expected Qty"
+
+msgid "Received Qty"
+msgstr "Received Qty"
+
+msgid "No items listed."
+msgstr "No items listed."
+
+msgid "Inventory Stock Movements Log"
+msgstr "Inventory Stock Movements Log"
+
+msgid "Timestamp"
+msgstr "Timestamp"
+
+msgid "Product"
+msgstr "Product"
+
+msgid "Qty Adjusted"
+msgstr "Qty Adjusted"
+
+msgid "New Balance"
+msgstr "New Balance"
+
+msgid "Live iCalendar (.ics) Sync Feed"
+msgstr "Live iCalendar (.ics) Sync Feed"
+
+msgid "Copy URL"
+msgstr "Copy URL"
+
+msgid "Copied!"
+msgstr "Copied!"
+
+msgid "Download .ics"
+msgstr "Download .ics"
+
+msgid "Legend:"
+msgstr "Legend:"
+
+msgid "Outgoing Payment Due"
+msgstr "Outgoing Payment Due"
+
+msgid "Expected Incoming Payment"
+msgstr "Expected Incoming Payment"
+
+msgid "Contract Renewal / Notice"
+msgstr "Contract Renewal / Notice"
+
+msgid "Consignment Delivery"
+msgstr "Consignment Delivery"
+
+msgid "Admin Task"
+msgstr "Admin Task"
+
+msgid "Pending Action Tasks"
+msgstr "Pending Action Tasks"
+
+msgid "Mark as completed"
+msgstr "Mark as completed"
+
+msgid "No pending tasks. Everything is up to date!"
+msgstr "No pending tasks. Everything is up to date!"
+
+msgid "Add Counterparty"
+msgstr "Add Counterparty"
+
+msgid "Company Name"
+msgstr "Company Name"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "No counterparties registered yet."
+msgstr "No counterparties registered yet."
+
+msgid "Entity Name *"
+msgstr "Entity Name *"
+
+msgid "Tax / VAT Number"
+msgstr "Tax / VAT Number"
+
+msgid "Bank Name"
+msgstr "Bank Name"
+
+msgid "Billing / Physical Address"
+msgstr "Billing / Physical Address"
+
+msgid "Save Counterparty"
+msgstr "Save Counterparty"
+
+msgid "Register Contract"
+msgstr "Register Contract"
+
+msgid "Contract Title / #"
+msgstr "Contract Title / #"
+
+msgid "Period (Start &rarr; End)"
+msgstr "Period (Start &rarr; End)"
+
+msgid "Renewal Terms"
+msgstr "Renewal Terms"
+
+msgid "Auto-renews"
+msgstr "Auto-renews"
+
+msgid "notice"
+msgstr "notice"
+
+msgid "Fixed Term"
+msgstr "Fixed Term"
+
+msgid "No contracts registered yet."
+msgstr "No contracts registered yet."
+
+msgid "Register New Contract"
+msgstr "Register New Contract"
+
+msgid "Contract Title *"
+msgstr "Contract Title *"
+
+msgid "Counterparty *"
+msgstr "Counterparty *"
+
+msgid "Start Date"
+msgstr "Start Date"
+
+msgid "End / Expiry Date"
+msgstr "End / Expiry Date"
+
+msgid "Notice Period (Days)"
+msgstr "Notice Period (Days)"
+
+msgid "Auto-renews?"
+msgstr "Auto-renews?"
+
+msgid "Save Contract"
+msgstr "Save Contract"
+
+msgid "Mark All as Read"
+msgstr "Mark All as Read"
+
+msgid "View Record"
+msgstr "View Record"
+
+msgid "No reminders or alerts recorded yet."
+msgstr "No reminders or alerts recorded yet."
+
+msgid "No address registered"
+msgstr "No address registered"
+
+msgid "Ongoing"
+msgstr "Ongoing"
+
+msgid "Direct"
+msgstr "Direct"
+
+msgid "General Store / Cash"
+msgstr "General Store / Cash"
+
+msgid "General"
+msgstr "General"
+
+msgid "Payment amount must be greater than zero."
+msgstr "Payment amount must be greater than zero."
+
+msgid "Invalid payment amount."
+msgstr "Invalid payment amount."
+
+msgid "Please select a scanned PDF or image document."
+msgstr "Please select a scanned PDF or image document."
+
+msgid "AI extraction re-run complete!"
+msgstr "AI extraction re-run complete!"
+
+msgid "All notifications marked as read."
+msgstr "All notifications marked as read."
+
+msgid ""
+"Reminders check complete. All payments, contracts, and inventory are in "
+"order!"
+msgstr ""
+"Reminders check complete. All payments, contracts, and inventory are in "
+"order!"
+
+msgid "This consignment has already been received and stocked."
+msgstr "This consignment has already been received and stocked."
+
+msgid ""
+"Track product inventory levels, consignment deliveries, and automated stock "
+"movements."
+msgstr ""
+"Track product inventory levels, consignment deliveries, and automated stock "
+"movements."
+
+msgid "Manage delivery receipts, waybills, and stock intake operations."
+msgstr "Manage delivery receipts, waybills, and stock intake operations."
+
+msgid ""
+"Unified operational schedule with payment deadlines, contract renewals, and "
+"delivery waybills."
+msgstr ""
+"Unified operational schedule with payment deadlines, contract renewals, and "
+"delivery waybills."
+
+msgid ""
+"Master registry of vendors, customers, contractors, banking IBANs, and tax "
+"details."
+msgstr ""
+"Master registry of vendors, customers, contractors, banking IBANs, and tax "
+"details."
+
+msgid ""
+"Track key commercial agreements, auto-renewals, and required notice decision"
+" deadlines."
+msgstr ""
+"Track key commercial agreements, auto-renewals, and required notice decision"
+" deadlines."
+
+msgid ""
+"Payment due dates, contract renewals, overdue bills, and inventory warnings."
+msgstr ""
+"Payment due dates, contract renewals, overdue bills, and inventory warnings."
+
+msgid ""
+"Track outgoing supplier bills, incoming customer invoices, and payment "
+"statuses."
+msgstr ""
+"Track outgoing supplier bills, incoming customer invoices, and payment "
+"statuses."
+
+msgid ""
+"Ingest, analyze with Multimodal AI, verify, and automatically schedule into "
+"ledgers."
+msgstr ""
+"Ingest, analyze with Multimodal AI, verify, and automatically schedule into "
+"ledgers."
+
+msgid ""
+"Upload incoming invoices, contracts, receipts, or consignment slips. The AI "
+"agent will extract structured data and prepare calendar tasks."
+msgstr ""
+"Upload incoming invoices, contracts, receipts, or consignment slips. The AI "
+"agent will extract structured data and prepare calendar tasks."
+
+msgid "Executive Overview & Agent Dashboard"
+msgstr "Executive Overview & Agent Dashboard"
+
+msgid "Scanned Documents & AI Ingestion"
+msgstr "Scanned Documents & AI Ingestion"
+
+msgid "Unit Price"
+msgstr "Unit Price"
+
+msgid "SKU"
+msgstr "SKU"
+
+msgid "Vendor Invoice (Payable)"
+msgstr "Vendor Invoice (Payable)"
+
+msgid "Customer Invoice (Receivable)"
+msgstr "Customer Invoice (Receivable)"
+
+msgid "General / Unclassified"
+msgstr "General / Unclassified"
+
+msgid "Receipt / Expense Voucher"
+msgstr "Receipt / Expense Voucher"
+
+msgid "Confirmed & Synced"
+msgstr "Confirmed & Synced"
+
+msgid "Processing Failed"
+msgstr "Processing Failed"
+
+msgid "Processing with AI"
+msgstr "Processing with AI"
+
+msgid "Vendor Bill (Outgoing Payment)"
+msgstr "Vendor Bill (Outgoing Payment)"
+
+msgid "Overdue"
+msgstr "Overdue"
+
+msgid "Disputed"
+msgstr "Disputed"
+
+msgid "Inward Receipt (Supplier Delivery)"
+msgstr "Inward Receipt (Supplier Delivery)"
+
+msgid "Outward Dispatch (Customer Delivery)"
+msgstr "Outward Dispatch (Customer Delivery)"
+
+msgid "Expected / In Transit"
+msgstr "Expected / In Transit"
+
+msgid "Received & Stocked"
+msgstr "Received & Stocked"
+
+msgid "Discrepancy Noted"
+msgstr "Discrepancy Noted"
+
+msgid "Rejected"
+msgstr "Rejected"
+
+msgid "Purchase Receipt / Inward"
+msgstr "Purchase Receipt / Inward"
+
+msgid "Sales Shipment / Outward"
+msgstr "Sales Shipment / Outward"
+
+msgid "Stock Count / Adjustment"
+msgstr "Stock Count / Adjustment"
+
+msgid "Return to Supplier / Customer Return"
+msgstr "Return to Supplier / Customer Return"
+
+msgid "Bank / Financial Institution"
+msgstr "Bank / Financial Institution"
+
+msgid "Draft"
+msgstr "Draft"
+
+msgid "Pending Renewal"
+msgstr "Pending Renewal"
+
+msgid "Expired"
+msgstr "Expired"
+
+msgid "Terminated"
+msgstr "Terminated"
+
+msgid "Outgoing Payment Due (Payable)"
+msgstr "Outgoing Payment Due (Payable)"
+
+msgid "Expected Payment (Receivable)"
+msgstr "Expected Payment (Receivable)"
+
+msgid "Consignment / Delivery Due"
+msgstr "Consignment / Delivery Due"
+
+msgid "Administrative Task"
+msgstr "Administrative Task"
+
+msgid "Low"
+msgstr "Low"
+
+msgid "Medium"
+msgstr "Medium"
+
+msgid "High"
+msgstr "High"
+
+msgid "Urgent"
+msgstr "Urgent"
+
+msgid "Pending"
+msgstr "Pending"
+
+msgid "In Progress"
+msgstr "In Progress"
+
+msgid "Completed"
+msgstr "Completed"
+
+msgid "Cancelled"
+msgstr "Cancelled"
+
+msgid "Info"
+msgstr "Info"
+
+msgid "Warning"
+msgstr "Warning"
+
+msgid "Critical / Urgent"
+msgstr "Critical / Urgent"
+
+msgid "Success"
+msgstr "Success"
+
+msgid "Upcoming Payment Due"
+msgstr "Upcoming Payment Due"
+
+msgid "Overdue Payment"
+msgstr "Overdue Payment"
+
+msgid "Contract Renewal"
+msgstr "Contract Renewal"
+
+msgid "Low Stock Alert"
+msgstr "Low Stock Alert"
+
+msgid "Document Analyzed"
+msgstr "Document Analyzed"
+
+msgid "General Alert"
+msgstr "General Alert"
+
+msgid "Assistant"
+msgstr "Assistant"
+
+msgid "System"
+msgstr "System"
+
+msgid "User"
+msgstr "User"
+
+msgid "Addition"
+msgstr "Addition"
+
+msgid "Change"
+msgstr "Change"
+
+msgid "Deletion"
+msgstr "Deletion"
+
+msgid "New %(doc_type)s Processed"
+msgstr "New %(doc_type)s Processed"
+
+msgid "Low Stock Alert: %(product)s"
+msgstr "Low Stock Alert: %(product)s"
+
+msgid "OVERDUE: %(kind)s #%(number)s"
+msgstr "OVERDUE: %(kind)s #%(number)s"
+
+msgid "Payment Due in %(days)s day(s): #%(number)s"
+msgstr "Payment Due in %(days)s day(s): #%(number)s"
+
+msgid "Payment Due TODAY: #%(number)s"
+msgstr "Payment Due TODAY: #%(number)s"
+
+msgid "Contract Renewal Decision: %(counterparty)s"
+msgstr "Contract Renewal Decision: %(counterparty)s"
+
+msgid "Consignment Delivery Expected: #%(number)s"
+msgstr "Consignment Delivery Expected: #%(number)s"
+
+msgid "Incoming Payment"
+msgstr "Incoming Payment"
+
+msgid "%(counterparty)s - #%(number)s confirmed and scheduled into calendar."
+msgstr "%(counterparty)s - #%(number)s confirmed and scheduled into calendar."
+
+msgid ""
+"We owe %(counterparty)s %(amount)s %(currency)s. Due date was %(date)s "
+"(%(days)s days ago)."
+msgstr ""
+"We owe %(counterparty)s %(amount)s %(currency)s. Due date was %(date)s "
+"(%(days)s days ago)."
+
+msgid ""
+"Expected from %(counterparty)s %(amount)s %(currency)s. Due date was "
+"%(date)s (%(days)s days ago)."
+msgstr ""
+"Expected from %(counterparty)s %(amount)s %(currency)s. Due date was "
+"%(date)s (%(days)s days ago)."
+
+msgid ""
+"Scheduled payment to %(counterparty)s for %(amount)s %(currency)s on "
+"%(date)s."
+msgstr ""
+"Scheduled payment to %(counterparty)s for %(amount)s %(currency)s on "
+"%(date)s."
+
+msgid ""
+"Expected incoming payment from %(counterparty)s for %(amount)s %(currency)s "
+"on %(date)s."
+msgstr ""
+"Expected incoming payment from %(counterparty)s for %(amount)s %(currency)s "
+"on %(date)s."
+
+msgid ""
+"Stock for '%(name)s' [%(sku)s] is down to %(qty)s %(uom)s (Reorder "
+"threshold: %(threshold)s)."
+msgstr ""
+"Stock for '%(name)s' [%(sku)s] is down to %(qty)s %(uom)s (Reorder "
+"threshold: %(threshold)s)."
+
+msgid ""
+"Contract '%(title)s' expires on %(end_date)s. Notice deadline is "
+"%(notice_date)s (%(days)s days left)."
+msgstr ""
+"Contract '%(title)s' expires on %(end_date)s. Notice deadline is "
+"%(notice_date)s (%(days)s days left)."
+
+msgid "Expected delivery from %(counterparty)s scheduled for %(date)s."
+msgstr "Expected delivery from %(counterparty)s scheduled for %(date)s."
+
+msgid "Pay Bill #%(number)s to %(counterparty)s"
+msgstr "Pay Bill #%(number)s to %(counterparty)s"
+
+msgid "OVERDUE: Pay Bill #%(number)s to %(counterparty)s"
+msgstr "OVERDUE: Pay Bill #%(number)s to %(counterparty)s"
+
+msgid "Expected Incoming Payment #%(number)s from %(counterparty)s"
+msgstr "Expected Incoming Payment #%(number)s from %(counterparty)s"
+
+msgid "Inspect Incoming Delivery #%(number)s at Dock"
+msgstr "Inspect Incoming Delivery #%(number)s at Dock"
+
+msgid "pcs"
+msgstr "pcs"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Edit Counterparty"
+msgstr "Edit Counterparty"
+
+msgid "Save Changes"
+msgstr "Save Changes"
+
+msgid "Registration Number"
+msgstr "Registration Number"
+
+msgid "SWIFT / BIC"
+msgstr "SWIFT / BIC"
+
+msgid "Payment Terms (Days)"
+msgstr "Payment Terms (Days)"
+
+msgid "Counterparty '%(name)s' updated successfully."
+msgstr "Counterparty '%(name)s' updated successfully."
+
+msgid "Counterparty '%(name)s' created successfully."
+msgstr "Counterparty '%(name)s' created successfully."

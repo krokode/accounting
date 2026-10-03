@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Upload Scanned Record" %} - Sole Enterprise Orchestrator{% endblock %}
+
+{% block breadcrumbs %}
+  <span>{% trans "Documents" %}</span> / <a href="{% url 'documents:list' %}" class="hover:underline">{% trans "Scanned Records" %}</a> / <span class="text-slate-800 font-medium">{% trans "Upload" %}</span>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto space-y-6">
+  <div>
+    <h2 class="text-2xl font-bold text-slate-900 tracking-tight">{% trans "Upload Scanned Document" %}</h2>
+    <p class="text-sm text-slate-500 mt-1">{% trans "Upload incoming invoices, contracts, receipts, or consignment slips. The AI agent will extract structured data and prepare calendar tasks." %}</p>
+  </div>
+
+  {% if initial_type == 'RECEIPT' %}
+    <div class="p-4 rounded-xl bg-amber-50 border border-amber-200 flex items-center gap-3 text-amber-900 shadow-sm">
+      <div class="w-9 h-9 rounded-lg bg-amber-100 flex items-center justify-center text-amber-700 flex-shrink-0">
+        <i class="fa-solid fa-receipt text-lg"></i>
+      </div>
+      <div>
+        <h4 class="font-bold text-xs uppercase tracking-wider text-amber-800">{% trans "Receipt & Expense Voucher Mode" %}</h4>
+        <p class="text-xs text-amber-700 mt-0.5">{% trans "AI will extract merchant name, receipt date, expense category, VAT/tax, and totals directly into your accounting ledgers." %}</p>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 sm:p-8">
+    <form method="post" enctype="multipart/form-data" class="space-y-6">
+      {% csrf_token %}
+
+      <!-- Drag & Drop Box -->
+      <div class="border-2 border-dashed border-slate-300 hover:border-blue-500 rounded-2xl p-8 sm:p-12 text-center transition bg-slate-50/50 hover:bg-blue-50/20"
+           x-data="{ isDragging: false, fileName: '' }"
+           @dragover.prevent="isDragging = true"
+           @dragleave.prevent="isDragging = false"
+           @drop.prevent="isDragging = false; $refs.fileInput.files = $event.dataTransfer.files; fileName = $refs.fileInput.files[0]?.name">
+        
+        <input type="file" name="document_file" x-ref="fileInput" required
+               @change="fileName = $refs.fileInput.files[0]?.name"
+               class="hidden" id="document_file" accept=".pdf,.png,.jpg,.jpeg,.webp">
+
+        <label for="document_file" class="cursor-pointer flex flex-col items-center">
+          <div class="w-16 h-16 rounded-2xl bg-blue-100/70 text-blue-600 flex items-center justify-center mb-4 shadow-inner">
+            <i class="fa-solid fa-cloud-arrow-up text-2xl"></i>
+          </div>
+          
+          <template x-if="fileName">
+            <div class="text-sm font-semibold text-slate-900 bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-sm flex items-center gap-2">
+              <i class="fa-solid fa-file text-blue-600"></i>
+              <span x-text="fileName"></span>
+            </div>
+          </template>
+
+          <template x-if="!fileName">
+            <div>
+              <p class="text-sm font-semibold text-slate-700">{% trans "Click to upload or drag & drop" %}</p>
+              <p class="text-xs text-slate-400 mt-1">{% trans "PDF, PNG, JPG, or WEBP (Scans, contracts, receipts)" %}</p>
+            </div>
+          </template>
+        </label>
+      </div>
+
+      <!-- Feature cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+        <div class="p-3.5 rounded-lg border border-slate-100 bg-slate-50 flex items-start gap-2.5">
+          <i class="fa-solid fa-brain text-blue-500 mt-0.5"></i>
+          <div>
+            <h4 class="text-xs font-semibold text-slate-800">{% trans "Multimodal AI" %}</h4>
+            <p class="text-[11px] text-slate-500 mt-0.5">{% trans "Accurate reading of tables, totals, IBANs, and handwritten stamps." %}</p>
+          </div>
+        </div>
+
+        <div class="p-3.5 rounded-lg border border-slate-100 bg-slate-50 flex items-start gap-2.5">
+          <i class="fa-solid fa-calendar-check text-indigo-500 mt-0.5"></i>
+          <div>
+            <h4 class="text-xs font-semibold text-slate-800">{% trans "Auto Task Creation" %}</h4>
+            <p class="text-[11px] text-slate-500 mt-0.5">{% trans "Schedules payment due dates and contract renewals directly into your calendar." %}</p>
+          </div>
+        </div>
+
+        <div class="p-3.5 rounded-lg border border-slate-100 bg-slate-50 flex items-start gap-2.5">
+          <i class="fa-solid fa-bell text-amber-500 mt-0.5"></i>
+          <div>
+            <h4 class="text-xs font-semibold text-slate-800">{% trans "Proactive Alerts" %}</h4>
+            <p class="text-[11px] text-slate-500 mt-0.5">{% trans "Reminds your team before payments are due and flags overdue bills." %}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex items-center justify-end gap-3 pt-4 border-t border-slate-200">
+        <a href="{% url 'documents:list' %}" class="px-4 py-2 rounded-lg border border-slate-300 text-sm font-semibold text-slate-700 hover:bg-slate-100 transition">{% trans "Cancel" %}</a>
+        <button type="submit" class="px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold shadow-sm transition flex items-center gap-2">
+          <i class="fa-solid fa-bolt"></i>
+          <span>{% trans "Process with AI" %}</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

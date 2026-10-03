@@ -1,0 +1,1562 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 23:00+0000\n"
+"PO-Revision-Date: 2026-10-02 23:00+0000\n"
+"Last-Translator: Antigravity AI\n"
+"Language-Team: ja\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Accounting & Agent"
+msgstr "会計＆AIエージェント"
+
+msgid "Collapse Sidebar"
+msgstr "サイドバーを折りたたむ"
+
+msgid "Expand Sidebar"
+msgstr "サイドバーを展開する"
+
+msgid "Close Sidebar"
+msgstr "サイドバーを閉じる"
+
+msgid "Scan Receipt with AI"
+msgstr "AIで領収書をスキャン"
+
+msgid "View Scanned Receipts"
+msgstr "スキャン済み領収書を表示"
+
+msgid "View all scanned receipts in Scanned Records"
+msgstr "スキャン済み書類で領収書一覧を表示"
+
+msgid "Scan Source"
+msgstr "スキャンソース"
+
+msgid "AI Verified Scan"
+msgstr "AI検証済みスキャン"
+
+msgid "Manual Entry"
+msgstr "手動入力"
+
+msgid "View original scan and AI extracted details"
+msgstr "元のスキャンとAI抽出詳細を表示"
+
+msgid "Receipt & Expense Voucher Mode"
+msgstr "領収書・出金伝票モード"
+
+msgid ""
+"AI will extract merchant name, receipt date, expense category, VAT/tax, and "
+"totals directly into your accounting ledgers."
+msgstr "AIが店舗名、領収日、経費項目、消費税、合計金額を自動抽出し帳簿に記帳します。"
+
+msgid "Expense Category *"
+msgstr "経費区分 *"
+
+msgid "e.g. Office Supplies, Fuel, Travel"
+msgstr "例：事務用品、ガソリン代、出張旅費"
+
+msgid "Travel & Transportation"
+msgstr "旅費交通費"
+
+msgid "Meals & Entertainment"
+msgstr "飲食接待費"
+
+msgid "Fuel & Vehicle"
+msgstr "燃料・車両費"
+
+msgid "Utilities & Telecom"
+msgstr "水道光熱・通信費"
+
+msgid "Software & IT"
+msgstr "ソフトウェア・IT費"
+
+msgid "Repairs & Maintenance"
+msgstr "修繕維持費"
+
+msgid "General / Other"
+msgstr "雑費・その他"
+
+msgid "View in Receipts Ledger"
+msgstr "領収書台帳で確認"
+
+msgid "View Invoices"
+msgstr "請求書を表示"
+
+msgid ""
+"Reminders check triggered! Generated %(total)s active alert(s) (Payables: "
+"%(payables)s, Receivables: %(receivables)s, Overdue: %(overdue)s, Contracts:"
+" %(contracts)s, Stock: %(stock)s)."
+msgstr ""
+"リマインダー確認を実行しました！ %(total)s 件のアクティブアラートが生成されました（買掛金: %(payables)s、売掛金: "
+"%(receivables)s、期日超過: %(overdue)s、契約: %(contracts)s、在庫: %(stock)s）。"
+
+msgid ""
+"Full payment of %(amount)s %(currency)s recorded! Invoice #%(number)s is now"
+" marked as Paid, and the calendar task is completed."
+msgstr ""
+"満額支払 %(amount)s %(currency)s を記録しました！請求書 #%(number)s "
+"は支払済となり、カレンダータスクも完了しました。"
+
+msgid ""
+"Partial payment of %(amount)s %(currency)s recorded. Remaining: "
+"%(remaining)s %(currency)s."
+msgstr "一部支払 %(amount)s %(currency)s を記録しました。残額: %(remaining)s %(currency)s。"
+
+msgid "Expense receipt for €%(amount)s recorded."
+msgstr "経費領収書（€%(amount)s）が記録されました。"
+
+msgid "Contract '%(title)s' registered."
+msgstr "契約 '%(title)s' を登録しました。"
+
+msgid ""
+"Scanned file '%(name)s' successfully processed by AI! Please review "
+"extracted data."
+msgstr "スキャンファイル '%(name)s' のAI解析が完了しました！抽出データをご確認ください。"
+
+msgid "Extraction failed: %(error)s"
+msgstr "抽出に失敗しました: %(error)s"
+
+msgid ""
+"Document #%(number)s confirmed! Created ledger records & scheduled calendar "
+"tasks."
+msgstr "書類 #%(number)s を確認・確定しました！台帳レコードの記帳とカレンダータスクを生成しました。"
+
+msgid "Error saving records: %(error)s"
+msgstr "レコード保存エラー: %(error)s"
+
+msgid "Re-extraction failed: %(error)s"
+msgstr "再抽出に失敗しました: %(error)s"
+
+msgid "Product with SKU '%(sku)s' already exists."
+msgstr "SKU '%(sku)s' の商品は既に存在します。"
+
+msgid "Product '%(name)s' [%(sku)s] created successfully."
+msgstr "商品 '%(name)s' [%(sku)s] を作成しました。"
+
+msgid ""
+"Consignment #%(number)s received! Warehouse stock levels automatically "
+"updated."
+msgstr "委託貨物 #%(number)s を検収しました！倉庫在庫数が自動更新されました。"
+
+msgid "Dashboard"
+msgstr "ダッシュボード"
+
+msgid "Documents & AI"
+msgstr "書類＆AI解析"
+
+msgid "AI Provider Settings"
+msgstr "AIプロバイダー設定"
+
+msgid "AI & LLM Configuration"
+msgstr "AI・LLM設定"
+
+msgid "AI & LLM Provider Configuration"
+msgstr "AI・LLMプロバイダー詳細設定"
+
+msgid ""
+"Select and configure your preferred multimodal AI engine for document "
+"extraction and Copilot intelligence."
+msgstr "書類の解析および Copilot 支援に使用するマルチモーダル AI エンジンを選択・設定します。"
+
+msgid "Active"
+msgstr "有効"
+
+msgid ""
+"High-speed multimodal AI by Google. Supports native PDF and photo scans with"
+" precision extraction."
+msgstr "Googleの高速マルチモーダルAI。ネイティブPDFおよび画像書類の高精度抽出に対応。"
+
+msgid "Gemini API Key"
+msgstr "Gemini APIキー"
+
+msgid ""
+"Industry standard GPT-4o models with multimodal document inspection and "
+"structured JSON schemas."
+msgstr "マルチモーダル文書検査と構造化JSONスキーマを備えた業界標準のGPT-4oモデル。"
+
+msgid "OpenAI API Key"
+msgstr "OpenAI APIキー"
+
+msgid ""
+"Deep reasoning and native PDF contract analysis with state-of-the-art "
+"accuracy and nuanced understanding."
+msgstr "高度な推論とネイティブPDF契約書解析により、最高水準の精度と文脈理解を実現。"
+
+msgid "Anthropic API Key"
+msgstr "Anthropic APIキー"
+
+msgid ""
+"Cost-effective, powerful reasoning model (DeepSeek-V3 / R1) for intelligent "
+"ledger automation."
+msgstr "スマートな台帳自動化を実現する高コスパ・強力な推論モデル (DeepSeek-V3 / R1)。"
+
+msgid "DeepSeek API Key"
+msgstr "DeepSeek APIキー"
+
+msgid ""
+"Enterprise Alibaba Cloud DashScope platform with excellent multilingual and "
+"vision capabilities."
+msgstr "優れた多言語処理と視覚認識能力を備えた Alibaba Cloud DashScope エンタープライズ基盤。"
+
+msgid "DashScope API Key"
+msgstr "DashScope APIキー"
+
+msgid ""
+"100% private, on-premise AI via Ollama, LM Studio, vLLM, or OpenRouter. "
+"Keeps financial data on local hardware."
+msgstr "Ollama、LM Studio、vLLM、OpenRouter による完全プライベートなローカルAI。社内ハードウェア上で安全に処理。"
+
+msgid "API Key (Optional for Ollama)"
+msgstr "APIキー (Ollamaの場合は省略可)"
+
+msgid "Model Name"
+msgstr "モデル名"
+
+msgid "Endpoint Base URL"
+msgstr "エンドポイント Base URL"
+
+msgid "Test Ping"
+msgstr "接続テスト"
+
+msgid "Settings are saved to both database and .env configuration file."
+msgstr "設定はデータベースおよび .env 構成ファイルの両方に同期保存されます。"
+
+msgid "Save & Apply AI Settings"
+msgstr "AI設定を保存して適用"
+
+msgid "AI Configuration successfully updated!"
+msgstr "AI設定が正常に更新されました！"
+
+msgid "AI configuration and active provider updated successfully!"
+msgstr "AI構成およびアクティブプロバイダーが正常に更新されました！"
+
+msgid "AI Configuration Required"
+msgstr "AIプロバイダー設定が必要です"
+
+msgid "Open AI Settings"
+msgstr "AI設定を開く"
+
+msgid "Rate Limit Exceeded"
+msgstr "利用制限・クォータを超過しました"
+
+msgid "Switch Provider in AI Settings"
+msgstr "AI設定でプロバイダーを切り替える"
+
+msgid "AI Provider Offline / Unreachable"
+msgstr "AIプロバイダーがオフラインまたは接続不能です"
+
+msgid "Check Endpoint in AI Settings"
+msgstr "AI設定でエンドポイントを確認する"
+
+msgid "Authentication Failed"
+msgstr "認証に失敗しました"
+
+msgid "Update API Key in AI Settings"
+msgstr "AI設定で API キーを更新する"
+
+msgid "AI Execution Failed"
+msgstr "AI処理の実行に失敗しました"
+
+msgid "AI Document Extraction Alert"
+msgstr "AI書類抽出アラート"
+
+msgid "Configure AI Settings"
+msgstr "AI環境を設定する"
+
+msgid "Or run in terminal:"
+msgstr "またはターミナルで実行："
+
+msgid "Documents"
+msgstr "書類管理"
+
+msgid "Scanned Records"
+msgstr "スキャン書類一覧"
+
+msgid "Scanned Records Management"
+msgstr "スキャン書類管理"
+
+msgid "Upload & Ingest"
+msgstr "アップロード＆解析"
+
+msgid "Upload"
+msgstr "登録"
+
+msgid "Accounting"
+msgstr "会計・財務"
+
+msgid "Invoices (AP/AR)"
+msgstr "請求書 (買掛金/売掛金)"
+
+msgid "Invoices"
+msgstr "請求書"
+
+msgid "Invoice"
+msgstr "請求書"
+
+msgid "Invoices & Payments"
+msgstr "請求書＆支払管理"
+
+msgid "Invoices & Payments (AP/AR)"
+msgstr "請求書＆支払管理 (買掛金/売掛金)"
+
+msgid "Accounts Payable & Receivable"
+msgstr "買掛金・売掛金管理"
+
+msgid "Receipts & Expenses"
+msgstr "領収書＆経費精算"
+
+msgid "Receipts & Petty Cash"
+msgstr "領収書＆小口現金"
+
+msgid "Operations & Admin"
+msgstr "業務・総務管理"
+
+msgid "Operations"
+msgstr "業務管理"
+
+msgid "Administration"
+msgstr "総務・管理"
+
+msgid "Calendar & Tasks"
+msgstr "カレンダー＆タスク"
+
+msgid "Company Calendar & Tasks"
+msgstr "全社カレンダー＆タスク管理"
+
+msgid "Operational & Financial Calendar"
+msgstr "業務・財務カレンダー"
+
+msgid "Warehouse & Stock"
+msgstr "倉庫＆在庫管理"
+
+msgid "Warehouse & Inventory"
+msgstr "倉庫＆在庫"
+
+msgid "Warehouse Inventory"
+msgstr "倉庫在庫一覧"
+
+msgid "Warehouse & Inventory Management"
+msgstr "倉庫・在庫総合管理"
+
+msgid "Consignments"
+msgstr "納品書・受領証"
+
+msgid "Consignment"
+msgstr "納品書"
+
+msgid "Consignments & Waybills"
+msgstr "納品書・運送状管理"
+
+msgid "Consignments & Delivery Slips"
+msgstr "納品伝票・受領書"
+
+msgid "Counterparties"
+msgstr "取引先一覧"
+
+msgid "Counterparties Directory"
+msgstr "取引先台帳"
+
+msgid "Counterparties & Vendors Directory"
+msgstr "取引先・仕入先台帳"
+
+msgid "Contracts"
+msgstr "契約書管理"
+
+msgid "Contracts Registry"
+msgstr "契約台帳"
+
+msgid "Contracts & Agreements Registry"
+msgstr "契約・協定台帳"
+
+msgid "Alerts"
+msgstr "アラート"
+
+msgid "Notifications"
+msgstr "通知一覧"
+
+msgid "Proactive Reminders & Notifications"
+msgstr "事前リマインダー＆通知"
+
+msgid "Proactive Reminders & Alerts"
+msgstr "事前リマインダー＆アラート"
+
+msgid "AI Copilot Assistant"
+msgstr "AI コパイロット"
+
+msgid "ERP AI Copilot"
+msgstr "ERP AI コパイロット"
+
+msgid "Real-time ledger & calendar intelligence"
+msgstr "元帳とカレンダーのリアルタイムインテリジェンス"
+
+msgid "Check Reminders"
+msgstr "リマインダー確認"
+
+msgid "Proactive Alerts"
+msgstr "事前通知アラート"
+
+msgid "View All"
+msgstr "すべて表示"
+
+msgid "Take Action"
+msgstr "対応する"
+
+msgid "ago"
+msgstr "前"
+
+msgid "Upload Scan"
+msgstr "スキャン読込"
+
+msgid "Upload New Scan"
+msgstr "新規スキャン登録"
+
+msgid "Upload Scanned Record"
+msgstr "スキャン書類の登録"
+
+msgid "Upload Scanned Document"
+msgstr "スキャン書類のアップロード"
+
+msgid "Company Operational Dashboard"
+msgstr "全社業務ダッシュボード"
+
+msgid ""
+"Autonomous records management, invoice tracking, warehouse stock, and "
+"calendar automation."
+msgstr "書類の自動管理、請求書追跡、在庫管理、カレンダー連携の自動化システム。"
+
+msgid "Consult AI Copilot"
+msgstr "AIコパイロットに相談"
+
+msgid "Urgent: Invoice(s) Overdue"
+msgstr "至急：支払期限超過の請求書"
+
+msgid ""
+"There are overdue obligations requiring immediate payment or collection "
+"action."
+msgstr "支払期限が超過している案件があります。速やかに支払または回収を行ってください。"
+
+msgid "View All Overdue"
+msgstr "超過案件をすべて確認"
+
+msgid "Outgoing Payables"
+msgstr "買掛金 (支払予定)"
+
+msgid "Outgoing Payables (We Owe)"
+msgstr "買掛金 (当社支払分)"
+
+msgid "Track vendor bills"
+msgstr "仕入先請求書を確認"
+
+msgid "Expected Receivables"
+msgstr "売掛金 (入金予定)"
+
+msgid "Expected Receivables (Incoming)"
+msgstr "売掛金 (回収見込分)"
+
+msgid "Customer payments"
+msgstr "顧客からの入金"
+
+msgid "Customer payments expected"
+msgstr "回収見込の顧客入金"
+
+msgid "Net Position"
+msgstr "純資金ポジション"
+
+msgid "Projected balance"
+msgstr "予測残高"
+
+msgid "Expected cash margin"
+msgstr "予測資金マージン"
+
+msgid "Low Stock SKUs"
+msgstr "在庫僅少商品"
+
+msgid "Low Stock Warnings"
+msgstr "在庫僅少警告"
+
+msgid "Check inventory"
+msgstr "在庫を確認"
+
+msgid "Scanned Records Awaiting Review"
+msgstr "確認待ちのスキャン書類"
+
+msgid "View All Documents"
+msgstr "すべての書類を表示"
+
+msgid "Type"
+msgstr "種別"
+
+msgid "Uploaded"
+msgstr "登録日時"
+
+msgid "Review & Commit"
+msgstr "確認・元帳登録"
+
+msgid "No documents awaiting review. All uploaded scans have been confirmed!"
+msgstr "確認待ちの書類はありません。すべてのスキャン書類が登録済みです。"
+
+msgid "Upcoming Tasks & Payments (Next 7 Days)"
+msgstr "今後の予定＆支払期限 (直近7日間)"
+
+msgid "Open Full Calendar"
+msgstr "全体カレンダーを表示"
+
+msgid "Due"
+msgstr "期日"
+
+msgid "Due Date"
+msgstr "支払期限"
+
+msgid "Amount"
+msgstr "金額"
+
+msgid "View Bill"
+msgstr "請求書を表示"
+
+msgid "No tasks due in the next 7 days."
+msgstr "直近7日間に期限を迎えるタスクはありません。"
+
+msgid "Quick Actions"
+msgstr "クイックアクション"
+
+msgid "Calendar Sync"
+msgstr "カレンダー同期"
+
+msgid "Inventory Stock"
+msgstr "倉庫在庫"
+
+msgid "Ask ERP AI Copilot"
+msgstr "ERP AIに質問"
+
+msgid ""
+"Ask questions in natural language. The AI agent scans company ledgers, "
+"calendars, and warehouse stock in real-time."
+msgstr "自然な言葉で質問できます。AIが台帳、カレンダー、倉庫在庫をリアルタイムに検索します。"
+
+msgid "What bills are due this week?"
+msgstr "今週期限を迎える請求書は何ですか？"
+
+msgid "Show low stock inventory items"
+msgstr "在庫が少なくなっている商品を表示"
+
+msgid "What are our expected receivables?"
+msgstr "入金予定の売掛金はどうなっていますか？"
+
+msgid "Summarize company financial status"
+msgstr "現在の財務・資金状況を要約してください"
+
+msgid "Hello!"
+msgstr "こんにちは！"
+
+msgid ""
+"I am your Sole Enterprise Orchestrator assistant. Ask me anything about your"
+" records, such as:"
+msgstr "Sole Enterprise Orchestrator の業務アシスタントです。記録や台帳について何でもお尋ねください："
+
+msgid "Ask about invoices, stock, contracts..."
+msgstr "請求書、在庫、契約書について質問..."
+
+msgid "All caught up! No unread payment or contract alerts."
+msgstr "すべて最新です！未読の支払や契約のアラートはありません。"
+
+msgid "Scan upcoming payments and trigger proactive reminders"
+msgstr "今後の支払期限をスキャンしてリマインダーを生成"
+
+msgid "All"
+msgstr "すべて"
+
+msgid "Needs Review"
+msgstr "要確認"
+
+msgid "Vendor Invoices"
+msgstr "仕入先請求書"
+
+msgid "Document"
+msgstr "書類"
+
+msgid "Detected Type"
+msgstr "検出種別"
+
+msgid "AI Status"
+msgstr "AI解析状態"
+
+msgid "Actions"
+msgstr "操作"
+
+msgid "Synced to Ledgers"
+msgstr "元帳連携完了"
+
+msgid "Ready for Review"
+msgstr "確認待ち"
+
+msgid "AI Analyzing..."
+msgstr "AI解析中..."
+
+msgid "Error"
+msgstr "エラー"
+
+msgid "Inspect"
+msgstr "詳細確認"
+
+msgid "No scanned documents found matching your filter."
+msgstr "該当するスキャン書類が見つかりませんでした。"
+
+msgid "Upload your first document"
+msgstr "最初の書類をアップロード"
+
+msgid "Click to upload or drag & drop"
+msgstr "クリックして選択またはファイルをドロップ"
+
+msgid "PDF, PNG, JPG, or WEBP (Scans, contracts, receipts)"
+msgstr "PDF, PNG, JPG, WEBP対応 (スキャン、契約書、領収書)"
+
+msgid "Multimodal AI"
+msgstr "マルチモーダルAI"
+
+msgid "Accurate reading of tables, totals, IBANs, and handwritten stamps."
+msgstr "表、合計金額、口座番号、押印・手書きを高精度に読み取り。"
+
+msgid "Auto Task Creation"
+msgstr "タスク自動生成"
+
+msgid ""
+"Schedules payment due dates and contract renewals directly into your "
+"calendar."
+msgstr "支払期日や契約更新日をカレンダーに自動登録。"
+
+msgid "Reminds your team before payments are due and flags overdue bills."
+msgstr "支払期日前にチームへ通知し、超過した請求書を強調表示。"
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "Process with AI"
+msgstr "AIで解析開始"
+
+msgid "Verify Document"
+msgstr "書類の検証"
+
+msgid "Verify & Review"
+msgstr "検証・レビュー"
+
+msgid "Confirmed & Committed"
+msgstr "確認・確定済み"
+
+msgid "Verification Required"
+msgstr "要確認"
+
+msgid "Re-run AI extraction"
+msgstr "AI解析を再実行"
+
+msgid "Re-Extract"
+msgstr "再解析"
+
+msgid "Original Scanned Document"
+msgstr "原本スキャン画像"
+
+msgid "Open Fullscreen"
+msgstr "全画面表示"
+
+msgid "Extracted Structured Record"
+msgstr "抽出された構造化データ"
+
+msgid "Review AI extracted details before committing to company ledgers."
+msgstr "会社の元帳に登録する前に、AIが抽出した内容をご確認ください。"
+
+msgid "Locked & Synced"
+msgstr "確定・同期済み"
+
+msgid "Document Type"
+msgstr "書類種別"
+
+msgid "Vendor Invoice (Outgoing Payment)"
+msgstr "仕入先請求書 (支払対象)"
+
+msgid "Customer Invoice (Incoming Payment)"
+msgstr "顧客向け請求書 (入金対象)"
+
+msgid "Contract / Agreement"
+msgstr "契約書 / 協定書"
+
+msgid "Consignment / Delivery Note"
+msgstr "納品書 / 運送状"
+
+msgid "Expense Receipt / Petty Cash"
+msgstr "経費領収書 / 小口現金"
+
+msgid "General Document"
+msgstr "一般書類"
+
+msgid "Document / Invoice Number"
+msgstr "書類番号 / 請求書番号"
+
+msgid "Counterparty Details"
+msgstr "取引先詳細情報"
+
+msgid "Vendor / Supplier"
+msgstr "仕入先 / サプライヤー"
+
+msgid "Customer / Client"
+msgstr "顧客 / クライアント"
+
+msgid "Business Partner"
+msgstr "ビジネスパートナー"
+
+msgid "Logistics / Carrier"
+msgstr "物流会社 / 運送業者"
+
+msgid "Company / Entity Name"
+msgstr "会社名 / 法人名"
+
+msgid "Tax / VAT ID"
+msgstr "税務登録番号 / インボイス番号"
+
+msgid "Bank IBAN"
+msgstr "銀行口座番号 / IBAN"
+
+msgid "Email"
+msgstr "メールアドレス"
+
+msgid "Phone"
+msgstr "電話番号"
+
+msgid "Issue Date"
+msgstr "発行日"
+
+msgid "Payment Due Date *"
+msgstr "支払期限 *"
+
+msgid "Contract End / Renewal *"
+msgstr "契約満了 / 更新期限 *"
+
+msgid "Expected Delivery Date *"
+msgstr "納品予定日 *"
+
+msgid "Notice / Grace Period (Days)"
+msgstr "事前通知期間 (日数)"
+
+msgid "Currency"
+msgstr "通貨"
+
+msgid "Subtotal"
+msgstr "税抜小計"
+
+msgid "Tax / VAT"
+msgstr "消費税額"
+
+msgid "Total Amount"
+msgstr "合計金額"
+
+msgid "Line Items / Products"
+msgstr "明細行 / 取扱商品"
+
+msgid "Add Item"
+msgstr "行を追加"
+
+msgid "Description"
+msgstr "品名・摘要"
+
+msgid "SKU / Code"
+msgstr "商品コード / SKU"
+
+msgid "Qty"
+msgstr "数量"
+
+msgid "Price"
+msgstr "単価"
+
+msgid "Line Total"
+msgstr "金額"
+
+msgid "Calendar Task & Reminder Automation"
+msgstr "カレンダータスク＆通知の自動化"
+
+msgid ""
+"Approving this record will automatically create a scheduled event on your "
+"calendar and dispatch proactive payment reminders."
+msgstr "この書類を承認すると、カレンダーに自動で予定が登録され、支払期限の事前通知が設定されます。"
+
+msgid "Task Title"
+msgstr "タスク名"
+
+msgid "Scheduled Due Date"
+msgstr "予定期限日"
+
+msgid "Back to List"
+msgstr "一覧に戻る"
+
+msgid "Confirm & Commit to Ledgers"
+msgstr "確認して元帳に反映"
+
+msgid "Scan New Bill / Invoice"
+msgstr "新しい請求書をスキャン"
+
+msgid "Unpaid vendor bills"
+msgstr "未払いの仕入先請求書"
+
+msgid "All Invoices"
+msgstr "すべての請求書"
+
+msgid "Outgoing Payables (Vendor Bills)"
+msgstr "買掛金請求書 (仕入先分)"
+
+msgid "Incoming Receivables (Customers)"
+msgstr "売掛金請求書 (顧客請求分)"
+
+msgid "Overdue Only"
+msgstr "期限超過のみ"
+
+msgid "Unpaid"
+msgstr "未払い"
+
+msgid "Settled / Paid"
+msgstr "決済済み / 支払完了"
+
+msgid "Invoice #"
+msgstr "請求書番号"
+
+msgid "Direction"
+msgstr "収支方向"
+
+msgid "Counterparty"
+msgstr "取引先"
+
+msgid "Status"
+msgstr "ステータス"
+
+msgid "Outgoing Bill"
+msgstr "支払請求書"
+
+msgid "Incoming"
+msgstr "入金分"
+
+msgid "Overdue!"
+msgstr "期日超過！"
+
+msgid "Paid"
+msgstr "支払済"
+
+msgid "Partially Paid"
+msgstr "一部入金・支払済"
+
+msgid "View Details"
+msgstr "詳細を見る"
+
+msgid "No invoices found."
+msgstr "請求書が見つかりませんでした。"
+
+msgid "Outgoing Bill (We Owe)"
+msgstr "支払請求書 (買掛金)"
+
+msgid "Incoming Receivable"
+msgstr "回収予定売掛金"
+
+msgid "Paid in Full"
+msgstr "完済・全額受領"
+
+msgid "View Source Scan"
+msgstr "原本スキャンを表示"
+
+msgid "Invoice Line Items"
+msgstr "請求書明細"
+
+msgid "item(s)"
+msgstr "項目"
+
+msgid "Standard single line invoice"
+msgstr "単一品目請求書"
+
+msgid "Payment History"
+msgstr "支払・入金履歴"
+
+msgid "Date"
+msgstr "日付"
+
+msgid "Method"
+msgstr "支払方法"
+
+msgid "Reference"
+msgstr "参照番号"
+
+msgid "No payments recorded yet for this invoice."
+msgstr "この請求書に対する支払履歴はまだありません。"
+
+msgid "Financial Breakdown"
+msgstr "財務明細内訳"
+
+msgid "Total Invoiced"
+msgstr "請求総額"
+
+msgid "Total Paid"
+msgstr "支払済総額"
+
+msgid "Remaining Due"
+msgstr "残高 / 未払残高"
+
+msgid "Record a Settlement Payment"
+msgstr "支払・入金の記録"
+
+msgid "Amount to Pay (€)"
+msgstr "決済金額 (€)"
+
+msgid "Payment Method"
+msgstr "決済手段"
+
+msgid "Bank Transfer / Wire"
+msgstr "銀行振込"
+
+msgid "Credit / Debit Card"
+msgstr "クレジットカード / デビットカード"
+
+msgid "Direct Debit"
+msgstr "口座振替"
+
+msgid "Cash"
+msgstr "現金"
+
+msgid "Other"
+msgstr "その他"
+
+msgid "Transaction Ref / Cheque No."
+msgstr "取引参照番号 / 小切手番号"
+
+msgid "Notes (optional)"
+msgstr "備考 (任意)"
+
+msgid "Save Payment Record"
+msgstr "支払記録を保存"
+
+msgid "Expense Receipts & Petty Cash"
+msgstr "経費領収書＆小口現金"
+
+msgid "Receipts & Expense Vouchers"
+msgstr "領収証・経費伝票"
+
+msgid ""
+"Petty cash receipts, office supplies, travel expenses, and small "
+"disbursements."
+msgstr "小口現金、事務用品、旅費交通費、雑費などの支出伝票。"
+
+msgid "Total Recorded Expenses"
+msgstr "経費累計総額"
+
+msgid "Category"
+msgstr "カテゴリー"
+
+msgid "Counterparty / Vendor"
+msgstr "取引先 / 仕入先"
+
+msgid "No expense receipts recorded yet."
+msgstr "経費領収書はまだ登録されていません。"
+
+msgid "Record Cash Expense"
+msgstr "現金支出の登録"
+
+msgid "Expense Category"
+msgstr "経費科目"
+
+msgid "Total Amount (€)"
+msgstr "合計金額 (€)"
+
+msgid "Tax Amount (€)"
+msgstr "税額 (€)"
+
+msgid "Vendor / Counterparty (optional)"
+msgstr "仕入先 / 取引先 (任意)"
+
+msgid "None / General Store"
+msgstr "なし / 一般店舗"
+
+msgid "Notes"
+msgstr "備考"
+
+msgid "Add Expense Record"
+msgstr "経費記録を追加"
+
+msgid "Add Product SKU"
+msgstr "商品SKUを追加"
+
+msgid "Total Product SKUs"
+msgstr "商品SKU総数"
+
+msgid "Product Name"
+msgstr "商品名"
+
+msgid "Cost / Sale"
+msgstr "原価 / 売価"
+
+msgid "On Hand"
+msgstr "現在庫"
+
+msgid "Stock Status"
+msgstr "在庫状態"
+
+msgid "Reorder Needed"
+msgstr "要発注"
+
+msgid "In Stock"
+msgstr "在庫あり"
+
+msgid "No products found in warehouse inventory."
+msgstr "倉庫在庫に登録された商品はありません。"
+
+msgid "Add New Inventory Product"
+msgstr "新規在庫商品の登録"
+
+msgid "SKU Code *"
+msgstr "SKUコード *"
+
+msgid "Unit of Measure"
+msgstr "単位"
+
+msgid "Product / Item Name *"
+msgstr "商品・品目名 *"
+
+msgid "Cost Price (€)"
+msgstr "仕入原価 (€)"
+
+msgid "Sale Price (€)"
+msgstr "販売価格 (€)"
+
+msgid "Initial Stock"
+msgstr "初期在庫数量"
+
+msgid "Reorder Point"
+msgstr "発注点"
+
+msgid "Save Product"
+msgstr "商品を保存"
+
+msgid "Waybill / Consignment #"
+msgstr "運送状 / 納品伝票番号"
+
+msgid "Carrier"
+msgstr "配送業者"
+
+msgid "Delivery Date"
+msgstr "納品日"
+
+msgid "Scan Waybill / Delivery Note"
+msgstr "納品伝票・運送状をスキャン"
+
+msgid "No consignments recorded."
+msgstr "納品伝票は登録されていません。"
+
+msgid "From"
+msgstr "発送元"
+
+msgid "Scheduled Date"
+msgstr "予定日"
+
+msgid "Confirm & Stock In"
+msgstr "検収・入庫を確定"
+
+msgid "Manifest Items"
+msgstr "積載品明細"
+
+msgid "Expected Qty"
+msgstr "予定数量"
+
+msgid "Received Qty"
+msgstr "受領数量"
+
+msgid "No items listed."
+msgstr "品目が登録されていません。"
+
+msgid "Inventory Stock Movements Log"
+msgstr "在庫移動履歴ログ"
+
+msgid "Timestamp"
+msgstr "タイムスタンプ"
+
+msgid "Product"
+msgstr "対象商品"
+
+msgid "Qty Adjusted"
+msgstr "数量変動"
+
+msgid "New Balance"
+msgstr "調整後残高"
+
+msgid "Live iCalendar (.ics) Sync Feed"
+msgstr "iCalendar (.ics) リアルタイム同期フィード"
+
+msgid "Copy URL"
+msgstr "URLをコピー"
+
+msgid "Copied!"
+msgstr "コピーしました！"
+
+msgid "Download .ics"
+msgstr ".ics ファイルをダウンロード"
+
+msgid "Legend:"
+msgstr "凡例："
+
+msgid "Outgoing Payment Due"
+msgstr "買掛金支払期日"
+
+msgid "Expected Incoming Payment"
+msgstr "売掛金回収期日"
+
+msgid "Contract Renewal / Notice"
+msgstr "契約更新・通知期限"
+
+msgid "Consignment Delivery"
+msgstr "納品予定日"
+
+msgid "Admin Task"
+msgstr "一般総務タスク"
+
+msgid "Pending Action Tasks"
+msgstr "未完了タスク一覧"
+
+msgid "Mark as completed"
+msgstr "完了済みにする"
+
+msgid "No pending tasks. Everything is up to date!"
+msgstr "未完了タスクはありません。すべて対応済みです！"
+
+msgid "Add Counterparty"
+msgstr "取引先を追加"
+
+msgid "Company Name"
+msgstr "企業名"
+
+msgid "Contact"
+msgstr "連絡先"
+
+msgid "No counterparties registered yet."
+msgstr "取引先はまだ登録されていません。"
+
+msgid "Entity Name *"
+msgstr "法人名 *"
+
+msgid "Tax / VAT Number"
+msgstr "税務番号"
+
+msgid "Bank Name"
+msgstr "銀行名"
+
+msgid "Billing / Physical Address"
+msgstr "請求先・事業所所在地"
+
+msgid "Save Counterparty"
+msgstr "取引先を保存"
+
+msgid "Register Contract"
+msgstr "契約書を登録"
+
+msgid "Contract Title / #"
+msgstr "契約名 / 契約番号"
+
+msgid "Period (Start &rarr; End)"
+msgstr "契約期間 (開始 &rarr; 終了)"
+
+msgid "Renewal Terms"
+msgstr "更新条項"
+
+msgid "Auto-renews"
+msgstr "自動更新"
+
+msgid "notice"
+msgstr "事前通知"
+
+msgid "Fixed Term"
+msgstr "定期契約"
+
+msgid "No contracts registered yet."
+msgstr "契約書はまだ登録されていません。"
+
+msgid "Register New Contract"
+msgstr "新規契約の登録"
+
+msgid "Contract Title *"
+msgstr "契約名称 *"
+
+msgid "Counterparty *"
+msgstr "契約先 *"
+
+msgid "Start Date"
+msgstr "契約開始日"
+
+msgid "End / Expiry Date"
+msgstr "契約終了日"
+
+msgid "Notice Period (Days)"
+msgstr "解約申入期間 (日)"
+
+msgid "Auto-renews?"
+msgstr "自動更新あり？"
+
+msgid "Save Contract"
+msgstr "契約を保存"
+
+msgid "Mark All as Read"
+msgstr "すべて既読にする"
+
+msgid "View Record"
+msgstr "該当データを確認"
+
+msgid "No reminders or alerts recorded yet."
+msgstr "通知やアラートはまだありません。"
+
+msgid "No address registered"
+msgstr "住所未登録"
+
+msgid "Ongoing"
+msgstr "継続・無期限"
+
+msgid "Direct"
+msgstr "自社・直送"
+
+msgid "General Store / Cash"
+msgstr "一般店舗 / 現金"
+
+msgid "General"
+msgstr "一般"
+
+msgid "Payment amount must be greater than zero."
+msgstr "支払額は0より大きい必要があります。"
+
+msgid "Invalid payment amount."
+msgstr "無効な支払金額です。"
+
+msgid "Please select a scanned PDF or image document."
+msgstr "スキャンしたPDFまたは画像ファイルを選択してください。"
+
+msgid "AI extraction re-run complete!"
+msgstr "AIによる再解析が完了しました！"
+
+msgid "All notifications marked as read."
+msgstr "すべての通知を既読にしました。"
+
+msgid ""
+"Reminders check complete. All payments, contracts, and inventory are in "
+"order!"
+msgstr "リマインダー確認が完了しました。すべての支払、契約、在庫は正常です！"
+
+msgid "This consignment has already been received and stocked."
+msgstr "この委託貨物は既に検品・入庫済みです。"
+
+msgid ""
+"Track product inventory levels, consignment deliveries, and automated stock "
+"movements."
+msgstr "商品在庫数、納品書受領、および自動入出庫履歴を追跡・管理します。"
+
+msgid "Manage delivery receipts, waybills, and stock intake operations."
+msgstr "納品書、運送状、および倉庫への受入入庫業務を管理します。"
+
+msgid ""
+"Unified operational schedule with payment deadlines, contract renewals, and "
+"delivery waybills."
+msgstr "支払期日、契約更新通知、納品スケジュールを統合管理する業務カレンダー。"
+
+msgid ""
+"Master registry of vendors, customers, contractors, banking IBANs, and tax "
+"details."
+msgstr "仕入先、顧客、取引業者、銀行IBAN口座、税務情報の統合マスター台帳。"
+
+msgid ""
+"Track key commercial agreements, auto-renewals, and required notice decision"
+" deadlines."
+msgstr "主要な商談契約、自動更新条項、解約通知期限を確実に追跡・管理します。"
+
+msgid ""
+"Payment due dates, contract renewals, overdue bills, and inventory warnings."
+msgstr "支払期日、契約更新期限、期日超過請求書、在庫僅少アラートを通知します。"
+
+msgid ""
+"Track outgoing supplier bills, incoming customer invoices, and payment "
+"statuses."
+msgstr "仕入先への支払請求書、顧客からの入金予定請求書、および決済ステータスを追跡。"
+
+msgid ""
+"Ingest, analyze with Multimodal AI, verify, and automatically schedule into "
+"ledgers."
+msgstr "書類の取り込み、マルチモーダルAI解析、検証、そして台帳・カレンダーへの自動登録。"
+
+msgid ""
+"Upload incoming invoices, contracts, receipts, or consignment slips. The AI "
+"agent will extract structured data and prepare calendar tasks."
+msgstr "請求書、契約書、領収書、納品書を登録してください。AIが構造化データを抽出しカレンダー予定を作成します。"
+
+msgid "Executive Overview & Agent Dashboard"
+msgstr "経営サマリー＆エージェントダッシュボード"
+
+msgid "Scanned Documents & AI Ingestion"
+msgstr "スキャン書類＆AI取り込み"
+
+msgid "Unit Price"
+msgstr "単価"
+
+msgid "SKU"
+msgstr "SKUコード"
+
+msgid "Vendor Invoice (Payable)"
+msgstr "仕入請求書 (買掛金)"
+
+msgid "Customer Invoice (Receivable)"
+msgstr "顧客請求書 (売掛金)"
+
+msgid "General / Unclassified"
+msgstr "一般 / 未分類"
+
+msgid "Receipt / Expense Voucher"
+msgstr "領収書 / 経費伝票"
+
+msgid "Confirmed & Synced"
+msgstr "確認・同期完了"
+
+msgid "Processing Failed"
+msgstr "処理失敗"
+
+msgid "Processing with AI"
+msgstr "AI処理中"
+
+msgid "Vendor Bill (Outgoing Payment)"
+msgstr "仕入先請求書 (支払予定)"
+
+msgid "Overdue"
+msgstr "期限超過"
+
+msgid "Disputed"
+msgstr "異議あり"
+
+msgid "Inward Receipt (Supplier Delivery)"
+msgstr "入荷受入 (仕入先納品)"
+
+msgid "Outward Dispatch (Customer Delivery)"
+msgstr "出荷発送 (顧客納品)"
+
+msgid "Expected / In Transit"
+msgstr "輸送中 / 入荷待ち"
+
+msgid "Received & Stocked"
+msgstr "受領・入庫済"
+
+msgid "Discrepancy Noted"
+msgstr "不一致あり"
+
+msgid "Rejected"
+msgstr "却下"
+
+msgid "Purchase Receipt / Inward"
+msgstr "仕入入庫 / 受入"
+
+msgid "Sales Shipment / Outward"
+msgstr "売发出庫 / 出荷"
+
+msgid "Stock Count / Adjustment"
+msgstr "棚卸 / 在庫調整"
+
+msgid "Return to Supplier / Customer Return"
+msgstr "仕入先返品 / 顧客返品"
+
+msgid "Bank / Financial Institution"
+msgstr "銀行 / 金融機関"
+
+msgid "Draft"
+msgstr "下書き"
+
+msgid "Pending Renewal"
+msgstr "更新待ち"
+
+msgid "Expired"
+msgstr "期限切れ"
+
+msgid "Terminated"
+msgstr "解約済"
+
+msgid "Outgoing Payment Due (Payable)"
+msgstr "支払期日 (買掛金)"
+
+msgid "Expected Payment (Receivable)"
+msgstr "入金予定 (売掛金)"
+
+msgid "Consignment / Delivery Due"
+msgstr "納品・発送期日"
+
+msgid "Administrative Task"
+msgstr "総務・管理タスク"
+
+msgid "Low"
+msgstr "低"
+
+msgid "Medium"
+msgstr "中"
+
+msgid "High"
+msgstr "高"
+
+msgid "Urgent"
+msgstr "緊急"
+
+msgid "Pending"
+msgstr "保留中"
+
+msgid "In Progress"
+msgstr "進行中"
+
+msgid "Completed"
+msgstr "完了"
+
+msgid "Cancelled"
+msgstr "キャンセル済"
+
+msgid "Info"
+msgstr "情報"
+
+msgid "Warning"
+msgstr "警告"
+
+msgid "Critical / Urgent"
+msgstr "重大 / 緊急"
+
+msgid "Success"
+msgstr "成功"
+
+msgid "Upcoming Payment Due"
+msgstr "支払期日接近"
+
+msgid "Overdue Payment"
+msgstr "延滞支払"
+
+msgid "Contract Renewal"
+msgstr "契約更新"
+
+msgid "Low Stock Alert"
+msgstr "在庫僅少アラート"
+
+msgid "Document Analyzed"
+msgstr "書類解析完了"
+
+msgid "General Alert"
+msgstr "全般アラート"
+
+msgid "Assistant"
+msgstr "アシスタント"
+
+msgid "System"
+msgstr "システム"
+
+msgid "User"
+msgstr "ユーザー"
+
+msgid "Addition"
+msgstr "追加"
+
+msgid "Change"
+msgstr "変更"
+
+msgid "Deletion"
+msgstr "削除"
+
+msgid "New %(doc_type)s Processed"
+msgstr "新規 %(doc_type)s 処理完了"
+
+msgid "Low Stock Alert: %(product)s"
+msgstr "在庫僅少アラート: %(product)s"
+
+msgid "OVERDUE: %(kind)s #%(number)s"
+msgstr "期限超過: %(kind)s #%(number)s"
+
+msgid "Payment Due in %(days)s day(s): #%(number)s"
+msgstr "支払期日まであと %(days)s 日: #%(number)s"
+
+msgid "Payment Due TODAY: #%(number)s"
+msgstr "本日支払期日: #%(number)s"
+
+msgid "Contract Renewal Decision: %(counterparty)s"
+msgstr "契約更新判断: %(counterparty)s"
+
+msgid "Consignment Delivery Expected: #%(number)s"
+msgstr "納品予定の荷物: #%(number)s"
+
+msgid "Incoming Payment"
+msgstr "入金予定"
+
+msgid "%(counterparty)s - #%(number)s confirmed and scheduled into calendar."
+msgstr "%(counterparty)s - #%(number)s が確認され、カレンダーに登録されました。"
+
+msgid ""
+"We owe %(counterparty)s %(amount)s %(currency)s. Due date was %(date)s "
+"(%(days)s days ago)."
+msgstr ""
+"%(counterparty)s に対する債務 %(amount)s %(currency)s。期日は %(date)s (%(days)s 日前) "
+"でした。"
+
+msgid ""
+"Expected from %(counterparty)s %(amount)s %(currency)s. Due date was "
+"%(date)s (%(days)s days ago)."
+msgstr ""
+"%(counterparty)s からの回収予定 %(amount)s %(currency)s。期日は %(date)s (%(days)s 日前) "
+"でした。"
+
+msgid ""
+"Scheduled payment to %(counterparty)s for %(amount)s %(currency)s on "
+"%(date)s."
+msgstr "%(date)s に %(counterparty)s への支払予定 %(amount)s %(currency)s。"
+
+msgid ""
+"Expected incoming payment from %(counterparty)s for %(amount)s %(currency)s "
+"on %(date)s."
+msgstr "%(date)s に %(counterparty)s からの入金予定 %(amount)s %(currency)s。"
+
+msgid ""
+"Stock for '%(name)s' [%(sku)s] is down to %(qty)s %(uom)s (Reorder "
+"threshold: %(threshold)s)."
+msgstr ""
+"商品「%(name)s」[%(sku)s] の在庫が %(qty)s %(uom)s に低下しました (発注閾値: %(threshold)s)。"
+
+msgid ""
+"Contract '%(title)s' expires on %(end_date)s. Notice deadline is "
+"%(notice_date)s (%(days)s days left)."
+msgstr ""
+"契約「%(title)s」は %(end_date)s に満了します。通知期限は %(notice_date)s (残り %(days)s 日) です。"
+
+msgid "Expected delivery from %(counterparty)s scheduled for %(date)s."
+msgstr "%(counterparty)s からの納品が %(date)s に予定されています。"
+
+msgid "Pay Bill #%(number)s to %(counterparty)s"
+msgstr "%(counterparty)s への請求書 #%(number)s の支払い"
+
+msgid "OVERDUE: Pay Bill #%(number)s to %(counterparty)s"
+msgstr "期限超過: %(counterparty)s への請求書 #%(number)s の支払い"
+
+msgid "Expected Incoming Payment #%(number)s from %(counterparty)s"
+msgstr "%(counterparty)s からの入金予定 #%(number)s"
+
+msgid "Inspect Incoming Delivery #%(number)s at Dock"
+msgstr "搬入口にて入荷品 #%(number)s の検品"
+
+msgid "pcs"
+msgstr "個"
+
+msgid "Edit"
+msgstr "編集"
+
+msgid "Edit Counterparty"
+msgstr "取引先情報の編集"
+
+msgid "Save Changes"
+msgstr "変更を保存"
+
+msgid "Registration Number"
+msgstr "法人登録番号"
+
+msgid "SWIFT / BIC"
+msgstr "SWIFT / BICコード"
+
+msgid "Payment Terms (Days)"
+msgstr "支払サイト (日数)"
+
+msgid "Counterparty '%(name)s' updated successfully."
+msgstr "取引先「%(name)s」を正常に更新しました。"
+
+msgid "Counterparty '%(name)s' created successfully."
+msgstr "取引先「%(name)s」を正常に登録しました。"

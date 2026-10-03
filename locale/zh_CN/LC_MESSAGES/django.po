@@ -1,0 +1,1557 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 23:00+0000\n"
+"PO-Revision-Date: 2026-10-02 23:00+0000\n"
+"Last-Translator: Antigravity AI\n"
+"Language-Team: zh_Hans\n"
+"Language: zh_Hans\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Accounting & Agent"
+msgstr "财务与智能助理"
+
+msgid "Collapse Sidebar"
+msgstr "折叠侧边栏"
+
+msgid "Expand Sidebar"
+msgstr "展开侧边栏"
+
+msgid "Close Sidebar"
+msgstr "关闭侧边栏"
+
+msgid "Scan Receipt with AI"
+msgstr "使用 AI 扫描单据"
+
+msgid "View Scanned Receipts"
+msgstr "查看已扫描收据"
+
+msgid "View all scanned receipts in Scanned Records"
+msgstr "在扫描记录中查看所有已扫描收据"
+
+msgid "Scan Source"
+msgstr "扫描来源"
+
+msgid "AI Verified Scan"
+msgstr "AI 验证扫描件"
+
+msgid "Manual Entry"
+msgstr "手动录入"
+
+msgid "View original scan and AI extracted details"
+msgstr "查看原始扫描件与 AI 提取详情"
+
+msgid "Receipt & Expense Voucher Mode"
+msgstr "收据与支出凭证模式"
+
+msgid ""
+"AI will extract merchant name, receipt date, expense category, VAT/tax, and "
+"totals directly into your accounting ledgers."
+msgstr "AI 将自动提取商户名称、单据日期、费用类别、税额及总金额并同步至账簿。"
+
+msgid "Expense Category *"
+msgstr "费用类别 *"
+
+msgid "e.g. Office Supplies, Fuel, Travel"
+msgstr "例如：办公用品、燃油、差旅"
+
+msgid "Travel & Transportation"
+msgstr "差旅与交通"
+
+msgid "Meals & Entertainment"
+msgstr "餐饮与招待"
+
+msgid "Fuel & Vehicle"
+msgstr "燃油与车辆"
+
+msgid "Utilities & Telecom"
+msgstr "水电气与通信"
+
+msgid "Software & IT"
+msgstr "软件与 IT 服务"
+
+msgid "Repairs & Maintenance"
+msgstr "维修与保养"
+
+msgid "General / Other"
+msgstr "其他通用支出"
+
+msgid "View in Receipts Ledger"
+msgstr "在收据账本中查看"
+
+msgid "View Invoices"
+msgstr "查看发票"
+
+msgid ""
+"Reminders check triggered! Generated %(total)s active alert(s) (Payables: "
+"%(payables)s, Receivables: %(receivables)s, Overdue: %(overdue)s, Contracts:"
+" %(contracts)s, Stock: %(stock)s)."
+msgstr ""
+"提醒检查已执行！已生成 %(total)s 条活跃提醒（应付账款: %(payables)s，应收账款: %(receivables)s，逾期: "
+"%(overdue)s，合同: %(contracts)s，库存: %(stock)s）。"
+
+msgid ""
+"Full payment of %(amount)s %(currency)s recorded! Invoice #%(number)s is now"
+" marked as Paid, and the calendar task is completed."
+msgstr "全额付款 %(amount)s %(currency)s 已登记！发票 #%(number)s 已标记为已付款，关联日程任务已完成。"
+
+msgid ""
+"Partial payment of %(amount)s %(currency)s recorded. Remaining: "
+"%(remaining)s %(currency)s."
+msgstr "部分付款 %(amount)s %(currency)s 已登记。剩余待付: %(remaining)s %(currency)s。"
+
+msgid "Expense receipt for €%(amount)s recorded."
+msgstr "支出收据 €%(amount)s 已登记。"
+
+msgid "Contract '%(title)s' registered."
+msgstr "合同 '%(title)s' 已登记。"
+
+msgid ""
+"Scanned file '%(name)s' successfully processed by AI! Please review "
+"extracted data."
+msgstr "扫描文件 '%(name)s' 已通过 AI 成功解析！请核对提取数据。"
+
+msgid "Extraction failed: %(error)s"
+msgstr "提取失败: %(error)s"
+
+msgid ""
+"Document #%(number)s confirmed! Created ledger records & scheduled calendar "
+"tasks."
+msgstr "单据 #%(number)s 已确认！已生成账簿记录并排入日程任务。"
+
+msgid "Error saving records: %(error)s"
+msgstr "保存记录出错: %(error)s"
+
+msgid "Re-extraction failed: %(error)s"
+msgstr "重新提取失败: %(error)s"
+
+msgid "Product with SKU '%(sku)s' already exists."
+msgstr "SKU 为 '%(sku)s' 的商品已存在。"
+
+msgid "Product '%(name)s' [%(sku)s] created successfully."
+msgstr "商品 '%(name)s' [%(sku)s] 创建成功。"
+
+msgid ""
+"Consignment #%(number)s received! Warehouse stock levels automatically "
+"updated."
+msgstr "发货单 #%(number)s 已收货！仓库库存数量已自动更新。"
+
+msgid "Dashboard"
+msgstr "仪表板"
+
+msgid "Documents & AI"
+msgstr "文档与人工智能"
+
+msgid "AI Provider Settings"
+msgstr "AI 模型提供商设置"
+
+msgid "AI & LLM Configuration"
+msgstr "AI 与大模型配置"
+
+msgid "AI & LLM Provider Configuration"
+msgstr "AI 与大模型提供商配置"
+
+msgid ""
+"Select and configure your preferred multimodal AI engine for document "
+"extraction and Copilot intelligence."
+msgstr "选择并配置用于单据解析与 Copilot 智能助手的首选多模态 AI 引擎。"
+
+msgid "Active"
+msgstr "生效中"
+
+msgid ""
+"High-speed multimodal AI by Google. Supports native PDF and photo scans with"
+" precision extraction."
+msgstr "谷歌高速多模态 AI，支持原生 PDF 与图片单据的高精度识别提取。"
+
+msgid "Gemini API Key"
+msgstr "Gemini API 密钥"
+
+msgid ""
+"Industry standard GPT-4o models with multimodal document inspection and "
+"structured JSON schemas."
+msgstr "业界主流的 GPT-4o 系列模型，具备多模态单据检查与严谨的结构化 JSON 输出能力。"
+
+msgid "OpenAI API Key"
+msgstr "OpenAI API 密钥"
+
+msgid ""
+"Deep reasoning and native PDF contract analysis with state-of-the-art "
+"accuracy and nuanced understanding."
+msgstr "领先的深度逻辑推理与原生 PDF 合同解析能力，具备极高精度与细致理解力。"
+
+msgid "Anthropic API Key"
+msgstr "Anthropic API 密钥"
+
+msgid ""
+"Cost-effective, powerful reasoning model (DeepSeek-V3 / R1) for intelligent "
+"ledger automation."
+msgstr "超高性价比的高性能推理大模型 (DeepSeek-V3 / R1)，智能驱动财务账本自动化。"
+
+msgid "DeepSeek API Key"
+msgstr "DeepSeek API 密钥"
+
+msgid ""
+"Enterprise Alibaba Cloud DashScope platform with excellent multilingual and "
+"vision capabilities."
+msgstr "阿里云百炼企业级 DashScope 平台，具备出色的多语言理解与视觉解析能力。"
+
+msgid "DashScope API Key"
+msgstr "DashScope API 密钥"
+
+msgid ""
+"100% private, on-premise AI via Ollama, LM Studio, vLLM, or OpenRouter. "
+"Keeps financial data on local hardware."
+msgstr "100% 私有化本地 AI 部署 (Ollama, LM Studio, vLLM, OpenRouter)，财务敏感数据全程不出内网。"
+
+msgid "API Key (Optional for Ollama)"
+msgstr "API 密钥 (Ollama 可留空)"
+
+msgid "Model Name"
+msgstr "模型名称"
+
+msgid "Endpoint Base URL"
+msgstr "服务端点 Base URL"
+
+msgid "Test Ping"
+msgstr "测试连通性"
+
+msgid "Settings are saved to both database and .env configuration file."
+msgstr "设置将同步保存至数据库与 .env 环境变量配置文件中。"
+
+msgid "Save & Apply AI Settings"
+msgstr "保存并应用 AI 设置"
+
+msgid "AI Configuration successfully updated!"
+msgstr "AI 配置更新成功！"
+
+msgid "AI configuration and active provider updated successfully!"
+msgstr "AI 配置与当前激活提供商已成功更新！"
+
+msgid "AI Configuration Required"
+msgstr "需要配置 AI 模型"
+
+msgid "Open AI Settings"
+msgstr "打开 AI 设置"
+
+msgid "Rate Limit Exceeded"
+msgstr "模型请求频率超限或配额耗尽"
+
+msgid "Switch Provider in AI Settings"
+msgstr "在 AI 设置中切换模型提供商"
+
+msgid "AI Provider Offline / Unreachable"
+msgstr "AI 服务离线或连接不可达"
+
+msgid "Check Endpoint in AI Settings"
+msgstr "在 AI 设置中检查服务端点"
+
+msgid "Authentication Failed"
+msgstr "身份验证失败"
+
+msgid "Update API Key in AI Settings"
+msgstr "在 AI 设置中更新 API 密钥"
+
+msgid "AI Execution Failed"
+msgstr "AI 处理执行失败"
+
+msgid "AI Document Extraction Alert"
+msgstr "AI 单据解析提示"
+
+msgid "Configure AI Settings"
+msgstr "配置 AI 设置"
+
+msgid "Or run in terminal:"
+msgstr "或在终端中运行："
+
+msgid "Documents"
+msgstr "单据中心"
+
+msgid "Scanned Records"
+msgstr "扫描单据记录"
+
+msgid "Scanned Records Management"
+msgstr "扫描单据管理"
+
+msgid "Upload & Ingest"
+msgstr "上传与智能解析"
+
+msgid "Upload"
+msgstr "上传"
+
+msgid "Accounting"
+msgstr "财务核算"
+
+msgid "Invoices (AP/AR)"
+msgstr "发票管理 (应付/应收)"
+
+msgid "Invoices"
+msgstr "发票"
+
+msgid "Invoice"
+msgstr "发票"
+
+msgid "Invoices & Payments"
+msgstr "发票与收支款项"
+
+msgid "Invoices & Payments (AP/AR)"
+msgstr "发票与收支管理 (应付/应收)"
+
+msgid "Accounts Payable & Receivable"
+msgstr "应付账款与应收账款"
+
+msgid "Receipts & Expenses"
+msgstr "收据与费用报销"
+
+msgid "Receipts & Petty Cash"
+msgstr "收据与零用现金"
+
+msgid "Operations & Admin"
+msgstr "综合运营与管理"
+
+msgid "Operations"
+msgstr "业务运营"
+
+msgid "Administration"
+msgstr "企业管理"
+
+msgid "Calendar & Tasks"
+msgstr "日历日程与任务"
+
+msgid "Company Calendar & Tasks"
+msgstr "企业日历与任务中心"
+
+msgid "Operational & Financial Calendar"
+msgstr "运营与财务日历"
+
+msgid "Warehouse & Stock"
+msgstr "仓储与库存"
+
+msgid "Warehouse & Inventory"
+msgstr "仓库与库存"
+
+msgid "Warehouse Inventory"
+msgstr "仓库库存明细"
+
+msgid "Warehouse & Inventory Management"
+msgstr "仓库与库存管理"
+
+msgid "Consignments"
+msgstr "发货与送货单"
+
+msgid "Consignment"
+msgstr "送货单"
+
+msgid "Consignments & Waybills"
+msgstr "送货单与物流运单"
+
+msgid "Consignments & Delivery Slips"
+msgstr "发货运单与交付清单"
+
+msgid "Counterparties"
+msgstr "往来企业 (供应商/客户)"
+
+msgid "Counterparties Directory"
+msgstr "往来单位名录"
+
+msgid "Counterparties & Vendors Directory"
+msgstr "供应商与客户档案目录"
+
+msgid "Contracts"
+msgstr "商业合同"
+
+msgid "Contracts Registry"
+msgstr "合同管理档案"
+
+msgid "Contracts & Agreements Registry"
+msgstr "商业合同与合作协议名录"
+
+msgid "Alerts"
+msgstr "预警提醒"
+
+msgid "Notifications"
+msgstr "通知消息"
+
+msgid "Proactive Reminders & Notifications"
+msgstr "主动提醒与预警通知"
+
+msgid "Proactive Reminders & Alerts"
+msgstr "主动到期提醒与事件预警"
+
+msgid "AI Copilot Assistant"
+msgstr "AI 智能副驾驶助理"
+
+msgid "ERP AI Copilot"
+msgstr "ERP AI 智能副驾驶"
+
+msgid "Real-time ledger & calendar intelligence"
+msgstr "实时账本与日历智能分析"
+
+msgid "Check Reminders"
+msgstr "检查到期提醒"
+
+msgid "Proactive Alerts"
+msgstr "主动预警提醒"
+
+msgid "View All"
+msgstr "查看全部"
+
+msgid "Take Action"
+msgstr "立即处理"
+
+msgid "ago"
+msgstr "前"
+
+msgid "Upload Scan"
+msgstr "上传扫描件"
+
+msgid "Upload New Scan"
+msgstr "上传新扫描件"
+
+msgid "Upload Scanned Record"
+msgstr "上传扫描单据"
+
+msgid "Upload Scanned Document"
+msgstr "上传扫描业务单据"
+
+msgid "Company Operational Dashboard"
+msgstr "企业综合运营工作台"
+
+msgid ""
+"Autonomous records management, invoice tracking, warehouse stock, and "
+"calendar automation."
+msgstr "自动化单据归档、发票跟踪、仓储库存与日程任务协同管理。"
+
+msgid "Consult AI Copilot"
+msgstr "咨询 AI 副驾驶"
+
+msgid "Urgent: Invoice(s) Overdue"
+msgstr "紧急提醒：发票已逾期"
+
+msgid ""
+"There are overdue obligations requiring immediate payment or collection "
+"action."
+msgstr "存在已逾期的款项，需要立即安排付款或发起催收。"
+
+msgid "View All Overdue"
+msgstr "查看全部逾期账单"
+
+msgid "Outgoing Payables"
+msgstr "待付账款 (应付款)"
+
+msgid "Outgoing Payables (We Owe)"
+msgstr "待付款项 (公司应付)"
+
+msgid "Track vendor bills"
+msgstr "跟踪供应商发票"
+
+msgid "Expected Receivables"
+msgstr "待收账款 (应收款)"
+
+msgid "Expected Receivables (Incoming)"
+msgstr "待收款项 (预期收入)"
+
+msgid "Customer payments"
+msgstr "客户回款"
+
+msgid "Customer payments expected"
+msgstr "预期客户应收款"
+
+msgid "Net Position"
+msgstr "资金净头寸"
+
+msgid "Projected balance"
+msgstr "预计结余"
+
+msgid "Expected cash margin"
+msgstr "预计流动资金差额"
+
+msgid "Low Stock SKUs"
+msgstr "低库存预警商品"
+
+msgid "Low Stock Warnings"
+msgstr "库存短缺预警"
+
+msgid "Check inventory"
+msgstr "检查当前库存"
+
+msgid "Scanned Records Awaiting Review"
+msgstr "待审核扫描单据"
+
+msgid "View All Documents"
+msgstr "查看所有单据"
+
+msgid "Type"
+msgstr "类型"
+
+msgid "Uploaded"
+msgstr "上传于"
+
+msgid "Review & Commit"
+msgstr "审核并记账"
+
+msgid "No documents awaiting review. All uploaded scans have been confirmed!"
+msgstr "暂无待审核单据。所有上传的扫描件均已确认入账！"
+
+msgid "Upcoming Tasks & Payments (Next 7 Days)"
+msgstr "未来7天任务与款项日程"
+
+msgid "Open Full Calendar"
+msgstr "打开完整日历"
+
+msgid "Due"
+msgstr "到期日"
+
+msgid "Due Date"
+msgstr "付款到期日"
+
+msgid "Amount"
+msgstr "金额"
+
+msgid "View Bill"
+msgstr "查看账单"
+
+msgid "No tasks due in the next 7 days."
+msgstr "未来7天内没有即将到期的任务。"
+
+msgid "Quick Actions"
+msgstr "快捷操作"
+
+msgid "Calendar Sync"
+msgstr "日历同步订阅"
+
+msgid "Inventory Stock"
+msgstr "仓储库存"
+
+msgid "Ask ERP AI Copilot"
+msgstr "向 ERP AI 提问"
+
+msgid ""
+"Ask questions in natural language. The AI agent scans company ledgers, "
+"calendars, and warehouse stock in real-time."
+msgstr "支持自然语言对话，AI 代理实时查询企业账本、日历日程与库存变动。"
+
+msgid "What bills are due this week?"
+msgstr "本周有哪些账单即将到期？"
+
+msgid "Show low stock inventory items"
+msgstr "显示库存不足的商品"
+
+msgid "What are our expected receivables?"
+msgstr "近期预期收款有哪些？"
+
+msgid "Summarize company financial status"
+msgstr "总结公司当前的财务与资金状况"
+
+msgid "Hello!"
+msgstr "您好！"
+
+msgid ""
+"I am your Sole Enterprise Orchestrator assistant. Ask me anything about your"
+" records, such as:"
+msgstr "我是您的 Sole Enterprise Orchestrator 智能业务助手。您可以询问任何关于公司账册的问题，例如："
+
+msgid "Ask about invoices, stock, contracts..."
+msgstr "询问发票、库存、合同等问题..."
+
+msgid "All caught up! No unread payment or contract alerts."
+msgstr "一切就绪！暂无未读的付款或合同预警。"
+
+msgid "Scan upcoming payments and trigger proactive reminders"
+msgstr "扫描近期款项并触发主动提醒"
+
+msgid "All"
+msgstr "全部"
+
+msgid "Needs Review"
+msgstr "待审核"
+
+msgid "Vendor Invoices"
+msgstr "供应商发票"
+
+msgid "Document"
+msgstr "单据文件"
+
+msgid "Detected Type"
+msgstr "识别类型"
+
+msgid "AI Status"
+msgstr "AI 处理状态"
+
+msgid "Actions"
+msgstr "操作"
+
+msgid "Synced to Ledgers"
+msgstr "已记入系统账本"
+
+msgid "Ready for Review"
+msgstr "待审核确认"
+
+msgid "AI Analyzing..."
+msgstr "AI 正在深度解析..."
+
+msgid "Error"
+msgstr "处理异常"
+
+msgid "Inspect"
+msgstr "查阅审核"
+
+msgid "No scanned documents found matching your filter."
+msgstr "未找到符合筛选条件的扫描单据。"
+
+msgid "Upload your first document"
+msgstr "上传您的首张单据"
+
+msgid "Click to upload or drag & drop"
+msgstr "点击选择文件或直接拖放至此处"
+
+msgid "PDF, PNG, JPG, or WEBP (Scans, contracts, receipts)"
+msgstr "支持 PDF, PNG, JPG 或 WEBP 格式 (发票、合同、收据等)"
+
+msgid "Multimodal AI"
+msgstr "多模态视觉 AI"
+
+msgid "Accurate reading of tables, totals, IBANs, and handwritten stamps."
+msgstr "高精度识别表格数据、结算金额、银行账号与手写签章。"
+
+msgid "Auto Task Creation"
+msgstr "自动排期生成任务"
+
+msgid ""
+"Schedules payment due dates and contract renewals directly into your "
+"calendar."
+msgstr "将付款到期日和合同续签提醒直接同步至全员日历。"
+
+msgid "Reminds your team before payments are due and flags overdue bills."
+msgstr "在款项到期前主动提醒团队，并自动追踪逾期发票。"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Process with AI"
+msgstr "开始 AI 智能解析"
+
+msgid "Verify Document"
+msgstr "单据核验"
+
+msgid "Verify & Review"
+msgstr "核对与审核"
+
+msgid "Confirmed & Committed"
+msgstr "已审核入账"
+
+msgid "Verification Required"
+msgstr "需要人工审核"
+
+msgid "Re-run AI extraction"
+msgstr "重新运行 AI 数据提取"
+
+msgid "Re-Extract"
+msgstr "重新提取"
+
+msgid "Original Scanned Document"
+msgstr "原始扫描单据预览"
+
+msgid "Open Fullscreen"
+msgstr "全屏预览"
+
+msgid "Extracted Structured Record"
+msgstr "已提取结构化记录"
+
+msgid "Review AI extracted details before committing to company ledgers."
+msgstr "在将数据正式记入企业账本前，请核对 AI 提取的关键字段。"
+
+msgid "Locked & Synced"
+msgstr "已锁定并同步"
+
+msgid "Document Type"
+msgstr "单据类型"
+
+msgid "Vendor Invoice (Outgoing Payment)"
+msgstr "供应商发票 (对外付款)"
+
+msgid "Customer Invoice (Incoming Payment)"
+msgstr "客户销售发票 (收款款项)"
+
+msgid "Contract / Agreement"
+msgstr "商务合同 / 协议"
+
+msgid "Consignment / Delivery Note"
+msgstr "发货单 / 提货运单"
+
+msgid "Expense Receipt / Petty Cash"
+msgstr "费用凭证 / 零用发票"
+
+msgid "General Document"
+msgstr "通用常规单据"
+
+msgid "Document / Invoice Number"
+msgstr "单据编号 / 发票号码"
+
+msgid "Counterparty Details"
+msgstr "往来企业详细信息"
+
+msgid "Vendor / Supplier"
+msgstr "供应商 / 供货商"
+
+msgid "Customer / Client"
+msgstr "客户 / 委托方"
+
+msgid "Business Partner"
+msgstr "战略合作伙伴"
+
+msgid "Logistics / Carrier"
+msgstr "物流公司 / 承运方"
+
+msgid "Company / Entity Name"
+msgstr "企业 / 机构全称"
+
+msgid "Tax / VAT ID"
+msgstr "统一纳税人识别号 / 增值税号"
+
+msgid "Bank IBAN"
+msgstr "银行结算账户 / IBAN"
+
+msgid "Email"
+msgstr "电子邮箱"
+
+msgid "Phone"
+msgstr "联系电话"
+
+msgid "Issue Date"
+msgstr "开票 / 签署日期"
+
+msgid "Payment Due Date *"
+msgstr "付款截止到期日 *"
+
+msgid "Contract End / Renewal *"
+msgstr "合同终止 / 续签截止日 *"
+
+msgid "Expected Delivery Date *"
+msgstr "预期到货日期 *"
+
+msgid "Notice / Grace Period (Days)"
+msgstr "提前通知窗口期 (天数)"
+
+msgid "Currency"
+msgstr "结算币种"
+
+msgid "Subtotal"
+msgstr "不含税小计"
+
+msgid "Tax / VAT"
+msgstr "增值税 / 税额"
+
+msgid "Total Amount"
+msgstr "总金额 (价税合计)"
+
+msgid "Line Items / Products"
+msgstr "明细项目 / 商品清单"
+
+msgid "Add Item"
+msgstr "添加明细项"
+
+msgid "Description"
+msgstr "项目描述"
+
+msgid "SKU / Code"
+msgstr "商品编码 / SKU"
+
+msgid "Qty"
+msgstr "数量"
+
+msgid "Price"
+msgstr "单价"
+
+msgid "Line Total"
+msgstr "项目总额"
+
+msgid "Calendar Task & Reminder Automation"
+msgstr "日历任务与到期提醒自动化"
+
+msgid ""
+"Approving this record will automatically create a scheduled event on your "
+"calendar and dispatch proactive payment reminders."
+msgstr "确认审核此单据将自动在全员日历中生成排期日程，并按时推送主动付款/收款提醒。"
+
+msgid "Task Title"
+msgstr "任务事项名称"
+
+msgid "Scheduled Due Date"
+msgstr "预定到期执行日"
+
+msgid "Back to List"
+msgstr "返回单据列表"
+
+msgid "Confirm & Commit to Ledgers"
+msgstr "审核确认并正式入账"
+
+msgid "Scan New Bill / Invoice"
+msgstr "扫描新发票 / 账单"
+
+msgid "Unpaid vendor bills"
+msgstr "待付供应商账单"
+
+msgid "All Invoices"
+msgstr "全部发票"
+
+msgid "Outgoing Payables (Vendor Bills)"
+msgstr "应付款发票 (供应商对账单)"
+
+msgid "Incoming Receivables (Customers)"
+msgstr "应收款发票 (客户结算单)"
+
+msgid "Overdue Only"
+msgstr "仅显示已逾期"
+
+msgid "Unpaid"
+msgstr "未付款 / 未结清"
+
+msgid "Settled / Paid"
+msgstr "已结清 / 已付讫"
+
+msgid "Invoice #"
+msgstr "发票号码"
+
+msgid "Direction"
+msgstr "收付方向"
+
+msgid "Counterparty"
+msgstr "往来企业"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Outgoing Bill"
+msgstr "应付账单"
+
+msgid "Incoming"
+msgstr "应收款项"
+
+msgid "Overdue!"
+msgstr "已逾期！"
+
+msgid "Paid"
+msgstr "已付款"
+
+msgid "Partially Paid"
+msgstr "部分付款"
+
+msgid "View Details"
+msgstr "查看详情"
+
+msgid "No invoices found."
+msgstr "未找到符合条件的发票记录。"
+
+msgid "Outgoing Bill (We Owe)"
+msgstr "应付账单 (公司负债)"
+
+msgid "Incoming Receivable"
+msgstr "待收账款 (客户欠款)"
+
+msgid "Paid in Full"
+msgstr "全额结清"
+
+msgid "View Source Scan"
+msgstr "查看原始单据扫描件"
+
+msgid "Invoice Line Items"
+msgstr "发票明细行"
+
+msgid "item(s)"
+msgstr "项明细"
+
+msgid "Standard single line invoice"
+msgstr "标准单项发票"
+
+msgid "Payment History"
+msgstr "交易付款历史记录"
+
+msgid "Date"
+msgstr "交易日期"
+
+msgid "Method"
+msgstr "支付途径"
+
+msgid "Reference"
+msgstr "流水凭证号"
+
+msgid "No payments recorded yet for this invoice."
+msgstr "本发票尚未录入任何款项收付记录。"
+
+msgid "Financial Breakdown"
+msgstr "资金结算构成"
+
+msgid "Total Invoiced"
+msgstr "开票结算总额"
+
+msgid "Total Paid"
+msgstr "已结算支付总额"
+
+msgid "Remaining Due"
+msgstr "待付剩余余额"
+
+msgid "Record a Settlement Payment"
+msgstr "录入转账收付流水"
+
+msgid "Amount to Pay (€)"
+msgstr "本次结算金额 (€)"
+
+msgid "Payment Method"
+msgstr "结算方式"
+
+msgid "Bank Transfer / Wire"
+msgstr "银行电汇 / 支票转账"
+
+msgid "Credit / Debit Card"
+msgstr "信用卡 / 储蓄卡"
+
+msgid "Direct Debit"
+msgstr "银行自动扣款"
+
+msgid "Cash"
+msgstr "现金现款"
+
+msgid "Other"
+msgstr "其他方式"
+
+msgid "Transaction Ref / Cheque No."
+msgstr "转账交易流水号 / 支票号"
+
+msgid "Notes (optional)"
+msgstr "备注说明 (选填)"
+
+msgid "Save Payment Record"
+msgstr "保存付款流水"
+
+msgid "Expense Receipts & Petty Cash"
+msgstr "费用凭证与零用金管理"
+
+msgid "Receipts & Expense Vouchers"
+msgstr "开支收据与报销凭据"
+
+msgid ""
+"Petty cash receipts, office supplies, travel expenses, and small "
+"disbursements."
+msgstr "零用现金收据、办公用品采购、差旅报销与日常小额支出。"
+
+msgid "Total Recorded Expenses"
+msgstr "累计已记录费用总额"
+
+msgid "Category"
+msgstr "费用分类"
+
+msgid "Counterparty / Vendor"
+msgstr "结算单位 / 商户"
+
+msgid "No expense receipts recorded yet."
+msgstr "暂未记录任何费用收据。"
+
+msgid "Record Cash Expense"
+msgstr "登记现金日常开支"
+
+msgid "Expense Category"
+msgstr "报销费用科目"
+
+msgid "Total Amount (€)"
+msgstr "支出金额 (€)"
+
+msgid "Tax Amount (€)"
+msgstr "税额 (€)"
+
+msgid "Vendor / Counterparty (optional)"
+msgstr "往来供应商 (选填)"
+
+msgid "None / General Store"
+msgstr "无 / 零售商超"
+
+msgid "Notes"
+msgstr "备注文档"
+
+msgid "Add Expense Record"
+msgstr "录入费用凭证"
+
+msgid "Add Product SKU"
+msgstr "新增商品 SKU"
+
+msgid "Total Product SKUs"
+msgstr "现有商品 SKU 种类"
+
+msgid "Product Name"
+msgstr "商品名称"
+
+msgid "Cost / Sale"
+msgstr "成本价 / 销售价"
+
+msgid "On Hand"
+msgstr "在库可用数量"
+
+msgid "Stock Status"
+msgstr "库存健康度"
+
+msgid "Reorder Needed"
+msgstr "需要补货采购"
+
+msgid "In Stock"
+msgstr "库存充足"
+
+msgid "No products found in warehouse inventory."
+msgstr "仓库中暂无任何商品库存。"
+
+msgid "Add New Inventory Product"
+msgstr "录入新库存商品"
+
+msgid "SKU Code *"
+msgstr "商品 SKU 编码 *"
+
+msgid "Unit of Measure"
+msgstr "计量单位"
+
+msgid "Product / Item Name *"
+msgstr "商品 / 物料名称 *"
+
+msgid "Cost Price (€)"
+msgstr "进货采购单价 (€)"
+
+msgid "Sale Price (€)"
+msgstr "销售售价 (€)"
+
+msgid "Initial Stock"
+msgstr "初始入库库存"
+
+msgid "Reorder Point"
+msgstr "安全库存下限"
+
+msgid "Save Product"
+msgstr "保存商品档案"
+
+msgid "Waybill / Consignment #"
+msgstr "运单号 / 送货单号"
+
+msgid "Carrier"
+msgstr "承运物流"
+
+msgid "Delivery Date"
+msgstr "交付日期"
+
+msgid "Scan Waybill / Delivery Note"
+msgstr "扫描物流运单 / 送货单"
+
+msgid "No consignments recorded."
+msgstr "暂未登记任何送货单据。"
+
+msgid "From"
+msgstr "发货方"
+
+msgid "Scheduled Date"
+msgstr "计划交接日"
+
+msgid "Confirm & Stock In"
+msgstr "确认验收入库"
+
+msgid "Manifest Items"
+msgstr "托运清单商品明细"
+
+msgid "Expected Qty"
+msgstr "应收数量"
+
+msgid "Received Qty"
+msgstr "实收数量"
+
+msgid "No items listed."
+msgstr "暂无清单明细。"
+
+msgid "Inventory Stock Movements Log"
+msgstr "库存出入库变动审计日志"
+
+msgid "Timestamp"
+msgstr "时间戳"
+
+msgid "Product"
+msgstr "商品物料"
+
+msgid "Qty Adjusted"
+msgstr "变动调整量"
+
+msgid "New Balance"
+msgstr "变动后结存"
+
+msgid "Live iCalendar (.ics) Sync Feed"
+msgstr "实时 iCalendar (.ics) 订阅同步源"
+
+msgid "Copy URL"
+msgstr "复制订阅链接"
+
+msgid "Copied!"
+msgstr "已复制到剪贴板！"
+
+msgid "Download .ics"
+msgstr "下载 .ics 日历文件"
+
+msgid "Legend:"
+msgstr "日程色标说明："
+
+msgid "Outgoing Payment Due"
+msgstr "对外款项到期日"
+
+msgid "Expected Incoming Payment"
+msgstr "预期客户回款日"
+
+msgid "Contract Renewal / Notice"
+msgstr "合同续约 / 到期通知"
+
+msgid "Consignment Delivery"
+msgstr "货品交付验收日"
+
+msgid "Admin Task"
+msgstr "常规行政事务"
+
+msgid "Pending Action Tasks"
+msgstr "待处理行动任务"
+
+msgid "Mark as completed"
+msgstr "标记为已完成"
+
+msgid "No pending tasks. Everything is up to date!"
+msgstr "暂无待办任务。所有日程均已处理完毕！"
+
+msgid "Add Counterparty"
+msgstr "新增往来单位"
+
+msgid "Company Name"
+msgstr "企业全称"
+
+msgid "Contact"
+msgstr "联系方式"
+
+msgid "No counterparties registered yet."
+msgstr "尚未登记任何往来企业。"
+
+msgid "Entity Name *"
+msgstr "单位全称 *"
+
+msgid "Tax / VAT Number"
+msgstr "税号 / 组织机构代码"
+
+msgid "Bank Name"
+msgstr "开户银行名称"
+
+msgid "Billing / Physical Address"
+msgstr "注册 / 实际营业地址"
+
+msgid "Save Counterparty"
+msgstr "保存往来档案"
+
+msgid "Register Contract"
+msgstr "登记新合同"
+
+msgid "Contract Title / #"
+msgstr "合同名称 / 编号"
+
+msgid "Period (Start &rarr; End)"
+msgstr "有效周期 (起始 &rarr; 截止)"
+
+msgid "Renewal Terms"
+msgstr "续签与终止条款"
+
+msgid "Auto-renews"
+msgstr "自动续期"
+
+msgid "notice"
+msgstr "提前通知"
+
+msgid "Fixed Term"
+msgstr "固定期限"
+
+msgid "No contracts registered yet."
+msgstr "尚未登记任何合同协议。"
+
+msgid "Register New Contract"
+msgstr "归档新合同"
+
+msgid "Contract Title *"
+msgstr "合同主题名称 *"
+
+msgid "Counterparty *"
+msgstr "合作单位 *"
+
+msgid "Start Date"
+msgstr "生效起始日期"
+
+msgid "End / Expiry Date"
+msgstr "到期截止日期"
+
+msgid "Notice Period (Days)"
+msgstr "通知解约期 (天)"
+
+msgid "Auto-renews?"
+msgstr "是否自动续签？"
+
+msgid "Save Contract"
+msgstr "保存合同归档"
+
+msgid "Mark All as Read"
+msgstr "全部标为已读"
+
+msgid "View Record"
+msgstr "查看关联记录"
+
+msgid "No reminders or alerts recorded yet."
+msgstr "暂无任何提醒与告警记录。"
+
+msgid "No address registered"
+msgstr "未登记地址"
+
+msgid "Ongoing"
+msgstr "长期有效"
+
+msgid "Direct"
+msgstr "直接交付"
+
+msgid "General Store / Cash"
+msgstr "普通商户 / 现金"
+
+msgid "General"
+msgstr "常规"
+
+msgid "Payment amount must be greater than zero."
+msgstr "支付金额必须大于零。"
+
+msgid "Invalid payment amount."
+msgstr "支付金额无效。"
+
+msgid "Please select a scanned PDF or image document."
+msgstr "请选择扫描版 PDF 或图片文件。"
+
+msgid "AI extraction re-run complete!"
+msgstr "AI 重新解析完成！"
+
+msgid "All notifications marked as read."
+msgstr "所有通知已标记为已读。"
+
+msgid ""
+"Reminders check complete. All payments, contracts, and inventory are in "
+"order!"
+msgstr "提醒检查完毕。所有账单、合同与仓库库存均正常！"
+
+msgid "This consignment has already been received and stocked."
+msgstr "该发货单货物已经入库入册。"
+
+msgid ""
+"Track product inventory levels, consignment deliveries, and automated stock "
+"movements."
+msgstr "实时跟踪商品库存水平、发货单交付及自动化出入库变动记录。"
+
+msgid "Manage delivery receipts, waybills, and stock intake operations."
+msgstr "管理送货回单、物流运单及仓库验收入库作业流程。"
+
+msgid ""
+"Unified operational schedule with payment deadlines, contract renewals, and "
+"delivery waybills."
+msgstr "集款项到期日、商业合同续约期与物流交付排期于一体的统一业务日程。"
+
+msgid ""
+"Master registry of vendors, customers, contractors, banking IBANs, and tax "
+"details."
+msgstr "集中管理供应商、客户、承包商的企业档案、银行 IBAN 账户及税务代码。"
+
+msgid ""
+"Track key commercial agreements, auto-renewals, and required notice decision"
+" deadlines."
+msgstr "跟踪核心商务协议、自动续签条款及关键解约/续约决策通知期限。"
+
+msgid ""
+"Payment due dates, contract renewals, overdue bills, and inventory warnings."
+msgstr "账单付款截止期、合同到期续约预警、逾期应付未付及低库存预警。"
+
+msgid ""
+"Track outgoing supplier bills, incoming customer invoices, and payment "
+"statuses."
+msgstr "跟踪供应商采购账单、客户销售发票及实时款项收付与核销状态。"
+
+msgid ""
+"Ingest, analyze with Multimodal AI, verify, and automatically schedule into "
+"ledgers."
+msgstr "摄取单据、多模态 AI 智能解析、人工核对并一键自动记账入册。"
+
+msgid ""
+"Upload incoming invoices, contracts, receipts, or consignment slips. The AI "
+"agent will extract structured data and prepare calendar tasks."
+msgstr "上传发票、合同、收据或发货单。AI 智能体将自动提取结构化数据并生成关联的日程待办事项。"
+
+msgid "Executive Overview & Agent Dashboard"
+msgstr "经营总览与智能工作台"
+
+msgid "Scanned Documents & AI Ingestion"
+msgstr "扫描单据与 AI 智能解析"
+
+msgid "Unit Price"
+msgstr "单价"
+
+msgid "SKU"
+msgstr "SKU编码"
+
+msgid "Vendor Invoice (Payable)"
+msgstr "供应商发票 (应付账款)"
+
+msgid "Customer Invoice (Receivable)"
+msgstr "客户发票 (应收账款)"
+
+msgid "General / Unclassified"
+msgstr "常规 / 未分类"
+
+msgid "Receipt / Expense Voucher"
+msgstr "收据 / 费用凭单"
+
+msgid "Confirmed & Synced"
+msgstr "已确认并同步"
+
+msgid "Processing Failed"
+msgstr "处理失败"
+
+msgid "Processing with AI"
+msgstr "AI 正在解析处理"
+
+msgid "Vendor Bill (Outgoing Payment)"
+msgstr "供应商账单 (支出款项)"
+
+msgid "Overdue"
+msgstr "已逾期"
+
+msgid "Disputed"
+msgstr "有争议"
+
+msgid "Inward Receipt (Supplier Delivery)"
+msgstr "入库单 (供应商交货)"
+
+msgid "Outward Dispatch (Customer Delivery)"
+msgstr "出库发货 (客户配送)"
+
+msgid "Expected / In Transit"
+msgstr "在途 / 预期到达"
+
+msgid "Received & Stocked"
+msgstr "已收货入库"
+
+msgid "Discrepancy Noted"
+msgstr "发现差异"
+
+msgid "Rejected"
+msgstr "已拒收"
+
+msgid "Purchase Receipt / Inward"
+msgstr "采购入库 / 进货"
+
+msgid "Sales Shipment / Outward"
+msgstr "销售出库 / 出货"
+
+msgid "Stock Count / Adjustment"
+msgstr "盘点库存 / 调整"
+
+msgid "Return to Supplier / Customer Return"
+msgstr "退回供应商 / 客户退货"
+
+msgid "Bank / Financial Institution"
+msgstr "银行 / 金融机构"
+
+msgid "Draft"
+msgstr "草稿"
+
+msgid "Pending Renewal"
+msgstr "待续约"
+
+msgid "Expired"
+msgstr "已到期"
+
+msgid "Terminated"
+msgstr "已终止"
+
+msgid "Outgoing Payment Due (Payable)"
+msgstr "应付支出款到期"
+
+msgid "Expected Payment (Receivable)"
+msgstr "应收回款预期"
+
+msgid "Consignment / Delivery Due"
+msgstr "发货 / 交付到期"
+
+msgid "Administrative Task"
+msgstr "行政管理任务"
+
+msgid "Low"
+msgstr "低"
+
+msgid "Medium"
+msgstr "中"
+
+msgid "High"
+msgstr "高"
+
+msgid "Urgent"
+msgstr "紧急"
+
+msgid "Pending"
+msgstr "待处理"
+
+msgid "In Progress"
+msgstr "进行中"
+
+msgid "Completed"
+msgstr "已完成"
+
+msgid "Cancelled"
+msgstr "已取消"
+
+msgid "Info"
+msgstr "信息"
+
+msgid "Warning"
+msgstr "警告"
+
+msgid "Critical / Urgent"
+msgstr "严重 / 紧急"
+
+msgid "Success"
+msgstr "成功"
+
+msgid "Upcoming Payment Due"
+msgstr "即将到期的付款"
+
+msgid "Overdue Payment"
+msgstr "逾期付款"
+
+msgid "Contract Renewal"
+msgstr "合同续约"
+
+msgid "Low Stock Alert"
+msgstr "库存预警"
+
+msgid "Document Analyzed"
+msgstr "单据已分析"
+
+msgid "General Alert"
+msgstr "通用提示"
+
+msgid "Assistant"
+msgstr "助理"
+
+msgid "System"
+msgstr "系统"
+
+msgid "User"
+msgstr "用户"
+
+msgid "Addition"
+msgstr "添加"
+
+msgid "Change"
+msgstr "修改"
+
+msgid "Deletion"
+msgstr "删除"
+
+msgid "New %(doc_type)s Processed"
+msgstr "新单据已处理: %(doc_type)s"
+
+msgid "Low Stock Alert: %(product)s"
+msgstr "低库存预警: %(product)s"
+
+msgid "OVERDUE: %(kind)s #%(number)s"
+msgstr "逾期提醒: %(kind)s #%(number)s"
+
+msgid "Payment Due in %(days)s day(s): #%(number)s"
+msgstr "付款在 %(days)s 天内到期: #%(number)s"
+
+msgid "Payment Due TODAY: #%(number)s"
+msgstr "今日到期付款: #%(number)s"
+
+msgid "Contract Renewal Decision: %(counterparty)s"
+msgstr "合同续约决策: %(counterparty)s"
+
+msgid "Consignment Delivery Expected: #%(number)s"
+msgstr "预期交货到货: #%(number)s"
+
+msgid "Incoming Payment"
+msgstr "应收款项"
+
+msgid "%(counterparty)s - #%(number)s confirmed and scheduled into calendar."
+msgstr "%(counterparty)s - #%(number)s 已确认并排入日程。"
+
+msgid ""
+"We owe %(counterparty)s %(amount)s %(currency)s. Due date was %(date)s "
+"(%(days)s days ago)."
+msgstr ""
+"欠付 %(counterparty)s %(amount)s %(currency)s。到期日为 %(date)s (%(days)s 天前)。"
+
+msgid ""
+"Expected from %(counterparty)s %(amount)s %(currency)s. Due date was "
+"%(date)s (%(days)s days ago)."
+msgstr ""
+"应收 %(counterparty)s %(amount)s %(currency)s。到期日为 %(date)s (%(days)s 天前)。"
+
+msgid ""
+"Scheduled payment to %(counterparty)s for %(amount)s %(currency)s on "
+"%(date)s."
+msgstr "已排定于 %(date)s 向 %(counterparty)s 支付 %(amount)s %(currency)s。"
+
+msgid ""
+"Expected incoming payment from %(counterparty)s for %(amount)s %(currency)s "
+"on %(date)s."
+msgstr "预期于 %(date)s 收到来自 %(counterparty)s 的款项 %(amount)s %(currency)s。"
+
+msgid ""
+"Stock for '%(name)s' [%(sku)s] is down to %(qty)s %(uom)s (Reorder "
+"threshold: %(threshold)s)."
+msgstr "商品 '%(name)s' [%(sku)s] 库存降至 %(qty)s %(uom)s (补货阈值: %(threshold)s)。"
+
+msgid ""
+"Contract '%(title)s' expires on %(end_date)s. Notice deadline is "
+"%(notice_date)s (%(days)s days left)."
+msgstr ""
+"合同 '%(title)s' 于 %(end_date)s 到期。通知截止日为 %(notice_date)s (剩余 %(days)s 天)。"
+
+msgid "Expected delivery from %(counterparty)s scheduled for %(date)s."
+msgstr "预计于 %(date)s 收到来自 %(counterparty)s 的交货。"
+
+msgid "Pay Bill #%(number)s to %(counterparty)s"
+msgstr "向 %(counterparty)s 支付账单 #%(number)s"
+
+msgid "OVERDUE: Pay Bill #%(number)s to %(counterparty)s"
+msgstr "逾期款项: 向 %(counterparty)s 支付账单 #%(number)s"
+
+msgid "Expected Incoming Payment #%(number)s from %(counterparty)s"
+msgstr "来自 %(counterparty)s 的应收账单 #%(number)s"
+
+msgid "Inspect Incoming Delivery #%(number)s at Dock"
+msgstr "在卸货区检验入库交货 #%(number)s"
+
+msgid "pcs"
+msgstr "件"
+
+msgid "Edit"
+msgstr "编辑"
+
+msgid "Edit Counterparty"
+msgstr "编辑交易往来方"
+
+msgid "Save Changes"
+msgstr "保存修改"
+
+msgid "Registration Number"
+msgstr "公司注册号"
+
+msgid "SWIFT / BIC"
+msgstr "SWIFT / BIC代码"
+
+msgid "Payment Terms (Days)"
+msgstr "付款期限 (天)"
+
+msgid "Counterparty '%(name)s' updated successfully."
+msgstr "往来方 '%(name)s' 已成功更新。"
+
+msgid "Counterparty '%(name)s' created successfully."
+msgstr "往来方 '%(name)s' 已成功创建。"

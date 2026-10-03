@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Scanned Documents & AI Ingestion" %} - Sole Enterprise Orchestrator{% endblock %}
+
+{% block breadcrumbs %}
+  <span>{% trans "Documents" %}</span> / <span class="text-slate-800 font-medium">{% trans "Scanned Records" %}</span>
+{% endblock %}
+
+{% block content %}
+<div class="space-y-6">
+  <!-- Top bar -->
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+      <h2 class="text-2xl font-bold text-slate-900 tracking-tight">{% trans "Scanned Records Management" %}</h2>
+      <p class="text-sm text-slate-500 mt-1">{% trans "Ingest, analyze with Multimodal AI, verify, and automatically schedule into ledgers." %}</p>
+    </div>
+    <div class="flex gap-2">
+      <a href="{% url 'documents:upload' %}" class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold shadow-sm transition">
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+        <span>{% trans "Upload New Scan" %}</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Filter tabs -->
+  <div class="flex flex-wrap items-center gap-2 pb-2 border-b border-slate-200 text-xs font-medium">
+    <a href="{% url 'documents:list' %}" class="px-3 py-1.5 rounded-full {% if not selected_type and not selected_status %}bg-slate-900 text-white{% else %}bg-white border border-slate-300 text-slate-600 hover:bg-slate-50{% endif %}">
+      {% trans "All" %} ({{ total_count }})
+    </a>
+    <a href="{% url 'documents:list' %}?status=READY_FOR_REVIEW" class="px-3 py-1.5 rounded-full {% if selected_status == 'READY_FOR_REVIEW' %}bg-amber-600 text-white{% else %}bg-white border border-slate-300 text-slate-600 hover:bg-slate-50{% endif %}">
+      {% trans "Needs Review" %} ({{ pending_count }})
+    </a>
+    <a href="{% url 'documents:list' %}?type=INVOICE_PAYABLE" class="px-3 py-1.5 rounded-full {% if selected_type == 'INVOICE_PAYABLE' %}bg-red-600 text-white{% else %}bg-white border border-slate-300 text-slate-600 hover:bg-slate-50{% endif %}">
+      {% trans "Vendor Invoices" %}
+    </a>
+    <a href="{% url 'documents:list' %}?type=CONTRACT" class="px-3 py-1.5 rounded-full {% if selected_type == 'CONTRACT' %}bg-purple-600 text-white{% else %}bg-white border border-slate-300 text-slate-600 hover:bg-slate-50{% endif %}">
+      {% trans "Contracts" %}
+    </a>
+    <a href="{% url 'documents:list' %}?type=CONSIGNMENT" class="px-3 py-1.5 rounded-full {% if selected_type == 'CONSIGNMENT' %}bg-orange-600 text-white{% else %}bg-white border border-slate-300 text-slate-600 hover:bg-slate-50{% endif %}">
+      {% trans "Consignments" %}
+    </a>
+    <a href="{% url 'documents:list' %}?type=RECEIPT" class="px-3 py-1.5 rounded-full {% if selected_type == 'RECEIPT' %}bg-amber-600 text-white{% else %}bg-white border border-slate-300 text-slate-600 hover:bg-slate-50{% endif %}">
+      {% trans "Receipts & Expenses" %} ({{ receipts_count|default:0 }})
+    </a>
+  </div>
+
+  <!-- Documents Table -->
+  <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+    <table class="min-w-full divide-y divide-slate-200 text-left text-sm">
+      <thead class="bg-slate-50 text-slate-500 font-semibold text-xs uppercase tracking-wider">
+        <tr>
+          <th class="px-6 py-3.5">{% trans "Document" %}</th>
+          <th class="px-6 py-3.5">{% trans "Detected Type" %}</th>
+          <th class="px-6 py-3.5">{% trans "Uploaded" %}</th>
+          <th class="px-6 py-3.5">{% trans "AI Status" %}</th>
+          <th class="px-6 py-3.5 text-right">{% trans "Actions" %}</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100 font-normal text-slate-700">
+        {% if documents %}
+          {% for doc in documents %}
+            <tr class="hover:bg-slate-50/80 transition">
+              <td class="px-6 py-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600">
+                    {% if doc.mime_type == 'application/pdf' %}
+                      <i class="fa-solid fa-file-pdf text-red-500 text-lg"></i>
+                    {% else %}
+                      <i class="fa-solid fa-file-image text-emerald-500 text-lg"></i>
+                    {% endif %}
+                  </div>
+                  <div>
+                    <a href="{% url 'documents:detail' doc.pk %}" class="font-semibold text-slate-900 hover:text-blue-600 transition">
+                      {{ doc.original_filename }}
+                    </a>
+                    <p class="text-xs text-slate-400 mt-0.5">{{ doc.file_size|filesizeformat }}</p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium 
+                  {% if doc.document_type == 'INVOICE_PAYABLE' %}bg-red-100 text-red-800
+                  {% elif doc.document_type == 'INVOICE_RECEIVABLE' %}bg-green-100 text-green-800
+                  {% elif doc.document_type == 'CONTRACT' %}bg-purple-100 text-purple-800
+                  {% elif doc.document_type == 'CONSIGNMENT' %}bg-orange-100 text-orange-800
+                  {% elif doc.document_type == 'RECEIPT' %}bg-amber-100 text-amber-800
+                  {% else %}bg-slate-100 text-slate-800{% endif %}">
+                  {{ doc.get_document_type_display }}
+                </span>
+              </td>
+              <td class="px-6 py-4 text-xs text-slate-500">
+                {{ doc.created_at|date:"M d, Y H:i" }}
+              </td>
+              <td class="px-6 py-4">
+                {% if doc.status == 'CONFIRMED' %}
+                  <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">
+                    <i class="fa-solid fa-check"></i> {% trans "Synced to Ledgers" %}
+                  </span>
+                {% elif doc.status == 'READY_FOR_REVIEW' %}
+                  <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200 animate-pulse">
+                    <i class="fa-solid fa-eye"></i> {% trans "Ready for Review" %}
+                  </span>
+                {% elif doc.status == 'PROCESSING' %}
+                  <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200">
+                    <i class="fa-solid fa-spinner fa-spin"></i> {% trans "AI Analyzing..." %}
+                  </span>
+                {% else %}
+                  <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-red-700 bg-red-50 px-2.5 py-1 rounded-md border border-red-200">
+                    <i class="fa-solid fa-triangle-exclamation"></i> {% trans "Error" %}
+                  </span>
+                {% endif %}
+              </td>
+              <td class="px-6 py-4 text-right">
+                <a href="{% url 'documents:detail' doc.pk %}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition">
+                  <span>{% trans "Inspect" %}</span>
+                  <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+              </td>
+            </tr>
+          {% endfor %}
+        {% else %}
+          <tr>
+            <td colspan="5" class="px-6 py-12 text-center text-slate-400">
+              <i class="fa-solid fa-folder-open text-3xl mb-2 block text-slate-300"></i>
+              {% trans "No scanned documents found matching your filter." %}
+              <div class="mt-3">
+                <a href="{% url 'documents:upload' %}" class="text-xs font-semibold text-blue-600 hover:underline">{% trans "Upload your first document" %} &rarr;</a>
+              </div>
+            </td>
+          </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

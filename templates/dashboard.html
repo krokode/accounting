@@ -1,0 +1,261 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Executive Overview & Agent Dashboard" %} - Sole Enterprise Orchestrator{% endblock %}
+
+{% block breadcrumbs %}
+  <span class="text-slate-800 font-medium">{% trans "Dashboard" %}</span>
+{% endblock %}
+
+{% block content %}
+<div class="space-y-6">
+
+  <!-- Welcome / Header Banner -->
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+      <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">{% trans "Company Operational Dashboard" %}</h2>
+      <p class="text-sm text-slate-500 mt-1">{% trans "Autonomous records management, invoice tracking, warehouse stock, and calendar automation." %}</p>
+    </div>
+    <div class="flex items-center gap-2">
+      <a href="{% url 'documents:upload' %}" class="inline-flex items-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-sm transition">
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+        <span>{% trans "Upload Scanned Record" %}</span>
+      </a>
+      <button @click="copilotOpen = true" class="inline-flex items-center gap-2 px-4 py-2.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-xl text-xs font-bold transition">
+        <i class="fa-solid fa-sparkles text-indigo-600"></i>
+        <span>{% trans "Consult AI Copilot" %}</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Overdue Banner (if any) -->
+  {% if overdue_count > 0 %}
+    <div class="p-4 rounded-xl bg-red-50 border border-red-200 flex items-start justify-between gap-4">
+      <div class="flex items-start gap-3">
+        <div class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center flex-shrink-0 text-sm">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-red-900">{% trans "Urgent: Invoice(s) Overdue" %} ({{ overdue_count }})</h4>
+          <p class="text-xs text-red-700 mt-0.5">{% trans "There are overdue obligations requiring immediate payment or collection action." %}</p>
+          <div class="mt-2 flex flex-wrap gap-2">
+            {% for inv in overdue_invoices %}
+              <a href="{% url 'accounting:invoice_detail' inv.pk %}" class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border border-red-300 rounded text-xs font-bold text-red-800 hover:bg-red-50">
+                <span>#{{ inv.invoice_number }} ({{ inv.counterparty.name }}: €{{ inv.remaining_amount }})</span>
+                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <a href="{% url 'accounting:invoice_list' %}?status=OVERDUE" class="text-xs font-bold text-red-700 hover:underline whitespace-nowrap">{% trans "View All Overdue" %} &rarr;</a>
+    </div>
+  {% endif %}
+
+  <!-- KPI Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <!-- Outgoing Payables -->
+    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+      <div class="flex items-center justify-between">
+        <span class="text-xs font-bold text-red-600 uppercase tracking-wider">{% trans "Outgoing Payables" %}</span>
+        <div class="w-8 h-8 rounded-lg bg-red-50 text-red-600 flex items-center justify-center text-sm">
+          <i class="fa-solid fa-arrow-trend-down"></i>
+        </div>
+      </div>
+      <h3 class="text-2xl font-extrabold text-slate-900 mt-2">€{{ total_payable|floatformat:2 }}</h3>
+      <a href="{% url 'accounting:invoice_list' %}?direction=PAYABLE" class="text-xs text-blue-600 hover:underline mt-1 inline-block">{% trans "Track vendor bills" %} &rarr;</a>
+    </div>
+
+    <!-- Expected Receivables -->
+    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+      <div class="flex items-center justify-between">
+        <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">{% trans "Expected Receivables" %}</span>
+        <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-sm">
+          <i class="fa-solid fa-arrow-trend-up"></i>
+        </div>
+      </div>
+      <h3 class="text-2xl font-extrabold text-slate-900 mt-2">€{{ total_receivable|floatformat:2 }}</h3>
+      <a href="{% url 'accounting:invoice_list' %}?direction=RECEIVABLE" class="text-xs text-blue-600 hover:underline mt-1 inline-block">{% trans "Customer payments" %} &rarr;</a>
+    </div>
+
+    <!-- Net Cash Position -->
+    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+      <div class="flex items-center justify-between">
+        <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">{% trans "Net Position" %}</span>
+        <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center text-sm">
+          <i class="fa-solid fa-scale-balanced"></i>
+        </div>
+      </div>
+      <h3 class="text-2xl font-extrabold text-slate-900 mt-2">€{{ net_position|floatformat:2 }}</h3>
+      <span class="text-xs text-slate-500 mt-1 inline-block">{% trans "Projected balance" %}</span>
+    </div>
+
+    <!-- Low Stock Items -->
+    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+      <div class="flex items-center justify-between">
+        <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">{% trans "Low Stock SKUs" %}</span>
+        <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-sm">
+          <i class="fa-solid fa-boxes-stacked"></i>
+        </div>
+      </div>
+      <h3 class="text-2xl font-extrabold text-slate-900 mt-2">{{ low_stock_count }}</h3>
+      <a href="{% url 'warehouse:product_list' %}" class="text-xs text-blue-600 hover:underline mt-1 inline-block">{% trans "Check inventory" %} &rarr;</a>
+    </div>
+  </div>
+
+  <!-- 2-Column Main Layout -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+    
+    <!-- Left Column (8 cols): Scans needing review & Upcoming Deadlines -->
+    <div class="lg:col-span-8 space-y-6">
+      
+      <!-- Scanned Documents Needing Review -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="p-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></div>
+            <h3 class="text-xs font-bold text-slate-800 uppercase tracking-wider">{% trans "Scanned Records Awaiting Review" %}</h3>
+          </div>
+          <a href="{% url 'documents:list' %}" class="text-xs font-semibold text-blue-600 hover:underline">{% trans "View All Documents" %}</a>
+        </div>
+        
+        <div class="divide-y divide-slate-100">
+          {% if pending_docs %}
+            {% for doc in pending_docs %}
+              <div class="p-4 flex items-center justify-between hover:bg-slate-50 transition">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-sm">
+                    <i class="fa-solid fa-file-invoice"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-semibold text-slate-900">{{ doc.original_filename }}</h4>
+                    <p class="text-xs text-slate-500 mt-0.5">
+                      {% trans "Type" %}: <span class="font-semibold text-slate-700">{{ doc.get_document_type_display }}</span> &bull; 
+                      {% trans "Uploaded" %} {{ doc.created_at|timesince }} {% trans "ago" %}
+                    </p>
+                  </div>
+                </div>
+                <a href="{% url 'documents:detail' doc.pk %}" class="px-3.5 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold shadow-sm transition flex items-center gap-1.5">
+                  <i class="fa-solid fa-eye"></i>
+                  <span>{% trans "Review & Commit" %}</span>
+                </a>
+              </div>
+            {% endfor %}
+          {% else %}
+            <div class="p-8 text-center text-xs text-slate-400">
+              <i class="fa-regular fa-circle-check text-green-500 text-2xl mb-1.5 block"></i>
+              {% trans "No documents awaiting review. All uploaded scans have been confirmed!" %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Upcoming Deadlines & Calendar Tasks (Next 7 Days) -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="p-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-calendar-days text-blue-600"></i>
+            <h3 class="text-xs font-bold text-slate-800 uppercase tracking-wider">{% trans "Upcoming Tasks & Payments (Next 7 Days)" %}</h3>
+          </div>
+          <a href="{% url 'calendar_tasks:calendar_view' %}" class="text-xs font-semibold text-blue-600 hover:underline">{% trans "Open Full Calendar" %}</a>
+        </div>
+
+        <div class="divide-y divide-slate-100">
+          {% if upcoming_tasks %}
+            {% for task in upcoming_tasks %}
+              <div class="p-4 flex items-center justify-between hover:bg-slate-50 transition">
+                <div class="flex items-start gap-3">
+                  <span class="inline-block mt-1 w-2.5 h-2.5 rounded-full 
+                    {% if task.task_type == 'OUTGOING_PAYMENT_DUE' %}bg-red-500
+                    {% elif task.task_type == 'INCOMING_PAYMENT_EXPECTED' %}bg-green-500
+                    {% elif task.task_type == 'CONTRACT_RENEWAL' %}bg-purple-500
+                    {% else %}bg-blue-500{% endif %}"></span>
+                  <div>
+                    <h4 class="text-xs font-bold text-slate-900">{{ task.display_title }}</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">
+                      {% trans "Due" %}: <strong>{{ task.due_date|date:"l, M d" }}</strong>
+                      {% if task.amount %}&bull; {% trans "Amount" %}: <span class="font-bold text-slate-800">€{{ task.amount }}</span>{% endif %}
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <span class="text-[10px] font-semibold px-2 py-0.5 rounded {{ task.color_classes.badge }}">
+                    {{ task.get_task_type_display }}
+                  </span>
+                  {% if task.linked_invoice %}
+                    <a href="{% url 'accounting:invoice_detail' task.linked_invoice.pk %}" class="text-xs text-blue-600 hover:underline">{% trans "View Bill" %} &rarr;</a>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          {% else %}
+            <div class="p-8 text-center text-xs text-slate-400">
+              {% trans "No tasks due in the next 7 days." %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Column (4 cols): Quick Actions & Copilot Prompts -->
+    <div class="lg:col-span-4 space-y-6">
+      
+      <!-- Quick Actions Widget -->
+      <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-3">
+        <h3 class="text-xs font-bold text-slate-800 uppercase tracking-wider">{% trans "Quick Actions" %}</h3>
+        <div class="grid grid-cols-2 gap-2 text-xs font-semibold">
+          <a href="{% url 'documents:upload' %}" class="p-3 rounded-lg border border-slate-200 bg-slate-50/50 hover:bg-blue-50 hover:border-blue-200 hover:text-blue-700 transition flex flex-col items-center text-center gap-1.5">
+            <i class="fa-solid fa-file-arrow-up text-blue-600 text-lg"></i>
+            <span>{% trans "Upload Scan" %}</span>
+          </a>
+
+          <a href="{% url 'calendar_tasks:calendar_view' %}" class="p-3 rounded-lg border border-slate-200 bg-slate-50/50 hover:bg-purple-50 hover:border-purple-200 hover:text-purple-700 transition flex flex-col items-center text-center gap-1.5">
+            <i class="fa-solid fa-calendar-check text-purple-600 text-lg"></i>
+            <span>{% trans "Calendar Sync" %}</span>
+          </a>
+
+          <a href="{% url 'accounting:invoice_list' %}" class="p-3 rounded-lg border border-slate-200 bg-slate-50/50 hover:bg-emerald-50 hover:border-emerald-200 hover:text-emerald-700 transition flex flex-col items-center text-center gap-1.5">
+            <i class="fa-solid fa-money-bills text-emerald-600 text-lg"></i>
+            <span>{% trans "Invoices (AP/AR)" %}</span>
+          </a>
+
+          <a href="{% url 'warehouse:product_list' %}" class="p-3 rounded-lg border border-slate-200 bg-slate-50/50 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-700 transition flex flex-col items-center text-center gap-1.5">
+            <i class="fa-solid fa-boxes-packing text-orange-600 text-lg"></i>
+            <span>{% trans "Inventory Stock" %}</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- AI Copilot Prompt Card -->
+      <div class="bg-gradient-to-br from-indigo-900 to-slate-900 text-white p-5 rounded-2xl shadow-md space-y-3">
+        <div class="flex items-center gap-2 text-xs font-bold text-indigo-300 uppercase tracking-wider">
+          <i class="fa-solid fa-sparkles text-amber-300"></i>
+          <span>{% trans "Ask ERP AI Copilot" %}</span>
+        </div>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          {% trans "Ask questions in natural language. The AI agent scans company ledgers, calendars, and warehouse stock in real-time." %}
+        </p>
+        <div class="space-y-1.5 text-xs">
+          <button @click="copilotOpen = true; $nextTick(() => { $refs.copilotInput.value = '{% trans "What bills are due this week?" %}'; $refs.copilotForm.requestSubmit(); })" class="w-full text-left p-2 rounded-lg bg-white/10 hover:bg-white/20 transition flex items-center justify-between">
+            <span>&bull; {% trans "What bills are due this week?" %}</span>
+            <i class="fa-solid fa-chevron-right text-[10px] text-indigo-300"></i>
+          </button>
+          <button @click="copilotOpen = true; $nextTick(() => { $refs.copilotInput.value = '{% trans "Show low stock inventory items" %}'; $refs.copilotForm.requestSubmit(); })" class="w-full text-left p-2 rounded-lg bg-white/10 hover:bg-white/20 transition flex items-center justify-between">
+            <span>&bull; {% trans "Show low stock inventory items" %}</span>
+            <i class="fa-solid fa-chevron-right text-[10px] text-indigo-300"></i>
+          </button>
+          <button @click="copilotOpen = true; $nextTick(() => { $refs.copilotInput.value = '{% trans "Summarize company financial status" %}'; $refs.copilotForm.requestSubmit(); })" class="w-full text-left p-2 rounded-lg bg-white/10 hover:bg-white/20 transition flex items-center justify-between">
+            <span>&bull; {% trans "Summarize company financial status" %}</span>
+            <i class="fa-solid fa-chevron-right text-[10px] text-indigo-300"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}
