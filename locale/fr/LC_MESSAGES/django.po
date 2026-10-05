@@ -12,6 +12,158 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "Company Profile"
+msgstr "Profil de l'entreprise"
+
+msgid "Company & Organization Profile"
+msgstr "Profil de l'entreprise & de l'organisation"
+
+msgid ""
+"Master identity details used by AI agents to automatically determine Debit "
+"vs. Credit, invoice directions, and ledger accounts."
+msgstr ""
+"Coordonnées principales de l'entité utilisées par les agents IA pour "
+"déterminer automatiquement le Débit et le Crédit, le sens des factures et "
+"les écritures comptables."
+
+msgid "How AI Determines Debit vs. Credit Using Your Profile"
+msgstr ""
+"Comment l'IA détermine le Débit et le Crédit grâce au profil de votre "
+"entreprise"
+
+msgid ""
+"When processing scanned paperwork or receipts, the AI agent compares the "
+"document against your company's name and tax identifiers to eliminate "
+"accounting ambiguity:"
+msgstr ""
+"Lors du traitement des documents numérisés ou des reçus, l'agent IA compare "
+"le document au nom et aux identifiants fiscaux de votre entreprise pour "
+"éliminer toute ambiguïté comptable :"
+
+msgid "Our Company is the Buyer (Billed To)"
+msgstr "Notre entreprise est l'acheteur (Facturé à)"
+
+msgid ""
+"Classified as <strong>Vendor Bill (Payable)</strong>. Ledger effect: "
+"<strong>Debit</strong> = Expense/Inventory, <strong>Credit</strong> = "
+"Accounts Payable."
+msgstr ""
+"Classé comme <strong>Facture fournisseur (À payer)</strong>. Écriture : "
+"<strong>Débit</strong> = Charges/Stock, <strong>Crédit</strong> = Dettes "
+"fournisseurs."
+
+msgid "Our Company is the Seller (Billed From)"
+msgstr "Notre entreprise est le vendeur (Facturé par)"
+
+msgid ""
+"Classified as <strong>Customer Invoice (Receivable)</strong>. Ledger effect:"
+" <strong>Debit</strong> = Accounts Receivable, <strong>Credit</strong> = "
+"Sales Revenue."
+msgstr ""
+"Classé comme <strong>Facture client (À recevoir)</strong>. Écriture : "
+"<strong>Débit</strong> = Créances clients, <strong>Crédit</strong> = "
+"Produits des ventes."
+
+msgid "Corporate Identity"
+msgstr "Identité juridique"
+
+msgid "Legal Entity Name"
+msgstr "Raison sociale"
+
+msgid ""
+"Official registered corporate name appearing on legal contracts and "
+"invoices."
+msgstr ""
+"Dénomination sociale officielle figurant sur les contrats et factures."
+
+msgid "Official registered corporate name"
+msgstr "Dénomination sociale officielle"
+
+msgid "Trade / Commercial Name"
+msgstr "Nom commercial"
+
+msgid "Trade / Brand Name"
+msgstr "Nom commercial / Marque"
+
+msgid "Brand name or commercial trade name displayed in system headers."
+msgstr "Marque ou nom commercial affiché dans les en-têtes du système."
+
+msgid "Public-facing business name if different from legal name"
+msgstr "Nom commercial s'il diffère de la raison sociale"
+
+msgid "Tax / VAT ID"
+msgstr "Numéro de TVA"
+
+msgid "Crucial for AI to match issuer vs recipient on official tax documents."
+msgstr ""
+"Indispensable pour que l'IA identifie l'émetteur et le destinataire sur les "
+"documents fiscaux."
+
+msgid "VAT number, EIN, or national tax identifier"
+msgstr "Numéro de TVA, SIREN ou identifiant fiscal national"
+
+msgid "Company Registry No."
+msgstr "Numéro RCS / Immatriculation"
+
+msgid "Company Registry No. (CRN)"
+msgstr "Numéro RCS / Immatriculation (CRN)"
+
+msgid "Commercial register number / CRN"
+msgstr "Numéro d'immatriculation au RCS"
+
+msgid "Commercial registry number in state or national records."
+msgstr "Numéro d'immatriculation au registre du commerce et des sociétés."
+
+msgid "Accounting Functional Currency"
+msgstr "Devise fonctionnelle de comptabilité"
+
+msgid "Functional Currency"
+msgstr "Devise fonctionnelle"
+
+msgid "Accounting Currency"
+msgstr "Devise comptable"
+
+msgid "Base currency code (e.g. EUR, USD, GBP)"
+msgstr "Code de la devise de base (ex. EUR, USD, GBP)"
+
+msgid "Default currency for ledger balance sheets and summaries."
+msgstr "Devise par défaut pour les bilans et les synthèses comptables."
+
+msgid "Banking & Settlement Accounts"
+msgstr "Comptes bancaires et de règlement"
+
+msgid "Primary Bank IBAN"
+msgstr "IBAN bancaire principal"
+
+msgid "Default bank account for receiving customer payments"
+msgstr "Compte bancaire par défaut pour recevoir les paiements des clients"
+
+msgid "SWIFT / BIC Code"
+msgstr "Code SWIFT / BIC"
+
+msgid "Contact & Headquarters Address"
+msgstr "Contact et adresse du siège social"
+
+msgid "Accounting / Finance Email"
+msgstr "Email comptabilité / finances"
+
+msgid "Official Email"
+msgstr "Email officiel"
+
+msgid "Registered Address"
+msgstr "Adresse du siège social"
+
+msgid "Save Company Profile"
+msgstr "Enregistrer le profil de l'entreprise"
+
+msgid ""
+"Company profile updated successfully. AI document classification and ledger "
+"rules will now use these entity details."
+msgstr ""
+"Profil de l'entreprise mis à jour avec succès. La classification des "
+"documents par l'IA et les règles comptables utiliseront désormais ces "
+"informations."
+
 msgid "Accounting & Agent"
 msgstr "Comptabilité & Agent IA"
 
@@ -750,9 +902,6 @@ msgstr "Logistique / Transporteur"
 
 msgid "Company / Entity Name"
 msgstr "Nom de l'Entreprise"
-
-msgid "Tax / VAT ID"
-msgstr "Numéro de TVA"
 
 msgid "Bank IBAN"
 msgstr "IBAN Bancaire"

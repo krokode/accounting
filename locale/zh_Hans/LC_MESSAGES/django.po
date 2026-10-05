@@ -12,6 +12,142 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "Company Profile"
+msgstr "企业资料"
+
+msgid "Company & Organization Profile"
+msgstr "公司与组织基本资料"
+
+msgid ""
+"Master identity details used by AI agents to automatically determine Debit "
+"vs. Credit, invoice directions, and ledger accounts."
+msgstr "用于让 AI 智能助理自动判定借贷方向、发票收付类型及记账科目的主体基础信息。"
+
+msgid "How AI Determines Debit vs. Credit Using Your Profile"
+msgstr "AI 如何根据企业信息判定借贷方向与发票归属"
+
+msgid ""
+"When processing scanned paperwork or receipts, the AI agent compares the "
+"document against your company's name and tax identifiers to eliminate "
+"accounting ambiguity:"
+msgstr "在处理扫描单据或收据时，AI 助理会将单据信息与您公司的名称及税号进行比对，消除会计核算歧义："
+
+msgid "Our Company is the Buyer (Billed To)"
+msgstr "我司为购买方 / 客户（抬头为我司）"
+
+msgid ""
+"Classified as <strong>Vendor Bill (Payable)</strong>. Ledger effect: "
+"<strong>Debit</strong> = Expense/Inventory, <strong>Credit</strong> = "
+"Accounts Payable."
+msgstr ""
+"归类为 <strong>供应商账单（应付款项）</strong>。记账影响：<strong>借方</strong> = "
+"费用/库存存货，<strong>贷方</strong> = 应付账款。"
+
+msgid "Our Company is the Seller (Billed From)"
+msgstr "我司为销售方 / 供应商（开票方为我司）"
+
+msgid ""
+"Classified as <strong>Customer Invoice (Receivable)</strong>. Ledger effect:"
+" <strong>Debit</strong> = Accounts Receivable, <strong>Credit</strong> = "
+"Sales Revenue."
+msgstr ""
+"归类为 <strong>客户销售发票（应收款项）</strong>。记账影响：<strong>借方</strong> = "
+"应收账款，<strong>贷方</strong> = 营业收入。"
+
+msgid "Corporate Identity"
+msgstr "企业主体身份"
+
+msgid "Legal Entity Name"
+msgstr "法定全称"
+
+msgid ""
+"Official registered corporate name appearing on legal contracts and "
+"invoices."
+msgstr "出现在法律合同及发票上的工商注册企业法定名称。"
+
+msgid "Official registered corporate name"
+msgstr "工商注册官方企业法定名称"
+
+msgid "Trade / Commercial Name"
+msgstr "品牌 / 商业简称"
+
+msgid "Trade / Brand Name"
+msgstr "商业名称 / 品牌"
+
+msgid "Brand name or commercial trade name displayed in system headers."
+msgstr "显示在系统顶部及界面的品牌或商业简称。"
+
+msgid "Public-facing business name if different from legal name"
+msgstr "对外经营名称（若与法定全称不同）"
+
+msgid "Tax / VAT ID"
+msgstr "统一纳税人识别号 / 增值税号"
+
+msgid "Crucial for AI to match issuer vs recipient on official tax documents."
+msgstr "AI 识别税务单据开票方与受票方的核心依据。"
+
+msgid "VAT number, EIN, or national tax identifier"
+msgstr "增值税号、税号或国家税务登记号"
+
+msgid "Company Registry No."
+msgstr "公司登记号"
+
+msgid "Company Registry No. (CRN)"
+msgstr "工商注册号 / 公司登记代码 (CRN)"
+
+msgid "Commercial register number / CRN"
+msgstr "商业登记号 / 工商注册编号"
+
+msgid "Commercial registry number in state or national records."
+msgstr "在国家市场监管部门登记的工商营业执照注册编号。"
+
+msgid "Accounting Functional Currency"
+msgstr "会计本位币"
+
+msgid "Functional Currency"
+msgstr "记账本位币"
+
+msgid "Accounting Currency"
+msgstr "记账币种"
+
+msgid "Base currency code (e.g. EUR, USD, GBP)"
+msgstr "基础币种代码（如 EUR, USD, CNY）"
+
+msgid "Default currency for ledger balance sheets and summaries."
+msgstr "资产负债表与财务汇总报告使用的默认核算币种。"
+
+msgid "Banking & Settlement Accounts"
+msgstr "银行及结算账户"
+
+msgid "Primary Bank IBAN"
+msgstr "主银行结算账号 (IBAN)"
+
+msgid "Default bank account for receiving customer payments"
+msgstr "用于接收客户付款的默认银行账户"
+
+msgid "SWIFT / BIC Code"
+msgstr "SWIFT / BIC 代码"
+
+msgid "Contact & Headquarters Address"
+msgstr "联系方式与注册地址"
+
+msgid "Accounting / Finance Email"
+msgstr "财务部门官方邮箱"
+
+msgid "Official Email"
+msgstr "官方联系邮箱"
+
+msgid "Registered Address"
+msgstr "注册营业地址"
+
+msgid "Save Company Profile"
+msgstr "保存企业资料"
+
+msgid ""
+"Company profile updated successfully. AI document classification and ledger "
+"rules will now use these entity details."
+msgstr "企业资料已成功更新。AI 单据分类与借贷记账规则现已同步采用该主体信息。"
+
 msgid "Accounting & Agent"
 msgstr "财务与智能助理"
 
@@ -709,9 +845,6 @@ msgstr "物流公司 / 承运方"
 
 msgid "Company / Entity Name"
 msgstr "企业 / 机构全称"
-
-msgid "Tax / VAT ID"
-msgstr "统一纳税人识别号 / 增值税号"
 
 msgid "Bank IBAN"
 msgstr "银行结算账户 / IBAN"

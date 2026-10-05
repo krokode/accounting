@@ -9,6 +9,113 @@ from pypdf import PdfReader
 
 logger = logging.getLogger(__name__)
 
+def build_extraction_system_prompt() -> str:
+    """Builds a customized extraction prompt containing our reporting company identity."""
+    try:
+        from apps.administration.models import CompanyProfile
+        profile = CompanyProfile.get_solo()
+        company_name = profile.legal_name
+        trade_name = profile.trade_name or profile.legal_name
+        tax_id = profile.tax_id or "N/A"
+        iban = profile.iban or "N/A"
+    except Exception:
+        company_name = "Acme Operations Ltd"
+        trade_name = "Acme Operations"
+        tax_id = "N/A"
+        iban = "N/A"
+
+    return f"""You are an expert AI business accountant, legal administrative assistant, and inventory specialist.
+Analyze the provided scanned document (PDF or image) thoroughly and extract key structured operational and financial records.
+
+CRITICAL: OUR REPORTING COMPANY IDENTITY (THE COMPANY RUNNING THIS SYSTEM):
+- Legal Entity Name: "{company_name}"
+- Trade / Commercial Name: "{trade_name}"
+- Tax / VAT ID: "{tax_id}"
+- Primary Bank IBAN: "{iban}"
+
+RULES FOR DETERMINING DOCUMENT TYPE, DEBIT/CREDIT DIRECTION, AND COUNTERPARTY:
+1. Identify the parties on the document (Issuer/Seller vs. Recipient/Buyer):
+   - If OUR COMPANY is the ISSUER, SELLER, or VENDOR (we delivered goods/services or are billing the client):
+     * "document_type": "INVOICE_RECEIVABLE" (Customer Invoice / Accounts Receivable)
+     * "counterparty": The BUYER / CUSTOMER (the other party paying us). Set "type": "CUSTOMER".
+     * Accounting effect: Debit Accounts Receivable (Asset ↑), Credit Revenue / Sales (Income ↑).
+     * "calendar_actions" action_type: "INCOMING_PAYMENT_EXPECTED".
+   - If OUR COMPANY is the RECIPIENT, BUYER, or CLIENT (we purchased goods/services or are receiving a bill to pay):
+     * "document_type": "INVOICE_PAYABLE" (Vendor Bill / Accounts Payable)
+     * "counterparty": The SELLER / SUPPLIER / VENDOR (the other party billing us). Set "type": "VENDOR".
+     * Accounting effect: Debit Expense or Inventory (Asset/Expense ↑), Credit Accounts Payable (Liability ↑).
+     * "calendar_actions" action_type: "OUTGOING_PAYMENT_DUE".
+   - If the document is a point-of-sale receipt, cash register slip, or petty cash expense voucher:
+     * "document_type": "RECEIPT".
+     * "category": classify accurately (Office Supplies, Travel & Transportation, Meals & Entertainment, Fuel & Vehicle, Utilities & Telecom, Software & IT, Repairs & Maintenance, General).
+     * "counterparty": The merchant, store, or vendor where purchase was made. Set "type": "VENDOR".
+     * Accounting effect: Debit Expense Category, Credit Cash / Bank.
+     * "calendar_actions" action_type: "ADMINISTRATIVE_TASK".
+   - If the document is a contract or legal agreement:
+     * "document_type": "CONTRACT".
+     * "counterparty": The partner / other contracting party. Set "type": "PARTNER".
+     * "calendar_actions" action_type: "CONTRACT_RENEWAL".
+   - If the document is a bill of lading, delivery slip, or consignment note:
+     * "document_type": "CONSIGNMENT".
+     * "counterparty": The carrier or supplier. Set "type": "CARRIER" or "VENDOR".
+     * "calendar_actions" action_type: "CONSIGNMENT_DELIVERY".
+
+Return a strictly valid JSON object matching the following structure:
+{{
+  "document_type": "INVOICE_PAYABLE" | "INVOICE_RECEIVABLE" | "CONTRACT" | "CONSIGNMENT" | "RECEIPT" | "UNKNOWN",
+  "document_number": "string (e.g. invoice #, contract #, waybill #, receipt #)",
+  "category": "string (specifically for RECEIPT: e.g. Office Supplies, Travel & Transportation, Meals & Entertainment, Fuel & Vehicle, Utilities & Telecom, Software & IT, Repairs & Maintenance, General)",
+  "summary": "1-2 sentence overview of the document",
+  "counterparty": {{
+    "name": "Full legal company, merchant, or person name",
+    "type": "VENDOR" | "CUSTOMER" | "PARTNER" | "CARRIER",
+    "tax_id": "VAT / Tax ID if visible",
+    "iban": "IBAN bank account if visible",
+    "bank_name": "Bank name if visible",
+    "swift_bic": "SWIFT / BIC code if visible",
+    "email": "Contact email if visible",
+    "phone": "Phone number if visible",
+    "address": "Street address if visible"
+  }},
+  "dates": {{
+    "issue_date": "YYYY-MM-DD or null (receipt or invoice date)",
+    "due_date": "YYYY-MM-DD or null (critical for invoices)",
+    "delivery_date": "YYYY-MM-DD or null (for consignments)",
+    "contract_start": "YYYY-MM-DD or null",
+    "contract_end": "YYYY-MM-DD or null",
+    "renewal_notice_days": 30
+  }},
+  "financials": {{
+    "currency": "EUR" | "USD" | "GBP" | "CZK" | "PLN",
+    "subtotal": 0.00,
+    "tax_amount": 0.00,
+    "total_amount": 0.00
+  }},
+  "line_items": [
+    {{
+      "description": "Item or service name",
+      "sku": "Item code if any",
+      "quantity": 1.0,
+      "unit_price": 0.00,
+      "line_total": 0.00
+    }}
+  ],
+  "calendar_actions": [
+    {{
+      "title": "Actionable task name (e.g. Pay Invoice #INV-102 to Vendor or Await Payment from Customer)",
+      "date": "YYYY-MM-DD",
+      "action_type": "OUTGOING_PAYMENT_DUE" | "INCOMING_PAYMENT_EXPECTED" | "CONTRACT_RENEWAL" | "CONSIGNMENT_DELIVERY" | "ADMINISTRATIVE_TASK",
+      "priority": "LOW" | "MEDIUM" | "HIGH" | "URGENT",
+      "amount": 0.00,
+      "description": "Explanation of required operational step"
+    }}
+  ]
+}}
+
+Ensure all dates are formatted as YYYY-MM-DD. For receipts, sales slips, and petty cash expense vouchers: set document_type to "RECEIPT", classify the "category" accurately, extract the merchant name as counterparty, and capture tax and total amount. If an invoice due date is not explicitly written, compute it from payment terms (e.g. Net 14/30 days from issue date).
+"""
+
+
 EXTRACTION_SYSTEM_PROMPT = """You are an expert AI business accountant, legal administrative assistant, and inventory specialist.
 Analyze the provided scanned document (PDF or image) thoroughly and extract key structured operational and financial records.
 
@@ -88,10 +195,11 @@ def extract_document_with_ai(document) -> dict:
     """
     provider = get_active_provider()
     provider.validate_configuration()
+    system_prompt = build_extraction_system_prompt()
     return provider.extract_document(
         file_path=document.file.path,
         mime_type=document.mime_type,
-        system_prompt=EXTRACTION_SYSTEM_PROMPT
+        system_prompt=system_prompt
     )
 
 
@@ -139,6 +247,19 @@ def _heuristic_fallback_extractor(file_path: str, filename: str) -> dict:
     today = date.today()
     lower_text = (extracted_text + " " + filename).lower()
 
+    # Match against company profile identity
+    is_our_outgoing_invoice = False
+    try:
+        from apps.administration.models import CompanyProfile
+        profile = CompanyProfile.get_solo()
+        my_names = [n.lower() for n in [profile.legal_name, profile.trade_name, profile.tax_id] if n]
+        for name in my_names:
+            if re.search(r'(?:from|issuer|seller|vendor|issued by)[:\s]*[^\n]*' + re.escape(name), lower_text):
+                is_our_outgoing_invoice = True
+                break
+    except Exception:
+        pass
+
     # Determine document type
     if "consignment" in lower_text or "waybill" in lower_text or "delivery" in lower_text or "dispatch" in lower_text:
         doc_type = "CONSIGNMENT"
@@ -149,11 +270,11 @@ def _heuristic_fallback_extractor(file_path: str, filename: str) -> dict:
     elif "receipt" in lower_text or "cash" in lower_text or "petty" in lower_text:
         doc_type = "RECEIPT"
         counterparty_type = "VENDOR"
-    elif "receivable" in lower_text or "customer invoice" in lower_text:
+    elif is_our_outgoing_invoice or "receivable" in lower_text or "customer invoice" in lower_text:
         doc_type = "INVOICE_RECEIVABLE"
         counterparty_type = "CUSTOMER"
     else:
-        # Default for business paperwork is typically incoming vendor invoice
+        # Default for incoming paperwork is vendor bill (payable)
         doc_type = "INVOICE_PAYABLE"
         counterparty_type = "VENDOR"
 

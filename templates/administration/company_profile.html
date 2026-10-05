@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Company Profile" %} - Sole Enterprise Orchestrator{% endblock %}
+
+{% block breadcrumbs %}
+  <span>{% trans "Administration" %}</span> / <span class="text-slate-800 font-medium">{% trans "Company Profile" %}</span>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto space-y-6">
+  
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+      <h2 class="text-2xl font-bold text-slate-900 tracking-tight">{% trans "Company & Organization Profile" %}</h2>
+      <p class="text-sm text-slate-500 mt-1">
+        {% trans "Master identity details used by AI agents to automatically determine Debit vs. Credit, invoice directions, and ledger accounts." %}
+      </p>
+    </div>
+  </div>
+
+  <!-- Educational Banner: How AI Uses This Profile -->
+  <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-5 shadow-sm">
+    <div class="flex items-start gap-4">
+      <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center flex-shrink-0 shadow-md">
+        <i class="fa-solid fa-brain text-lg"></i>
+      </div>
+      <div class="space-y-3">
+        <h3 class="text-base font-semibold text-blue-900">{% trans "How AI Determines Debit vs. Credit Using Your Profile" %}</h3>
+        <p class="text-xs sm:text-sm text-blue-800 leading-relaxed">
+          {% trans "When processing scanned paperwork or receipts, the AI agent compares the document against your company's name and tax identifiers to eliminate accounting ambiguity:" %}
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+          <div class="bg-white/80 rounded-lg p-3 border border-blue-100 text-xs">
+            <div class="font-semibold text-slate-900 flex items-center gap-1.5 mb-1">
+              <span class="inline-block w-2 h-2 rounded-full bg-amber-500"></span>
+              {% trans "Our Company is the Buyer (Billed To)" %}
+            </div>
+            <p class="text-slate-600">
+              {% trans "Classified as <strong>Vendor Bill (Payable)</strong>. Ledger effect: <strong>Debit</strong> = Expense/Inventory, <strong>Credit</strong> = Accounts Payable." %}
+            </p>
+          </div>
+          <div class="bg-white/80 rounded-lg p-3 border border-blue-100 text-xs">
+            <div class="font-semibold text-slate-900 flex items-center gap-1.5 mb-1">
+              <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+              {% trans "Our Company is the Seller (Billed From)" %}
+            </div>
+            <p class="text-slate-600">
+              {% trans "Classified as <strong>Customer Invoice (Receivable)</strong>. Ledger effect: <strong>Debit</strong> = Accounts Receivable, <strong>Credit</strong> = Sales Revenue." %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Profile Form -->
+  <form method="POST" action="{% url 'administration:company_profile' %}" class="space-y-6">
+    {% csrf_token %}
+
+    <!-- 1. Corporate Identity -->
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+      <div class="px-6 py-4 border-b border-slate-100 bg-slate-50/50 flex items-center gap-2">
+        <i class="fa-solid fa-landmark text-blue-600"></i>
+        <h3 class="font-semibold text-slate-800 text-sm">{% trans "Corporate Identity" %}</h3>
+      </div>
+      <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">
+            {% trans "Legal Entity Name" %} <span class="text-red-500">*</span>
+          </label>
+          <input type="text" name="legal_name" value="{{ profile.legal_name }}" required
+                 class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                 placeholder="e.g. Acme Operations Ltd">
+          <p class="text-xs text-slate-400 mt-1.5">{% trans "Official registered corporate name appearing on legal contracts and invoices." %}</p>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">
+            {% trans "Trade / Commercial Name" %}
+          </label>
+          <input type="text" name="trade_name" value="{{ profile.trade_name }}"
+                 class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                 placeholder="e.g. Acme Ops">
+          <p class="text-xs text-slate-400 mt-1.5">{% trans "Brand name or commercial trade name displayed in system headers." %}</p>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">
+            {% trans "Tax / VAT ID" %}
+          </label>
+          <input type="text" name="tax_id" value="{{ profile.tax_id }}"
+                 class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                 placeholder="e.g. DE318492019 / VAT / EIN">
+          <p class="text-xs text-slate-400 mt-1.5">{% trans "Crucial for AI to match issuer vs recipient on official tax documents." %}</p>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">
+            {% trans "Company Registry No. (CRN)" %}
+          </label>
+          <input type="text" name="registration_number" value="{{ profile.registration_number }}"
+                 class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                 placeholder="e.g. HRB 123456 B">
+          <p class="text-xs text-slate-400 mt-1.5">{% trans "Commercial registry number in state or national records." %}</p>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">
+            {% trans "Accounting Functional Currency" %}
+          </label>
+          <select name="currency" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+            <option value="EUR" {% if profile.currency == "EUR" %}selected{% endif %}>EUR - Euro (€)</option>
+            <option value="USD" {% if profile.currency == "USD" %}selected{% endif %}>USD - US Dollar ($)</option>
+            <option value="GBP" {% if profile.currency == "GBP" %}selected{% endif %}>GBP - British Pound (£)</option>
+            <option value="CZK" {% if profile.currency == "CZK" %}selected{% endif %}>CZK - Czech Koruna (Kč)</option>
+            <option value="PLN" {% if profile.currency == "PLN" %}selected{% endif %}>PLN - Polish Złoty (zł)</option>
+            <option value="CHF" {% if profile.currency == "CHF" %}selected{% endif %}>CHF - Swiss Franc (CHF)</option>
+          </select>
+          <p class="text-xs text-slate-400 mt-1.5">{% trans "Default currency for ledger balance sheets and summaries." %}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Banking Details -->
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+      <div class="px-6 py-4 border-b border-slate-100 bg-slate-50/50 flex items-center gap-2">
+        <i class="fa-solid fa-building-columns text-emerald-600"></i>
+        <h3 class="font-semibold text-slate-800 text-sm">{% trans "Banking & Settlement Accounts" %}</h3>
+      </div>
+      <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">
+            {% trans "Bank Name" %}
+          </label>
+          <input type="text" name="bank_name" value="{{ profile.bank_name }}"
+                 class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                 placeholder="e.g. Deutsche Bank AG">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">
+            {% trans "Primary Bank IBAN" %}
+          </label>
+          <input type="text" name="iban" value="{{ profile.iban }}"
+                 class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                 placeholder="e.g. DE89370400440532013000">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">
+            {% trans "SWIFT / BIC Code" %}
+          </label>
+          <input type="text" name="swift_bic" value="{{ profile.swift_bic }}"
+                 class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                 placeholder="e.g. DEUTDEDDFXX">
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Contact & Address -->
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+      <div class="px-6 py-4 border-b border-slate-100 bg-slate-50/50 flex items-center gap-2">
+        <i class="fa-solid fa-map-location-dot text-indigo-600"></i>
+        <h3 class="font-semibold text-slate-800 text-sm">{% trans "Contact & Headquarters Address" %}</h3>
+      </div>
+      <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">
+            {% trans "Official Email" %}
+          </label>
+          <input type="email" name="email" value="{{ profile.email }}"
+                 class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                 placeholder="finance@acme-ops.de">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">
+            {% trans "Phone Number" %}
+          </label>
+          <input type="text" name="phone" value="{{ profile.phone }}"
+                 class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                 placeholder="+49 30 554321">
+        </div>
+
+        <div class="md:col-span-2">
+          <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">
+            {% trans "Registered Address" %}
+          </label>
+          <textarea name="address" rows="3"
+                    class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                    placeholder="Friedrichstrasse 120, 10117 Berlin, Germany">{{ profile.address }}</textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="flex items-center justify-end gap-3 pt-2">
+      <button type="submit" class="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold shadow-sm transition">
+        <i class="fa-solid fa-floppy-disk"></i>
+        <span>{% trans "Save Company Profile" %}</span>
+      </button>
+    </div>
+  </form>
+
+</div>
+{% endblock %}

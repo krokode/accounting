@@ -197,3 +197,19 @@ class DocumentWorkflowTestCase(TestCase):
         self.assertContains(response, f"/documents/{doc.pk}/")
         self.assertContains(response, "Scan Receipt with AI")
 
+    def test_build_extraction_prompt_includes_company_profile(self):
+        from apps.documents.services.ai_extractor import build_extraction_system_prompt
+        from apps.administration.models import CompanyProfile
+
+        profile = CompanyProfile.get_solo()
+        profile.legal_name = "Global Logistics Enterprise Ltd"
+        profile.tax_id = "DE99887766"
+        profile.save()
+
+        prompt = build_extraction_system_prompt()
+        self.assertIn("Global Logistics Enterprise Ltd", prompt)
+        self.assertIn("DE99887766", prompt)
+        self.assertIn("INVOICE_RECEIVABLE", prompt)
+        self.assertIn("INVOICE_PAYABLE", prompt)
+
+

@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.translation import gettext as _
 from django.views.decorators.http import require_POST
 
-from apps.administration.models import Counterparty, Contract
+from apps.administration.models import Counterparty, Contract, CompanyProfile
 
 
 def counterparty_list(request):
@@ -94,3 +94,37 @@ def contract_create(request):
     )
     messages.success(request, _("Contract '%(title)s' registered.") % {'title': title})
     return redirect('administration:contract_list')
+
+
+def company_profile_view(request):
+    profile = CompanyProfile.get_solo()
+
+    if request.method == 'POST':
+        legal_name = request.POST.get('legal_name', '').strip()
+        if legal_name:
+            profile.legal_name = legal_name
+        profile.trade_name = request.POST.get('trade_name', '').strip()
+        profile.tax_id = request.POST.get('tax_id', '').strip()
+        profile.registration_number = request.POST.get('registration_number', '').strip()
+        profile.iban = request.POST.get('iban', '').strip()
+        profile.bank_name = request.POST.get('bank_name', '').strip()
+        profile.swift_bic = request.POST.get('swift_bic', '').strip()
+        profile.email = request.POST.get('email', '').strip()
+        profile.phone = request.POST.get('phone', '').strip()
+        profile.address = request.POST.get('address', '').strip()
+        curr = request.POST.get('currency', '').strip().upper()
+        if curr:
+            profile.currency = curr
+        profile.save()
+
+        messages.success(
+            request,
+            _("Company profile updated successfully. AI document classification and ledger rules will now use these entity details.")
+        )
+        return redirect('administration:company_profile')
+
+    context = {
+        'profile': profile,
+    }
+    return render(request, 'administration/company_profile.html', context)
+

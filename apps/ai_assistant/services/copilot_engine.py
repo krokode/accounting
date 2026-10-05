@@ -56,7 +56,14 @@ def get_system_context() -> dict:
     recent_receipts = Receipt.objects.select_related('counterparty').all()[:5]
     total_receipts_amount = Receipt.objects.aggregate(sum=Sum('total_amount'))['sum'] or Decimal('0.00')
 
+    from apps.administration.models import CompanyProfile
+    profile = CompanyProfile.get_solo()
+
     return {
+        'company_name': profile.trade_name or profile.legal_name,
+        'company_legal_name': profile.legal_name,
+        'company_tax_id': profile.tax_id,
+        'currency': profile.currency,
         'today': str(today),
         'total_payable': float(total_payable),
         'total_receivable': float(total_receivable),
@@ -111,13 +118,15 @@ def query_copilot(user_prompt: str) -> str:
     from django.utils.translation import get_language
     lang = get_language() or 'en'
 
-    system_instruction = f"""You are the Sole Enterprise Orchestrator & Accounting AI Copilot.
+    system_instruction = f"""You are the senior financial and operational AI Copilot for {context['company_name']} (Legal Name: {context['company_legal_name']}, Tax ID: {context['company_tax_id']}).
 The user's active application language code is: '{lang}'.
 Please respond accurately and professionally in the user's language ({lang}).
 You have real-time live access to the company's records database:
+- Operating Currency: {context['currency']}
 - Current Date: {context['today']}
-- Total Outstanding Payables (Bills We Owe): €{context['total_payable']:,.2f}
-- Total Expected Receivables (Incoming): €{context['total_receivable']:,.2f}
+- Total Outstanding Payables (Bills We Owe to Suppliers): {context['currency']} {context['total_payable']:,.2f}
+- Total Expected Receivables (Customer Invoices Owed to Us): {context['currency']} {context['total_receivable']:,.2f}
+- Total Recorded Receipts & Direct Expenses: {context['currency']} {context['total_receipts_expense']:,.2f}
 - Overdue Invoices: {context['overdue_count']} ({context['overdue_list']})
 - Upcoming Tasks (Next 14 days): {context['upcoming_tasks_count']} ({context['upcoming_tasks_list']})
 - Low Stock Items: {context['low_stock_count']} ({context['low_stock_list']})

@@ -6,6 +6,244 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Comprehensive multilingual translation database for all 8 supported languages
 COMMON_STRINGS = {
+    # Company Profile & AI Debit/Credit Matching
+    "Company Profile": {
+        "ru": "Профиль компании", "es": "Perfil de la empresa", "nl": "Bedrijfsprofiel",
+        "fr": "Profil de l'entreprise", "pt": "Perfil da empresa", "zh_Hans": "企业资料", "ja": "会社概要"
+    },
+    "Company & Organization Profile": {
+        "ru": "Профиль компании и реквизиты", "es": "Perfil de la empresa y organización", "nl": "Bedrijfs- & Organisatieprofiel",
+        "fr": "Profil de l'entreprise & de l'organisation", "pt": "Perfil da empresa e organização", "zh_Hans": "公司与组织基本资料", "ja": "会社・組織プロファイル"
+    },
+    "Master identity details used by AI agents to automatically determine Debit vs. Credit, invoice directions, and ledger accounts.": {
+        "ru": "Основные реквизиты организации, используемые ИИ для определения дебета/кредита, направления счетов и бухгалтерских проводок.",
+        "es": "Datos maestros de identidad utilizados por los agentes de IA para determinar automáticamente Débito vs. Crédito, dirección de facturas y cuentas contables.",
+        "nl": "Basisidentiteitsgegevens die door AI-agents worden gebruikt om automatisch Debet vs. Credit, factuurrichtingen en grootboekrekeningen te bepalen.",
+        "fr": "Coordonnées principales de l'entité utilisées par les agents IA pour déterminer automatiquement le Débit et le Crédit, le sens des factures et les écritures comptables.",
+        "pt": "Dados de identificação utilizados pelos agentes de IA para determinar automaticamente Débito vs. Crédito, direção de faturas e contas de razão.",
+        "zh_Hans": "用于让 AI 智能助理自动判定借贷方向、发票收付类型及记账科目的主体基础信息。",
+        "ja": "AIエージェントが借方・貸方の判定、請求書の方向、勘定科目を自動決定するために使用する組織の基本情報。"
+    },
+    "How AI Determines Debit vs. Credit Using Your Profile": {
+        "ru": "Как ИИ определяет дебет и кредит на основе профиля компании",
+        "es": "Cómo determina la IA Débito vs. Crédito usando el perfil de su empresa",
+        "nl": "Hoe AI Debet vs. Credit bepaalt aan de hand van uw bedrijfsprofiel",
+        "fr": "Comment l'IA détermine le Débit et le Crédit grâce au profil de votre entreprise",
+        "pt": "Como a IA determina Débito vs. Crédito usando o perfil da sua empresa",
+        "zh_Hans": "AI 如何根据企业信息判定借贷方向与发票归属",
+        "ja": "AIが企業情報に基づいて借方・貸方を判定する仕組み"
+    },
+    "When processing scanned paperwork or receipts, the AI agent compares the document against your company's name and tax identifiers to eliminate accounting ambiguity:": {
+        "ru": "При обработке отсканированных документов и чеков ИИ сопоставляет реквизиты документа с названием и ИНН вашей компании, исключая двусмысленность:",
+        "es": "Al procesar documentos escaneados o recibos, el agente de IA compara el documento con el nombre e identificación fiscal de su empresa para eliminar ambigüedades:",
+        "nl": "Bij het verwerken van gescande documenten of bonnen vergelijkt de AI-agent het document met uw bedrijfsnaam en belastingnummers om boekhoudkundige onzekerheid weg te nemen:",
+        "fr": "Lors du traitement des documents numérisés ou des reçus, l'agent IA compare le document au nom et aux identifiants fiscaux de votre entreprise pour éliminer toute ambiguïté comptable :",
+        "pt": "Ao processar documentos digitalizados ou recibos, o agente de IA compara o documento com o nome e NIF da sua empresa para eliminar ambiguidades contabilísticas:",
+        "zh_Hans": "在处理扫描单据或收据时，AI 助理会将单据信息与您公司的名称及税号进行比对，消除会计核算歧义：",
+        "ja": "スキャンされた書類や領収書を処理する際、AIエージェントは書類と貴社の名称・納税者番号を照合し、仕訳の曖昧さを解消します："
+    },
+    "Our Company is the Buyer (Billed To)": {
+        "ru": "Наша компания является покупателем (Счет выставлен нам)",
+        "es": "Nuestra empresa es el comprador (Facturado a)",
+        "nl": "Ons bedrijf is de koper (Gefactureerd aan)",
+        "fr": "Notre entreprise est l'acheteur (Facturé à)",
+        "pt": "A nossa empresa é o comprador (Faturado a)",
+        "zh_Hans": "我司为购买方 / 客户（抬头为我司）",
+        "ja": "貴社が買い手（宛先が貴社）"
+    },
+    "Classified as <strong>Vendor Bill (Payable)</strong>. Ledger effect: <strong>Debit</strong> = Expense/Inventory, <strong>Credit</strong> = Accounts Payable.": {
+        "ru": "Классифицируется как <strong>Счет поставщика (К оплате)</strong>. Проводка: <strong>Дебет</strong> = Расходы/Склад, <strong>Кредит</strong> = Кредиторская задолженность.",
+        "es": "Clasificado como <strong>Factura de proveedor (Por pagar)</strong>. Efecto contable: <strong>Débito</strong> = Gasto/Inventario, <strong>Crédito</strong> = Cuentas por pagar.",
+        "nl": "Geclassificeerd als <strong>Inkoopfactuur (Crediteuren)</strong>. Boeking: <strong>Debet</strong> = Kosten/Voorraad, <strong>Credit</strong> = Crediteuren.",
+        "fr": "Classé comme <strong>Facture fournisseur (À payer)</strong>. Écriture : <strong>Débit</strong> = Charges/Stock, <strong>Crédit</strong> = Dettes fournisseurs.",
+        "pt": "Classificado como <strong>Fatura de fornecedor (A pagar)</strong>. Efeito: <strong>Débito</strong> = Despesa/Inventário, <strong>Crédito</strong> = Contas a pagar.",
+        "zh_Hans": "归类为 <strong>供应商账单（应付款项）</strong>。记账影响：<strong>借方</strong> = 费用/库存存货，<strong>贷方</strong> = 应付账款。",
+        "ja": "<strong>仕入先請求書（買掛金）</strong> として分類。仕訳効果：<strong>借方</strong> = 経費／在庫、<strong>貸方</strong> = 買掛金。"
+    },
+    "Our Company is the Seller (Billed From)": {
+        "ru": "Наша компания является продавцом (Счет выставлен нами)",
+        "es": "Nuestra empresa es el vendedor (Facturado por)",
+        "nl": "Ons bedrijf is de verkoper (Gefactureerd door)",
+        "fr": "Notre entreprise est le vendeur (Facturé par)",
+        "pt": "A nossa empresa é o vendedor (Faturado por)",
+        "zh_Hans": "我司为销售方 / 供应商（开票方为我司）",
+        "ja": "貴社が売り手（発行者が貴社）"
+    },
+    "Classified as <strong>Customer Invoice (Receivable)</strong>. Ledger effect: <strong>Debit</strong> = Accounts Receivable, <strong>Credit</strong> = Sales Revenue.": {
+        "ru": "Классифицируется как <strong>Счет клиенту (К получению)</strong>. Проводка: <strong>Дебет</strong> = Дебиторская задолженность, <strong>Кредит</strong> = Выручка от продаж.",
+        "es": "Clasificado como <strong>Factura de cliente (Por cobrar)</strong>. Efecto contable: <strong>Débito</strong> = Cuentas por cobrar, <strong>Crédito</strong> = Ingresos por ventas.",
+        "nl": "Geclassificeerd als <strong>Verkoopfactuur (Debiteuren)</strong>. Boeking: <strong>Debet</strong> = Debiteuren, <strong>Credit</strong> = Omzet.",
+        "fr": "Classé comme <strong>Facture client (À recevoir)</strong>. Écriture : <strong>Débit</strong> = Créances clients, <strong>Crédit</strong> = Produits des ventes.",
+        "pt": "Classificado como <strong>Fatura de cliente (A receber)</strong>. Efeito: <strong>Débito</strong> = Contas a receber, <strong>Crédito</strong> = Receita de vendas.",
+        "zh_Hans": "归类为 <strong>客户销售发票（应收款项）</strong>。记账影响：<strong>借方</strong> = 应收账款，<strong>贷方</strong> = 营业收入。",
+        "ja": "<strong>得意先請求書（売掛金）</strong> として分類。仕訳効果：<strong>借方</strong> = 売掛金、<strong>貸方</strong> = 売上高。"
+    },
+    "Corporate Identity": {
+        "ru": "Реквизиты юридического лица", "es": "Identidad corporativa", "nl": "Bedrijfsidentiteit",
+        "fr": "Identité juridique", "pt": "Identidade corporativa", "zh_Hans": "企业主体身份", "ja": "法人基本情報"
+    },
+    "Legal Entity Name": {
+        "ru": "Юридическое наименование", "es": "Razón social", "nl": "Statutaire naam",
+        "fr": "Raison sociale", "pt": "Denominação social", "zh_Hans": "法定全称", "ja": "法人正式名称"
+    },
+    "Official registered corporate name appearing on legal contracts and invoices.": {
+        "ru": "Официальное зарегистрированное наименование компании в договорах и счетах.",
+        "es": "Nombre corporativo registrado oficialmente que figura en contratos y facturas.",
+        "nl": "Officieel geregistreerde bedrijfsnaam zoals vermeld op contracten en facturen.",
+        "fr": "Dénomination sociale officielle figurant sur les contrats et factures.",
+        "pt": "Nome oficial registado da empresa constante em contratos e faturas.",
+        "zh_Hans": "出现在法律合同及发票上的工商注册企业法定名称。",
+        "ja": "契約書や請求書に記載される正式な登記法人名。"
+    },
+    "Official registered corporate name": {
+        "ru": "Официальное зарегистрированное наименование", "es": "Razón social oficial registrada", "nl": "Officieel geregistreerde bedrijfsnaam",
+        "fr": "Dénomination sociale officielle", "pt": "Denominação social oficial", "zh_Hans": "工商注册官方企业法定名称", "ja": "登記上の正式法人名"
+    },
+    "Trade / Commercial Name": {
+        "ru": "Торговое / коммерческое название", "es": "Nombre comercial", "nl": "Handelsnaam",
+        "fr": "Nom commercial", "pt": "Nome comercial", "zh_Hans": "品牌 / 商业简称", "ja": "商号・ブランド名"
+    },
+    "Trade / Brand Name": {
+        "ru": "Бренд / Торговое наименование", "es": "Nombre comercial / Marca", "nl": "Handels- / Merknaam",
+        "fr": "Nom commercial / Marque", "pt": "Nome comercial / Marca", "zh_Hans": "商业名称 / 品牌", "ja": "屋号・ブランド名"
+    },
+    "Brand name or commercial trade name displayed in system headers.": {
+        "ru": "Бренд или торговое название, отображаемое в шапке системы.",
+        "es": "Nombre de marca o denominación comercial que se muestra en los encabezados del sistema.",
+        "nl": "Merknaam of handelsnaam weergegeven in de systeemkopteksten.",
+        "fr": "Marque ou nom commercial affiché dans les en-têtes du système.",
+        "pt": "Nome da marca ou denominação comercial apresentada nos cabeçalhos do sistema.",
+        "zh_Hans": "显示在系统顶部及界面的品牌或商业简称。",
+        "ja": "システムヘッダー等に表示されるブランド名または通称。"
+    },
+    "Public-facing business name if different from legal name": {
+        "ru": "Публичное название компании, если отличается от юридического",
+        "es": "Nombre comercial si es diferente de la razón social",
+        "nl": "Commerciële naam indien afwijkend van de statutaire naam",
+        "fr": "Nom commercial s'il diffère de la raison sociale",
+        "pt": "Nome comercial caso difira da denominação social",
+        "zh_Hans": "对外经营名称（若与法定全称不同）",
+        "ja": "登記名と異なる場合の対外的な事業所名・商号"
+    },
+    "Tax / VAT ID": {
+        "ru": "ИНН / Номер плательщика НДС", "es": "NIF / CIF / IVA", "nl": "Btw-identificatienummer",
+        "fr": "N° de TVA / SIRET", "pt": "NIF / Número de IVA", "zh_Hans": "纳税人识别号 / 统一社会信用代码", "ja": "法人番号 / インボイス登録番号"
+    },
+    "Crucial for AI to match issuer vs recipient on official tax documents.": {
+        "ru": "Необходимо для ИИ для точного определения продавца и покупателя в налоговых документах.",
+        "es": "Fundamental para que la IA identifique emisor vs. receptor en documentos fiscales.",
+        "nl": "Cruciaal voor AI om verzender vs. ontvanger te identificeren op officiële belastingdocumenten.",
+        "fr": "Indispensable pour que l'IA identifie l'émetteur et le destinataire sur les documents fiscaux.",
+        "pt": "Fundamental para a IA identificar emitente vs. destinatário em documentos fiscais.",
+        "zh_Hans": "AI 识别税务单据开票方与受票方的核心依据。",
+        "ja": "AIが税務書類の発行元と受取人を正確に照合するために不可欠です。"
+    },
+    "VAT number, EIN, or national tax identifier": {
+        "ru": "Номер НДС, ИНН или государственный налоговый номер",
+        "es": "Número de IVA, NIF o identificación fiscal nacional",
+        "nl": "Btw-nummer of nationaal fiscaal identificatienummer",
+        "fr": "Numéro de TVA, SIREN ou identifiant fiscal national",
+        "pt": "Número de IVA, NIF ou identificador fiscal nacional",
+        "zh_Hans": "增值税号、税号或国家税务登记号",
+        "ja": "消費税インボイス番号または国税識別番号"
+    },
+    "Company Registry No.": {
+        "ru": "ОГРН / Регистрационный номер", "es": "Número de registro mercantil", "nl": "Handelsregisternummer",
+        "fr": "Numéro RCS / Immatriculation", "pt": "Número de registo comercial", "zh_Hans": "公司登记号", "ja": "会社登記番号"
+    },
+    "Company Registry No. (CRN)": {
+        "ru": "ОГРН / Регистрационный номер (CRN)", "es": "Número de registro mercantil (CRN)", "nl": "KVK-nummer / Handelsregisternummer",
+        "fr": "Numéro RCS / Immatriculation (CRN)", "pt": "Número de registo comercial (CRN)", "zh_Hans": "工商注册号 / 公司登记代码 (CRN)", "ja": "法人登記番号 (CRN)"
+    },
+    "Commercial register number / CRN": {
+        "ru": "Номер в торговом реестре / ОГРН", "es": "Número de registro mercantil / CRN", "nl": "Handelsregisternummer (KVK)",
+        "fr": "Numéro d'immatriculation au RCS", "pt": "Número de registo comercial / CRN", "zh_Hans": "商业登记号 / 工商注册编号", "ja": "商業登記番号"
+    },
+    "Commercial registry number in state or national records.": {
+        "ru": "Номер записи в едином государственном торговом реестре.",
+        "es": "Número de inscripción en el registro mercantil estatal o nacional.",
+        "nl": "Inschrijfnummer in het handelsregister (bijv. KVK).",
+        "fr": "Numéro d'immatriculation au registre du commerce et des sociétés.",
+        "pt": "Número de inscrição no registo comercial.",
+        "zh_Hans": "在国家市场监管部门登记的工商营业执照注册编号。",
+        "ja": "法務局等に登録された商業登記番号。"
+    },
+    "Accounting Functional Currency": {
+        "ru": "Функциональная валюта учета", "es": "Moneda funcional de contabilidad", "nl": "Functionele boekhoudvaluta",
+        "fr": "Devise fonctionnelle de comptabilité", "pt": "Moeda funcional de contabilidade", "zh_Hans": "会计本位币", "ja": "会計機能通貨"
+    },
+    "Functional Currency": {
+        "ru": "Функциональная валюта", "es": "Moneda funcional", "nl": "Functionele valuta",
+        "fr": "Devise fonctionnelle", "pt": "Moeda funcional", "zh_Hans": "记账本位币", "ja": "機能通貨"
+    },
+    "Accounting Currency": {
+        "ru": "Валюта учета", "es": "Moneda contable", "nl": "Boekhoudvaluta",
+        "fr": "Devise comptable", "pt": "Moeda contabilística", "zh_Hans": "记账币种", "ja": "会計通貨"
+    },
+    "Base currency code (e.g. EUR, USD, GBP)": {
+        "ru": "Код базовой валюты (напр., EUR, USD, GBP, RUB)", "es": "Código de moneda base (ej. EUR, USD, GBP)", "nl": "Basisvalutacode (bijv. EUR, USD, GBP)",
+        "fr": "Code de la devise de base (ex. EUR, USD, GBP)", "pt": "Código da moeda base (ex. EUR, USD, GBP)", "zh_Hans": "基础币种代码（如 EUR, USD, CNY）", "ja": "基本通貨コード（例：EUR, USD, JPY）"
+    },
+    "Default currency for ledger balance sheets and summaries.": {
+        "ru": "Валюта по умолчанию для балансовых отчетов и финансовой сводки.",
+        "es": "Moneda predeterminada para balances y resúmenes contables.",
+        "nl": "Standaardvaluta voor balansoverzichten en financiële samenvattingen.",
+        "fr": "Devise par défaut pour les bilans et les synthèses comptables.",
+        "pt": "Moeda padrão para balancetes e resumos contabilísticos.",
+        "zh_Hans": "资产负债表与财务汇总报告使用的默认核算币种。",
+        "ja": "貸借対照表や財務サマリーで使用するデフォルト通貨。"
+    },
+    "Banking & Settlement Accounts": {
+        "ru": "Банковские и расчетные счета", "es": "Cuentas bancarias y de liquidación", "nl": "Bank- & Betalingsrekeningen",
+        "fr": "Comptes bancaires et de règlement", "pt": "Contas bancárias e de liquidação", "zh_Hans": "银行及结算账户", "ja": "銀行決済口座"
+    },
+    "Primary Bank IBAN": {
+        "ru": "Основной расчетный счет / IBAN", "es": "IBAN bancario principal", "nl": "Primaire bank-IBAN",
+        "fr": "IBAN bancaire principal", "pt": "IBAN bancário principal", "zh_Hans": "主银行结算账号 (IBAN)", "ja": "主要銀行口座番号 (IBAN)"
+    },
+    "Default bank account for receiving customer payments": {
+        "ru": "Основной банковский счет для приема платежей от клиентов",
+        "es": "Cuenta bancaria predeterminada para recibir pagos de clientes",
+        "nl": "Standaard bankrekening voor het ontvangen van klantbetalingen",
+        "fr": "Compte bancaire par défaut pour recevoir les paiements des clients",
+        "pt": "Conta bancária padrão para receber pagamentos de clientes",
+        "zh_Hans": "用于接收客户付款的默认银行账户",
+        "ja": "顧客からの入金を受け取る主要口座"
+    },
+    "SWIFT / BIC Code": {
+        "ru": "Код SWIFT / БИК", "es": "Código SWIFT / BIC", "nl": "SWIFT / BIC-code",
+        "fr": "Code SWIFT / BIC", "pt": "Código SWIFT / BIC", "zh_Hans": "SWIFT / BIC 代码", "ja": "SWIFT / BIC コード"
+    },
+    "Contact & Headquarters Address": {
+        "ru": "Контакты и юридический адрес", "es": "Contacto y dirección de la sede", "nl": "Contact & Hoofdkantooradres",
+        "fr": "Contact et adresse du siège social", "pt": "Contacto e endereço da sede", "zh_Hans": "联系方式与注册地址", "ja": "連絡先および本社所在地"
+    },
+    "Accounting / Finance Email": {
+        "ru": "Email бухгалтерии / финансового отдела", "es": "Correo de contabilidad / finanzas", "nl": "E-mailadres boekhouding / financiën",
+        "fr": "Email comptabilité / finances", "pt": "Email de contabilidade / finanças", "zh_Hans": "财务部门官方邮箱", "ja": "経理・財務担当メールアドレス"
+    },
+    "Official Email": {
+        "ru": "Официальный email", "es": "Correo oficial", "nl": "Officieel e-mailadres",
+        "fr": "Email officiel", "pt": "Email oficial", "zh_Hans": "官方联系邮箱", "ja": "公式メールアドレス"
+    },
+    "Registered Address": {
+        "ru": "Юридический адрес", "es": "Dirección registrada", "nl": "Statutair adres",
+        "fr": "Adresse du siège social", "pt": "Endereço registado", "zh_Hans": "注册营业地址", "ja": "登記上所在地"
+    },
+    "Save Company Profile": {
+        "ru": "Сохранить профиль компании", "es": "Guardar perfil de la empresa", "nl": "Bedrijfsprofiel opslaan",
+        "fr": "Enregistrer le profil de l'entreprise", "pt": "Guardar perfil da empresa", "zh_Hans": "保存企业资料", "ja": "会社概要を保存"
+    },
+    "Company profile updated successfully. AI document classification and ledger rules will now use these entity details.": {
+        "ru": "Профиль компании успешно обновлен. Классификация документов ИИ и правила проводок теперь используют эти реквизиты.",
+        "es": "Perfil de la empresa actualizado correctamente. La clasificación de documentos por IA y las reglas contables utilizarán estos datos.",
+        "nl": "Bedrijfsprofiel succesvol bijgewerkt. AI-documentclassificatie en grootboekregels gebruiken nu deze entiteitsgegevens.",
+        "fr": "Profil de l'entreprise mis à jour avec succès. La classification des documents par l'IA et les règles comptables utiliseront désormais ces informations.",
+        "pt": "Perfil da empresa atualizado com sucesso. A classificação de documentos por IA e as regras de razão utilizarão agora estes dados.",
+        "zh_Hans": "企业资料已成功更新。AI 单据分类与借贷记账规则现已同步采用该主体信息。",
+        "ja": "会社概要が正常に更新されました。AIの書類分類と仕訳ルールにこの組織情報が適用されます。"
+    },
+
     # Core Navigation & Header
     "Accounting & Agent": {
         "ru": "Бухгалтерия и AI-агент", "es": "Contabilidad y Agente IA", "nl": "Boekhouding & AI-Agent",

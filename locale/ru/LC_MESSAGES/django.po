@@ -12,6 +12,153 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "Company Profile"
+msgstr "Профиль компании"
+
+msgid "Company & Organization Profile"
+msgstr "Профиль компании и реквизиты"
+
+msgid ""
+"Master identity details used by AI agents to automatically determine Debit "
+"vs. Credit, invoice directions, and ledger accounts."
+msgstr ""
+"Основные реквизиты организации, используемые ИИ для определения "
+"дебета/кредита, направления счетов и бухгалтерских проводок."
+
+msgid "How AI Determines Debit vs. Credit Using Your Profile"
+msgstr "Как ИИ определяет дебет и кредит на основе профиля компании"
+
+msgid ""
+"When processing scanned paperwork or receipts, the AI agent compares the "
+"document against your company's name and tax identifiers to eliminate "
+"accounting ambiguity:"
+msgstr ""
+"При обработке отсканированных документов и чеков ИИ сопоставляет реквизиты "
+"документа с названием и ИНН вашей компании, исключая двусмысленность:"
+
+msgid "Our Company is the Buyer (Billed To)"
+msgstr "Наша компания является покупателем (Счет выставлен нам)"
+
+msgid ""
+"Classified as <strong>Vendor Bill (Payable)</strong>. Ledger effect: "
+"<strong>Debit</strong> = Expense/Inventory, <strong>Credit</strong> = "
+"Accounts Payable."
+msgstr ""
+"Классифицируется как <strong>Счет поставщика (К оплате)</strong>. Проводка: "
+"<strong>Дебет</strong> = Расходы/Склад, <strong>Кредит</strong> = "
+"Кредиторская задолженность."
+
+msgid "Our Company is the Seller (Billed From)"
+msgstr "Наша компания является продавцом (Счет выставлен нами)"
+
+msgid ""
+"Classified as <strong>Customer Invoice (Receivable)</strong>. Ledger effect:"
+" <strong>Debit</strong> = Accounts Receivable, <strong>Credit</strong> = "
+"Sales Revenue."
+msgstr ""
+"Классифицируется как <strong>Счет клиенту (К получению)</strong>. Проводка: "
+"<strong>Дебет</strong> = Дебиторская задолженность, <strong>Кредит</strong> "
+"= Выручка от продаж."
+
+msgid "Corporate Identity"
+msgstr "Реквизиты юридического лица"
+
+msgid "Legal Entity Name"
+msgstr "Юридическое наименование"
+
+msgid ""
+"Official registered corporate name appearing on legal contracts and "
+"invoices."
+msgstr ""
+"Официальное зарегистрированное наименование компании в договорах и счетах."
+
+msgid "Official registered corporate name"
+msgstr "Официальное зарегистрированное наименование"
+
+msgid "Trade / Commercial Name"
+msgstr "Торговое / коммерческое название"
+
+msgid "Trade / Brand Name"
+msgstr "Бренд / Торговое наименование"
+
+msgid "Brand name or commercial trade name displayed in system headers."
+msgstr "Бренд или торговое название, отображаемое в шапке системы."
+
+msgid "Public-facing business name if different from legal name"
+msgstr "Публичное название компании, если отличается от юридического"
+
+msgid "Tax / VAT ID"
+msgstr "ИНН / НДС"
+
+msgid "Crucial for AI to match issuer vs recipient on official tax documents."
+msgstr ""
+"Необходимо для ИИ для точного определения продавца и покупателя в налоговых "
+"документах."
+
+msgid "VAT number, EIN, or national tax identifier"
+msgstr "Номер НДС, ИНН или государственный налоговый номер"
+
+msgid "Company Registry No."
+msgstr "ОГРН / Регистрационный номер"
+
+msgid "Company Registry No. (CRN)"
+msgstr "ОГРН / Регистрационный номер (CRN)"
+
+msgid "Commercial register number / CRN"
+msgstr "Номер в торговом реестре / ОГРН"
+
+msgid "Commercial registry number in state or national records."
+msgstr "Номер записи в едином государственном торговом реестре."
+
+msgid "Accounting Functional Currency"
+msgstr "Функциональная валюта учета"
+
+msgid "Functional Currency"
+msgstr "Функциональная валюта"
+
+msgid "Accounting Currency"
+msgstr "Валюта учета"
+
+msgid "Base currency code (e.g. EUR, USD, GBP)"
+msgstr "Код базовой валюты (напр., EUR, USD, GBP, RUB)"
+
+msgid "Default currency for ledger balance sheets and summaries."
+msgstr "Валюта по умолчанию для балансовых отчетов и финансовой сводки."
+
+msgid "Banking & Settlement Accounts"
+msgstr "Банковские и расчетные счета"
+
+msgid "Primary Bank IBAN"
+msgstr "Основной расчетный счет / IBAN"
+
+msgid "Default bank account for receiving customer payments"
+msgstr "Основной банковский счет для приема платежей от клиентов"
+
+msgid "SWIFT / BIC Code"
+msgstr "Код SWIFT / БИК"
+
+msgid "Contact & Headquarters Address"
+msgstr "Контакты и юридический адрес"
+
+msgid "Accounting / Finance Email"
+msgstr "Email бухгалтерии / финансового отдела"
+
+msgid "Official Email"
+msgstr "Официальный email"
+
+msgid "Registered Address"
+msgstr "Юридический адрес"
+
+msgid "Save Company Profile"
+msgstr "Сохранить профиль компании"
+
+msgid ""
+"Company profile updated successfully. AI document classification and ledger "
+"rules will now use these entity details."
+msgstr ""
+"Профиль компании успешно обновлен. Классификация документов ИИ и правила "
+"проводок теперь используют эти реквизиты."
+
 msgid "Accounting & Agent"
 msgstr "Бухгалтерия и AI-агент"
 
@@ -743,9 +890,6 @@ msgstr "Логистика / Перевозчик"
 
 msgid "Company / Entity Name"
 msgstr "Название компании / организации"
-
-msgid "Tax / VAT ID"
-msgstr "ИНН / НДС"
 
 msgid "Bank IBAN"
 msgstr "Банковский счет IBAN"

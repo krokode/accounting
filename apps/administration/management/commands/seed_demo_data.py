@@ -4,7 +4,7 @@ from django.core.management.base import BaseCommand
 from django.utils import timezone
 
 from apps.accounting.models import Invoice, InvoiceItem, PaymentRecord, Receipt
-from apps.administration.models import Counterparty, Contract
+from apps.administration.models import Counterparty, Contract, CompanyProfile
 from apps.calendar_tasks.models import CalendarTask
 from apps.reminders.services.reminder_service import run_daily_reminders_check
 from apps.warehouse.models import Product, Consignment, ConsignmentItem, StockMovement
@@ -16,6 +16,9 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         self.stdout.write("Populating demo business data...")
         today = timezone.localdate()
+
+        # 0. Ensure Company Profile is established
+        CompanyProfile.get_solo()
 
         # 1. Counterparties
         apex, _ = Counterparty.objects.get_or_create(

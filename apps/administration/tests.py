@@ -1,7 +1,7 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 from django.utils.translation import activate
-from apps.administration.models import Counterparty, Contract
+from apps.administration.models import Counterparty, Contract, CompanyProfile
 
 
 class CounterpartyTests(TestCase):
@@ -83,3 +83,74 @@ class CounterpartyTests(TestCase):
             response = self.client.get(url, HTTP_ACCEPT_LANGUAGE=lang)
             self.assertEqual(response.status_code, 200)
             self.assertContains(response, expected_btn)
+
+
+class CompanyProfileTests(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.profile = CompanyProfile.get_solo()
+
+    def test_company_profile_singleton(self):
+        profile1 = CompanyProfile.get_solo()
+        profile2 = CompanyProfile.get_solo()
+        self.assertEqual(profile1.pk, profile2.pk)
+        self.assertEqual(CompanyProfile.objects.count(), 1)
+
+    def test_company_profile_get_view(self):
+        url = reverse('administration:company_profile')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, self.profile.legal_name)
+        self.assertContains(response, self.profile.tax_id)
+
+    def test_company_profile_post_update(self):
+        url = reverse('administration:company_profile')
+        payload = {
+            'legal_name': 'Horizon Innovations Inc',
+            'trade_name': 'Horizon Tech',
+            'tax_id': 'US987654321',
+            'registration_number': 'CRN-777888',
+            'iban': 'US1234567890123456',
+            'bank_name': 'JPMorgan Chase',
+            'swift_bic': 'CHASUS33',
+            'email': 'finance@horizon.tech',
+            'phone': '+1 212 555 0199',
+            'address': '350 5th Ave, New York, NY 10118',
+            'currency': 'USD',
+        }
+        response = self.client.post(url, payload)
+        self.assertRedirects(response, url)
+
+        self.profile.refresh_from_db()
+        self.assertEqual(self.profile.legal_name, 'Horizon Innovations Inc')
+        self.assertEqual(self.profile.trade_name, 'Horizon Tech')
+        self.assertEqual(self.profile.tax_id, 'US987654321')
+        self.assertEqual(self.profile.currency, 'USD')
+
+    def test_company_profile_context_processor(self):
+        url = reverse('dashboard')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('active_company_profile', response.context)
+        self.assertEqual(response.context['active_company_profile'].pk, self.profile.pk)
+
+    def test_multilingual_company_profile(self):
+        url = reverse('administration:company_profile')
+        langs = [
+            ('ru', 'Профиль компании'),
+            ('es', 'Perfil de la empresa'),
+            ('nl', 'Bedrijfsprofiel'),
+            ('fr', "Profil de l'entreprise"),
+            ('pt', 'Perfil da empresa'),
+            ('zh-hans', '企业资料'),
+            ('ja', '会社概要'),
+            ('en', 'Company Profile'),
+        ]
+        for lang, expected_text in langs:
+            activate(lang)
+            self.client.cookies.load({'django_language': lang})
+            response = self.client.get(url, HTTP_ACCEPT_LANGUAGE=lang)
+            self.assertEqual(response.status_code, 200)
+            self.assertContains(response, expected_text)
+
+

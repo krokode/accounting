@@ -12,6 +12,142 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "Company Profile"
+msgstr "会社概要"
+
+msgid "Company & Organization Profile"
+msgstr "会社・組織プロファイル"
+
+msgid ""
+"Master identity details used by AI agents to automatically determine Debit "
+"vs. Credit, invoice directions, and ledger accounts."
+msgstr "AIエージェントが借方・貸方の判定、請求書の方向、勘定科目を自動決定するために使用する組織の基本情報。"
+
+msgid "How AI Determines Debit vs. Credit Using Your Profile"
+msgstr "AIが企業情報に基づいて借方・貸方を判定する仕組み"
+
+msgid ""
+"When processing scanned paperwork or receipts, the AI agent compares the "
+"document against your company's name and tax identifiers to eliminate "
+"accounting ambiguity:"
+msgstr "スキャンされた書類や領収書を処理する際、AIエージェントは書類と貴社の名称・納税者番号を照合し、仕訳の曖昧さを解消します："
+
+msgid "Our Company is the Buyer (Billed To)"
+msgstr "貴社が買い手（宛先が貴社）"
+
+msgid ""
+"Classified as <strong>Vendor Bill (Payable)</strong>. Ledger effect: "
+"<strong>Debit</strong> = Expense/Inventory, <strong>Credit</strong> = "
+"Accounts Payable."
+msgstr ""
+"<strong>仕入先請求書（買掛金）</strong> として分類。仕訳効果：<strong>借方</strong> = "
+"経費／在庫、<strong>貸方</strong> = 買掛金。"
+
+msgid "Our Company is the Seller (Billed From)"
+msgstr "貴社が売り手（発行者が貴社）"
+
+msgid ""
+"Classified as <strong>Customer Invoice (Receivable)</strong>. Ledger effect:"
+" <strong>Debit</strong> = Accounts Receivable, <strong>Credit</strong> = "
+"Sales Revenue."
+msgstr ""
+"<strong>得意先請求書（売掛金）</strong> として分類。仕訳効果：<strong>借方</strong> = "
+"売掛金、<strong>貸方</strong> = 売上高。"
+
+msgid "Corporate Identity"
+msgstr "法人基本情報"
+
+msgid "Legal Entity Name"
+msgstr "法人正式名称"
+
+msgid ""
+"Official registered corporate name appearing on legal contracts and "
+"invoices."
+msgstr "契約書や請求書に記載される正式な登記法人名。"
+
+msgid "Official registered corporate name"
+msgstr "登記上の正式法人名"
+
+msgid "Trade / Commercial Name"
+msgstr "商号・ブランド名"
+
+msgid "Trade / Brand Name"
+msgstr "屋号・ブランド名"
+
+msgid "Brand name or commercial trade name displayed in system headers."
+msgstr "システムヘッダー等に表示されるブランド名または通称。"
+
+msgid "Public-facing business name if different from legal name"
+msgstr "登記名と異なる場合の対外的な事業所名・商号"
+
+msgid "Tax / VAT ID"
+msgstr "税務登録番号 / インボイス番号"
+
+msgid "Crucial for AI to match issuer vs recipient on official tax documents."
+msgstr "AIが税務書類の発行元と受取人を正確に照合するために不可欠です。"
+
+msgid "VAT number, EIN, or national tax identifier"
+msgstr "消費税インボイス番号または国税識別番号"
+
+msgid "Company Registry No."
+msgstr "会社登記番号"
+
+msgid "Company Registry No. (CRN)"
+msgstr "法人登記番号 (CRN)"
+
+msgid "Commercial register number / CRN"
+msgstr "商業登記番号"
+
+msgid "Commercial registry number in state or national records."
+msgstr "法務局等に登録された商業登記番号。"
+
+msgid "Accounting Functional Currency"
+msgstr "会計機能通貨"
+
+msgid "Functional Currency"
+msgstr "機能通貨"
+
+msgid "Accounting Currency"
+msgstr "会計通貨"
+
+msgid "Base currency code (e.g. EUR, USD, GBP)"
+msgstr "基本通貨コード（例：EUR, USD, JPY）"
+
+msgid "Default currency for ledger balance sheets and summaries."
+msgstr "貸借対照表や財務サマリーで使用するデフォルト通貨。"
+
+msgid "Banking & Settlement Accounts"
+msgstr "銀行決済口座"
+
+msgid "Primary Bank IBAN"
+msgstr "主要銀行口座番号 (IBAN)"
+
+msgid "Default bank account for receiving customer payments"
+msgstr "顧客からの入金を受け取る主要口座"
+
+msgid "SWIFT / BIC Code"
+msgstr "SWIFT / BIC コード"
+
+msgid "Contact & Headquarters Address"
+msgstr "連絡先および本社所在地"
+
+msgid "Accounting / Finance Email"
+msgstr "経理・財務担当メールアドレス"
+
+msgid "Official Email"
+msgstr "公式メールアドレス"
+
+msgid "Registered Address"
+msgstr "登記上所在地"
+
+msgid "Save Company Profile"
+msgstr "会社概要を保存"
+
+msgid ""
+"Company profile updated successfully. AI document classification and ledger "
+"rules will now use these entity details."
+msgstr "会社概要が正常に更新されました。AIの書類分類と仕訳ルールにこの組織情報が適用されます。"
+
 msgid "Accounting & Agent"
 msgstr "会計＆AIエージェント"
 
@@ -711,9 +847,6 @@ msgstr "物流会社 / 運送業者"
 
 msgid "Company / Entity Name"
 msgstr "会社名 / 法人名"
-
-msgid "Tax / VAT ID"
-msgstr "税務登録番号 / インボイス番号"
 
 msgid "Bank IBAN"
 msgstr "銀行口座番号 / IBAN"

@@ -9,4 +9,5 @@ urlpatterns = [
     path('counterparties/<int:pk>/update/', views.counterparty_update, name='counterparty_update'),
     path('contracts/', views.contract_list, name='contract_list'),
     path('contracts/create/', views.contract_create, name='contract_create'),
+    path('company-profile/', views.company_profile_view, name='company_profile'),
 ]

@@ -12,6 +12,154 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "Company Profile"
+msgstr "Bedrijfsprofiel"
+
+msgid "Company & Organization Profile"
+msgstr "Bedrijfs- & Organisatieprofiel"
+
+msgid ""
+"Master identity details used by AI agents to automatically determine Debit "
+"vs. Credit, invoice directions, and ledger accounts."
+msgstr ""
+"Basisidentiteitsgegevens die door AI-agents worden gebruikt om automatisch "
+"Debet vs. Credit, factuurrichtingen en grootboekrekeningen te bepalen."
+
+msgid "How AI Determines Debit vs. Credit Using Your Profile"
+msgstr "Hoe AI Debet vs. Credit bepaalt aan de hand van uw bedrijfsprofiel"
+
+msgid ""
+"When processing scanned paperwork or receipts, the AI agent compares the "
+"document against your company's name and tax identifiers to eliminate "
+"accounting ambiguity:"
+msgstr ""
+"Bij het verwerken van gescande documenten of bonnen vergelijkt de AI-agent "
+"het document met uw bedrijfsnaam en belastingnummers om boekhoudkundige "
+"onzekerheid weg te nemen:"
+
+msgid "Our Company is the Buyer (Billed To)"
+msgstr "Ons bedrijf is de koper (Gefactureerd aan)"
+
+msgid ""
+"Classified as <strong>Vendor Bill (Payable)</strong>. Ledger effect: "
+"<strong>Debit</strong> = Expense/Inventory, <strong>Credit</strong> = "
+"Accounts Payable."
+msgstr ""
+"Geclassificeerd als <strong>Inkoopfactuur (Crediteuren)</strong>. Boeking: "
+"<strong>Debet</strong> = Kosten/Voorraad, <strong>Credit</strong> = "
+"Crediteuren."
+
+msgid "Our Company is the Seller (Billed From)"
+msgstr "Ons bedrijf is de verkoper (Gefactureerd door)"
+
+msgid ""
+"Classified as <strong>Customer Invoice (Receivable)</strong>. Ledger effect:"
+" <strong>Debit</strong> = Accounts Receivable, <strong>Credit</strong> = "
+"Sales Revenue."
+msgstr ""
+"Geclassificeerd als <strong>Verkoopfactuur (Debiteuren)</strong>. Boeking: "
+"<strong>Debet</strong> = Debiteuren, <strong>Credit</strong> = Omzet."
+
+msgid "Corporate Identity"
+msgstr "Bedrijfsidentiteit"
+
+msgid "Legal Entity Name"
+msgstr "Statutaire naam"
+
+msgid ""
+"Official registered corporate name appearing on legal contracts and "
+"invoices."
+msgstr ""
+"Officieel geregistreerde bedrijfsnaam zoals vermeld op contracten en "
+"facturen."
+
+msgid "Official registered corporate name"
+msgstr "Officieel geregistreerde bedrijfsnaam"
+
+msgid "Trade / Commercial Name"
+msgstr "Handelsnaam"
+
+msgid "Trade / Brand Name"
+msgstr "Handels- / Merknaam"
+
+msgid "Brand name or commercial trade name displayed in system headers."
+msgstr "Merknaam of handelsnaam weergegeven in de systeemkopteksten."
+
+msgid "Public-facing business name if different from legal name"
+msgstr "Commerciële naam indien afwijkend van de statutaire naam"
+
+msgid "Tax / VAT ID"
+msgstr "BTW-nummer"
+
+msgid "Crucial for AI to match issuer vs recipient on official tax documents."
+msgstr ""
+"Cruciaal voor AI om verzender vs. ontvanger te identificeren op officiële "
+"belastingdocumenten."
+
+msgid "VAT number, EIN, or national tax identifier"
+msgstr "Btw-nummer of nationaal fiscaal identificatienummer"
+
+msgid "Company Registry No."
+msgstr "Handelsregisternummer"
+
+msgid "Company Registry No. (CRN)"
+msgstr "KVK-nummer / Handelsregisternummer"
+
+msgid "Commercial register number / CRN"
+msgstr "Handelsregisternummer (KVK)"
+
+msgid "Commercial registry number in state or national records."
+msgstr "Inschrijfnummer in het handelsregister (bijv. KVK)."
+
+msgid "Accounting Functional Currency"
+msgstr "Functionele boekhoudvaluta"
+
+msgid "Functional Currency"
+msgstr "Functionele valuta"
+
+msgid "Accounting Currency"
+msgstr "Boekhoudvaluta"
+
+msgid "Base currency code (e.g. EUR, USD, GBP)"
+msgstr "Basisvalutacode (bijv. EUR, USD, GBP)"
+
+msgid "Default currency for ledger balance sheets and summaries."
+msgstr "Standaardvaluta voor balansoverzichten en financiële samenvattingen."
+
+msgid "Banking & Settlement Accounts"
+msgstr "Bank- & Betalingsrekeningen"
+
+msgid "Primary Bank IBAN"
+msgstr "Primaire bank-IBAN"
+
+msgid "Default bank account for receiving customer payments"
+msgstr "Standaard bankrekening voor het ontvangen van klantbetalingen"
+
+msgid "SWIFT / BIC Code"
+msgstr "SWIFT / BIC-code"
+
+msgid "Contact & Headquarters Address"
+msgstr "Contact & Hoofdkantooradres"
+
+msgid "Accounting / Finance Email"
+msgstr "E-mailadres boekhouding / financiën"
+
+msgid "Official Email"
+msgstr "Officieel e-mailadres"
+
+msgid "Registered Address"
+msgstr "Statutair adres"
+
+msgid "Save Company Profile"
+msgstr "Bedrijfsprofiel opslaan"
+
+msgid ""
+"Company profile updated successfully. AI document classification and ledger "
+"rules will now use these entity details."
+msgstr ""
+"Bedrijfsprofiel succesvol bijgewerkt. AI-documentclassificatie en "
+"grootboekregels gebruiken nu deze entiteitsgegevens."
+
 msgid "Accounting & Agent"
 msgstr "Boekhouding & AI-Agent"
 
@@ -749,9 +897,6 @@ msgstr "Logistiek / Vervoerder"
 
 msgid "Company / Entity Name"
 msgstr "Bedrijfsnaam"
-
-msgid "Tax / VAT ID"
-msgstr "BTW-nummer"
 
 msgid "Bank IBAN"
 msgstr "IBAN Bankrekening"

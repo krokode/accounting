@@ -86,3 +86,103 @@ class Contract(models.Model):
 
     def __str__(self):
         return f"{self.title} - {self.counterparty.name} ({self.status})"
+
+
+class CompanyProfile(models.Model):
+    legal_name = models.CharField(
+        max_length=255,
+        default="Sole Enterprise Group Ltd",
+        verbose_name=_("Legal Entity Name"),
+        help_text=_("Official registered corporate name")
+    )
+    trade_name = models.CharField(
+        max_length=255,
+        blank=True,
+        default="Sole Enterprise",
+        verbose_name=_("Trade / Commercial Name"),
+        help_text=_("Public-facing business name if different from legal name")
+    )
+    tax_id = models.CharField(
+        max_length=64,
+        blank=True,
+        default="DE982341902",
+        verbose_name=_("Tax / VAT ID"),
+        help_text=_("VAT number, EIN, or national tax identifier")
+    )
+    registration_number = models.CharField(
+        max_length=64,
+        blank=True,
+        default="HRB 88392 B",
+        verbose_name=_("Company Registry No."),
+        help_text=_("Commercial register number / CRN")
+    )
+    iban = models.CharField(
+        max_length=64,
+        blank=True,
+        default="DE44500105178823901234",
+        verbose_name=_("Primary Bank IBAN"),
+        help_text=_("Default bank account for receiving customer payments")
+    )
+    bank_name = models.CharField(
+        max_length=128,
+        blank=True,
+        default="Commerzbank AG",
+        verbose_name=_("Bank Name")
+    )
+    swift_bic = models.CharField(
+        max_length=32,
+        blank=True,
+        default="COBADEFFXXX",
+        verbose_name=_("SWIFT / BIC Code")
+    )
+    email = models.EmailField(
+        blank=True,
+        default="accounting@sole-enterprise.io",
+        verbose_name=_("Accounting / Finance Email")
+    )
+    phone = models.CharField(
+        max_length=64,
+        blank=True,
+        default="+49 30 987654",
+        verbose_name=_("Phone Number")
+    )
+    address = models.TextField(
+        blank=True,
+        default="Potsdamer Platz 1, 10785 Berlin, Germany",
+        verbose_name=_("Registered Address")
+    )
+    currency = models.CharField(
+        max_length=8,
+        default="EUR",
+        verbose_name=_("Functional Currency"),
+        help_text=_("Base currency code (e.g. EUR, USD, GBP)")
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = _('Company Profile')
+        verbose_name_plural = _('Company Profile')
+
+    def __str__(self):
+        return self.trade_name or self.legal_name
+
+    @classmethod
+    def get_solo(cls):
+        profile = cls.objects.first()
+        if not profile:
+            profile = cls.objects.create(
+                legal_name="Sole Enterprise Group Ltd",
+                trade_name="Sole Enterprise",
+                tax_id="DE982341902",
+                registration_number="HRB 88392 B",
+                iban="DE44500105178823901234",
+                bank_name="Commerzbank AG",
+                swift_bic="COBADEFFXXX",
+                email="accounting@sole-enterprise.io",
+                phone="+49 30 987654",
+                address="Potsdamer Platz 1, 10785 Berlin, Germany",
+                currency="EUR"
+            )
+        return profile
+
