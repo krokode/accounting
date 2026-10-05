@@ -86,47 +86,98 @@
 
 ## 🚀 クイックスタートガイド
 
-### 1. 仮想環境の有効化
+### 🔰 事前準備：Python のインストール（初回のみ）
+
+本プロジェクトには **Python 3.11 以上** が必要です（Python 3.11、3.12、3.13 すべてに対応）。
+
+1. [Python 公式ダウンロードページ](https://www.python.org/downloads/) からインストーラーをダウンロードします。
+2. インストーラーを起動します。**極めて重要な手順：** 最初の画面で下部にあるチェックボックスを必ずオンにしてください：  
+   ☑️ **Add python.exe to PATH**（PATH に python.exe を追加）  
+   *（この手順を忘れると、ターミナルで `python` コマンドが認識されなくなります！）*
+3. **Install Now** をクリックしてインストールを完了します。
+4. エクスプローラーで本プロジェクトのフォルダーを開きます。上部のアドレスバーをクリックし、`powershell`（または `cmd`）と入力して <kbd>Enter</kbd> を押します。フォルダー内で直接ターミナルが開きます。
+5. インストールを確認します：
+   ```powershell
+   python --version
+   ```
+   *（`Python 3.11.x`、`3.12.x`、または `3.13.x` と表示されれば成功です）*。
+
+---
+
+### ⚡ 初回セットアップ（5 分で完了）
+
+プロジェクトフォルダーで開いたターミナルで以下の手順を 1 回だけ実行します：
+
+#### 1. 独立した仮想環境の作成と有効化
 ```powershell
+# 仮想環境 (.venv) の作成
+python -m venv .venv
+
+# 仮想環境の有効化 (Windows PowerShell):
 .\.venv\Scripts\Activate.ps1
 ```
+> **Windows のヒント：** もしターミナルに赤字で *`このシステムではスクリプトの実行が無効になっているため`*（*`running scripts is disabled on this system`*）と表示された場合は、次のコマンドを 1 度実行してから再度有効化してください：
+> ```powershell
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> .\.venv\Scripts\Activate.ps1
+> ```
+> *（またはコマンドプロンプト CMD: `.\.venv\Scripts\activate.bat`、macOS/Linux: `source .venv/bin/activate` を使用可能）*。
 
-### 2. 環境変数とAIモデルプロバイダーの設定
-`.env.example` を `.env` にコピーするか、自動対話型セットアップウィザードを実行します：
+有効化に成功すると、ターミナルの行頭に `(.venv)` と表示されます。
+
+#### 2. 依存パッケージのインストール
+```powershell
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+#### 3. AI アシスタントの設定（対話型ウィザード）
+多言語セットアップウィザードを実行し、希望する AI プロバイダーの選択と API キーの設定を行います：
 ```powershell
 python setup_llm.py
 ```
-*(日本語、English、Русский、Español、Nederlands、Français、Português、简体中文 に完全対応)*。
+- 8 言語に対応：日本語、English、Русский、Español、Nederlands、Français、Português、简体中文。
+- **Google Gemini**（*[Google AI Studio](https://aistudio.google.com/) で無料枠を利用可能*）、**Ollama**（*完全無料・オフラインのローカル実行*）、**OpenAI**、**Claude**、**DeepSeek**、**Qwen** に対応。
+- *（任意）* Django 管理コマンド（`python manage.py configure_llm --list`）やウェブ画面 `/assistant/settings/` からも設定できます。
 
-Django 管理コマンドやブラウザ管理画面 **`/assistant/settings/`** からもいつでも視覚的に設定・切替が可能です：
+#### 4. データベースの初期化とデモデータの投入
 ```powershell
-# 利用可能なプロバイダー一覧とAPIキー登録状況を確認
-python manage.py configure_llm --list
-
-# 非対話型で即座に設定・接続テストを実行
-python manage.py configure_llm --provider deepseek --api-key sk-xxxx --model deepseek-chat --test
-```
-
-### 3. マイグレーションの実行＆デモデータの投入
-```powershell
+# データベーステーブルの作成
 python manage.py migrate
-```
 
-管理画面へのアクセス用スーパーユーザーを作成する場合：
-```powershell
+# デモデータの投入（推奨：請求書、在庫、取引先、契約書を自動生成）
+python manage.py seed_demo_data
+
+# （任意）管理画面 /admin/ アクセス用のスーパーユーザーを作成
 python manage.py createsuperuser
 ```
 
-テスト用のサンプルデータをシステムに投入する場合：
-```powershell
-python manage.py seed_demo_data
-```
+---
 
-### 4. 開発用サーバーの起動
+### 🏃 日常的な起動方法（いつでも起動可能）
+
+初期セットアップ完了後、今後アプリを起動する際は **以下の 2 コマンドを実行するだけ** です：
+
 ```powershell
+# 1. 仮想環境の有効化（まだ有効化されていない場合）
+.\.venv\Scripts\Activate.ps1
+
+# 2. 開発サーバーの起動
 python manage.py runserver
 ```
-ブラウザで **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)** を開きます。
+
+ブラウザで **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)** を開きます 🎉
+
+---
+
+### ❓ トラブルシューティング（よくある質問）
+
+| エラー・現象 | 原因と簡単な解決策 |
+| :--- | :--- |
+| **`python は内部コマンドまたは外部コマンドとして認識されていません`** | Python インストール時に **Add to PATH** にチェックを入れていません。Python インストーラーを再起動し、**Modify** を選択して **Add Python to environment variables** にチェックを入れてからターミナルを再起動してください。 |
+| **`このシステムではスクリプトの実行が無効になっているため、Activate.ps1 を読み込めません`** | Windows のデフォルトポリシーで PowerShell スクリプトが制限されています。`Set-ExecutionPolicy RemoteSigned -Scope CurrentUser` を実行するか、CMD に切り替えて `.\.venv\Scripts\activate.bat` を実行してください。 |
+| **`Error: That port is already in use`** | ポート 8000 が他のアプリや前回の Django プロセスで使用中です。別のポートで起動してください：`python manage.py runserver 8080`。 |
+| **`no such table: ...`** | データベースのマイグレーションが未実行です。`python manage.py migrate` を実行してください。 |
 
 ---
 

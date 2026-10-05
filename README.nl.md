@@ -84,49 +84,100 @@ Wissel op elk gewenst moment van taal via het wereldbol-keuzemenu in de bovenste
 
 ---
 
-## 🚀 Aan de Slag
+## 🚀 Snelle Startgids
 
-### 1. Activeer Virtuele Omgeving
+### 🔰 Vereisten: Python installeren (Eenmalig)
+
+Dit project vereist **Python 3.11 of nieuwer** (Python 3.11, 3.12 en 3.13 worden allemaal ondersteund).
+
+1. Download het installatiebestand van de [officiële Python-downloadpagina](https://www.python.org/downloads/).
+2. Start het installatieprogramma. **CRUCIALE STAP:** Vink op het allereerste scherm het vakje aan:  
+   ☑️ **Add python.exe to PATH**  
+   *(Als u deze stap overslaat, herkent uw terminal het `python`-commando niet!)*
+3. Klik op **Install Now**.
+4. Open de projectmap in Windows Verkenner. Klik op de adresbalk bovenaan, typ `powershell` (of `cmd`) en druk op <kbd>Enter</kbd>. Er wordt direct in deze map een terminalvenster geopend.
+5. Controleer uw installatie:
+   ```powershell
+   python --version
+   ```
+   *(Er moet `Python 3.11.x`, `3.12.x` of `3.13.x` worden weergegeven)*.
+
+---
+
+### ⚡ Eerste Keer Instellen (5 Minuten)
+
+Voer deze stappen eenmalig uit in uw terminal vanuit de projectmap:
+
+#### 1. Geïsoleerde omgeving aanmaken en activeren
 ```powershell
+# Virtuele omgeving aanmaken (.venv)
+python -m venv .venv
+
+# Activeren (Windows PowerShell):
 .\.venv\Scripts\Activate.ps1
 ```
+> **Tip voor Windows:** Als u een rode foutmelding ziet met de tekst *`running scripts is disabled on this system`* (uitvoeren van scripts is uitgeschakeld), voer dan dit commando uit en activeer opnieuw:
+> ```powershell
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> .\.venv\Scripts\Activate.ps1
+> ```
+> *(Of gebruik de Opdrachtprompt: `.\.venv\Scripts\activate.bat`, of macOS/Linux: `source .venv/bin/activate`)*.
 
-### 2. Configureer Omgeving & AI-Providers
-Kopieer `.env.example` naar `.env` of voer de geautomatiseerde interactieve installatiewizard uit:
+Wanneer de omgeving actief is, ziet u `(.venv)` aan het begin van uw opdrachtprompt.
+
+#### 2. Afhankelijkheden installeren
+```powershell
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+#### 3. AI-Assistent configureren (Interactieve wizard)
+Start onze meertalige installatiewizard om uw gewenste AI-provider te kiezen en uw API-sleutel in te stellen:
 ```powershell
 python setup_llm.py
 ```
-*(Ondersteunt Nederlands, English, Русский, Español, Français, Português, 简体中文 en 日本語)*.
+- Beschikbaar in alle 8 talen: Nederlands, English, Русский, Español, Français, Português, 简体中文, 日本語.
+- Werkt met **Google Gemini** (*gratis niveau beschikbaar via [Google AI Studio](https://aistudio.google.com/)*), **Ollama** (*100% gratis & lokaal offline*), **OpenAI**, **Claude**, **DeepSeek** of **Qwen**.
+- *(Optioneel)* U kunt ook configureren via de Django CLI (`python manage.py configure_llm --list`) of in het webdashboard op `/assistant/settings/`.
 
-U kunt de configuratie ook beheren via het Django-beheercommando of via het webdashboard op **`/assistant/settings/`**:
+#### 4. Database initialiseren en demo-gegevens laden
 ```powershell
-# Bekijk beschikbare providers en status van API-sleutels
-python manage.py configure_llm --list
-
-# Niet-interactief instellen en testen
-python manage.py configure_llm --provider deepseek --api-key sk-xxxx --model deepseek-chat --test
-```
-
-### 3. Voer Migraties Uit & Laad Demo-Gegevens
-```powershell
+# Databasetabellen aanmaken
 python manage.py migrate
-```
 
-Als u een superuser wilt aanmaken voor beheerderstoegang:
-```powershell
+# Demo-gegevens laden (aanbevolen: vult facturen, voorraad, relaties en contracten)
+python manage.py seed_demo_data
+
+# (Optioneel) Beheerder aanmaken voor toegang tot /admin/
 python manage.py createsuperuser
 ```
 
-Als u het systeem wilt vullen met voorbeeldgegevens om te testen:
-```powershell
-python manage.py seed_demo_data
-```
+---
 
-### 4. Start de Ontwikkelserver
+### 🏃 Dagelijks Gebruik (De app op elk moment starten)
+
+In de toekomst hoeft u om de applicatie te starten **slechts twee commando's** uit te voeren:
+
 ```powershell
+# 1. Omgeving activeren (indien nog niet actief)
+.\.venv\Scripts\Activate.ps1
+
+# 2. Server starten
 python manage.py runserver
 ```
-Bezoek **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)** in uw webbrowser.
+
+Open uw webbrowser en ga naar: **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)** 🎉
+
+---
+
+### ❓ Probleemoplossing & Veelgestelde Vragen
+
+| Probleem | Oorzaak & Eenvoudige Oplossing |
+| :--- | :--- |
+| **`python is not recognized as an internal or external command`** | Python is geïnstalleerd zonder het selectievakje **Add to PATH** aan te vinken. Start het Python-installatieprogramma opnieuw, kies **Modify**, vink **Add Python to environment variables** aan en herstart uw terminal. |
+| **`File ... Activate.ps1 cannot be loaded because running scripts is disabled`** | Windows blokkeert PowerShell-scripts standaard. Voer `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser` uit, of schakel over naar de Opdrachtprompt (CMD) en voer `.\.venv\Scripts\activate.bat` uit. |
+| **`Error: That port is already in use`** | Poort 8000 is al in gebruik door een ander programma of eerdere sessie. Start op een andere poort: `python manage.py runserver 8080`. |
+| **`no such table: ...`** | De database is nog niet geïnitialiseerd. Voer uit: `python manage.py migrate`. |
 
 ---
 

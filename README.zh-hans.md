@@ -86,47 +86,98 @@
 
 ## 🚀 快速上手指南
 
-### 1. 激活 Python 虚拟环境
+### 🔰 前置准备：安装 Python（仅需一次）
+
+本项目需要 **Python 3.11 或更高版本**（全面兼容 Python 3.11、3.12 及 3.13）。
+
+1. 前往 [Python 官方下载页面](https://www.python.org/downloads/) 下载安装程序。
+2. 运行安装程序。**关键步骤：** 在安装界面的第一个窗口中，务必勾选底部复选框：  
+   ☑️ **Add python.exe to PATH**（将 Python 添加至环境变量）  
+   *（若遗漏此步，终端将无法识别 `python` 指令！）*
+3. 点击 **Install Now** 完成安装。
+4. 在文件资源管理器中打开本项目文件夹。点击窗口顶部的地址栏，输入 `powershell`（或 `cmd`）并按 <kbd>Enter</kbd> 回车。终端窗口将在当前项目目录下直接打开。
+5. 验证安装：
+   ```powershell
+   python --version
+   ```
+   *（终端应正确输出 `Python 3.11.x`、`3.12.x` 或 `3.13.x`）*。
+
+---
+
+### ⚡ 首次初始化配置（仅需 5 分钟）
+
+在项目文件夹打开的终端中依次执行以下步骤：
+
+#### 1. 创建并激活独立虚拟环境
 ```powershell
+# 创建虚拟环境 (.venv)
+python -m venv .venv
+
+# 激活虚拟环境 (Windows PowerShell):
 .\.venv\Scripts\Activate.ps1
 ```
+> **Windows 用户提示：** 如果终端出现红色错误提示 *`在此系统上禁止运行脚本`*（*`running scripts is disabled on this system`*），请执行以下命令解除限制并重新激活：
+> ```powershell
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> .\.venv\Scripts\Activate.ps1
+> ```
+> *（或使用命令提示符 CMD：`.\.venv\Scripts\activate.bat`，macOS/Linux：`source .venv/bin/activate`）*。
 
-### 2. 配置环境变量与 AI 模型提供商
-复制 `.env.example` 为 `.env`，或运行全自动交互式配置向导：
+激活成功后，终端提示符前缀将显示 `(.venv)`。
+
+#### 2. 安装项目依赖
+```powershell
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+#### 3. 配置 AI 助手（交互式向导）
+运行我们的全自动多语言配置向导，选择您的 AI 模型提供商并保存 API 密钥：
 ```powershell
 python setup_llm.py
 ```
-*(完整支持 简体中文、English、Русский、Español、Nederlands、Français、Português 及 日本語)*。
+- 支持 8 种语言：简体中文、English、Русский、Español、Nederlands、Français、Português、日本語。
+- 兼容 **Google Gemini**（*可在 [Google AI Studio](https://aistudio.google.com/) 免费申请密钥*）、**Ollama**（*100% 免费本地离线运行*）、**OpenAI**、**Claude**、**DeepSeek** 或 **Qwen**（通义千问）。
+- *（可选）* 亦可通过 Django 命令行（`python manage.py configure_llm --list`）或访问网页端 `/assistant/settings/` 进行设置。
 
-您也可以随时通过 Django 管理命令或网页控制台 **`/assistant/settings/`** 进行可视化切换与配置：
+#### 4. 初始化数据库与导入演示数据
 ```powershell
-# 查看所有支持的模型提供商及密钥配置状态
-python manage.py configure_llm --list
-
-# 非交互式快捷配置并立即测试连通性
-python manage.py configure_llm --provider deepseek --api-key sk-xxxx --model deepseek-chat --test
-```
-
-### 3. 应用数据库迁移并初始化演示数据
-```powershell
+# 执行数据库表结构迁移
 python manage.py migrate
-```
 
-如需创建管理员超级用户以访问后台：
-```powershell
+# 导入业务演示数据（强烈推荐：自动填充真实发票、库存、往来单位与合同）
+python manage.py seed_demo_data
+
+# （可选）创建系统管理员用户以访问 /admin/
 python manage.py createsuperuser
 ```
 
-如需使用示例测试数据填充系统以进行测试：
-```powershell
-python manage.py seed_demo_data
-```
+---
 
-### 4. 启动开发服务器
+### 🏃 日常使用（随用随启）
+
+完成首次配置后，今后每次需要使用系统时，**仅需执行两条指令**：
+
 ```powershell
+# 1. 激活虚拟环境（若尚未激活）
+.\.venv\Scripts\Activate.ps1
+
+# 2. 启动本地开发服务器
 python manage.py runserver
 ```
-在浏览器中打开：**[http://127.0.0.1:8000/](http://127.0.0.1:8000/)**。
+
+在浏览器中打开：**[http://127.0.0.1:8000/](http://127.0.0.1:8000/)** 🎉
+
+---
+
+### ❓ 常见问题与疑难解答
+
+| 常见错误 / 现象 | 产生原因与解决办法 |
+| :--- | :--- |
+| **`python 不是内部或外部命令`** | 安装 Python 时未勾选 **Add to PATH**。重新运行 Python 安装包，选择 **Modify**（修改），勾选 **Add Python to environment variables** 并重启终端。 |
+| **`无法加载文件 Activate.ps1，因为在此系统上禁止运行脚本`** | Windows 默认策略阻止了 PowerShell 脚本。执行 `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`，或切换至 CMD 执行 `.\.venv\Scripts\activate.bat`。 |
+| **`Error: That port is already in use`** | 8000 端口已被其他程序或之前的 Django 进程占用。指定其他端口启动即可：`python manage.py runserver 8080`。 |
+| **`no such table: ...`** | 尚未执行数据库迁移。运行：`python manage.py migrate`。 |
 
 ---
 

@@ -84,49 +84,100 @@ Basculez de langue à tout moment grâce au sélecteur avec drapeau situé dans 
 
 ---
 
-## 🚀 Démarrage Rapide
+## 🚀 Guide de Démarrage Rapide
 
-### 1. Activer l'Environnement Virtuel
+### 🔰 Prérequis : Installer Python (Une seule fois)
+
+Ce projet nécessite **Python 3.11 ou une version plus récente** (Python 3.11, 3.12 et 3.13 sont tous pris en charge).
+
+1. Téléchargez le programme d'installation depuis la [page officielle de téléchargement de Python](https://www.python.org/downloads/).
+2. Lancez l'installateur. **ÉTAPE CRUCIALE :** Sur le tout premier écran, cochez la case :  
+   ☑️ **Add python.exe to PATH**  
+   *(Si vous ignorez cette étape, votre terminal ne reconnaîtra pas la commande `python` !)*
+3. Cliquez sur **Install Now**.
+4. Ouvrez le dossier du projet dans l'Explorateur de fichiers. Cliquez sur la barre d'adresse en haut, tapez `powershell` (ou `cmd`) et appuyez sur <kbd>Entrée</kbd>. Une fenêtre de terminal s'ouvrira directement dans ce dossier.
+5. Vérifiez l'installation :
+   ```powershell
+   python --version
+   ```
+   *(Elle doit afficher `Python 3.11.x`, `3.12.x` ou `3.13.x`)*.
+
+---
+
+### ⚡ Configuration Initiale (5 Minutes)
+
+Exécutez ces étapes une seule fois dans votre terminal depuis le dossier du projet :
+
+#### 1. Créer et activer l'environnement isolé
 ```powershell
+# Créer l'environnement virtuel (.venv)
+python -m venv .venv
+
+# L'activer (Windows PowerShell) :
 .\.venv\Scripts\Activate.ps1
 ```
+> **Astuce pour Windows :** Si un texte rouge indique *`l'exécution de scripts est désactivée sur ce système`* (*`running scripts is disabled on this system`*), exécutez cette commande une fois puis réactivez :
+> ```powershell
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> .\.venv\Scripts\Activate.ps1
+> ```
+> *(Ou utilisez l'Invite de commandes CMD : `.\.venv\Scripts\activate.bat`, ou sous macOS/Linux : `source .venv/bin/activate`)*.
 
-### 2. Configurer l'Environnement & les Fournisseurs d'IA
-Copiez `.env.example` vers `.env` ou exécutez l'assistant interactif de configuration :
+Une fois activé, l'indicateur `(.venv)` s'affichera au début de votre invite de commande.
+
+#### 2. Installer les dépendances
+```powershell
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+#### 3. Configurer l'Assistant IA (Assistant interactif)
+Lancez notre assistant multilingue pour choisir votre fournisseur d'IA et renseigner votre clé API :
 ```powershell
 python setup_llm.py
 ```
-*(Prend en charge le Français, English, Русский, Español, Nederlands, Português, 简体中文 et 日本語)*.
+- Disponible en 8 langues : Français, English, Русский, Español, Nederlands, Português, 简体中文, 日本語.
+- Fonctionne avec **Google Gemini** (*forfait gratuit disponible sur [Google AI Studio](https://aistudio.google.com/)*), **Ollama** (*100% gratuit & local sans connexion*), **OpenAI**, **Claude**, **DeepSeek** ou **Qwen**.
+- *(Facultatif)* Vous pouvez aussi le configurer via la CLI Django (`python manage.py configure_llm --list`) ou sur le tableau de bord web à `/assistant/settings/`.
 
-Vous pouvez également configurer les modèles via la commande Django ou l'interface web sur **`/assistant/settings/`** :
+#### 4. Initialiser la base de données et charger les données de démonstration
 ```powershell
-# Afficher les fournisseurs disponibles et le statut des clés
-python manage.py configure_llm --list
-
-# Configuration et test non interactifs
-python manage.py configure_llm --provider deepseek --api-key sk-xxxx --model deepseek-chat --test
-```
-
-### 3. Appliquer les Migrations & Charger les Données de Démonstration
-```powershell
+# Créer les tables de la base de données
 python manage.py migrate
-```
 
-Si vous souhaitez créer un superutilisateur pour l'accès administrateur :
-```powershell
+# Charger les données de démonstration (recommandé : remplit les factures, le stock, les tiers et les contrats)
+python manage.py seed_demo_data
+
+# (Facultatif) Créer un compte administrateur pour accéder à /admin/
 python manage.py createsuperuser
 ```
 
-Si vous souhaitez peupler le système avec des données d'exemple pour les tests :
-```powershell
-python manage.py seed_demo_data
-```
+---
 
-### 4. Lancer le Serveur de Développement
+### 🏃 Utilisation Quotidienne (Lancer l'application à tout moment)
+
+À l'avenir, pour démarrer l'application, vous n'aurez besoin que de **deux commandes** :
+
 ```powershell
+# 1. Activer l'environnement (s'il n'est pas déjà actif)
+.\.venv\Scripts\Activate.ps1
+
+# 2. Démarrer le serveur
 python manage.py runserver
 ```
-Consultez **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)** dans votre navigateur.
+
+Ouvrez votre navigateur à l'adresse : **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)** 🎉
+
+---
+
+### ❓ Dépannage & Questions Fréquentes
+
+| Problème | Cause et solution rapide |
+| :--- | :--- |
+| **`python n'est pas reconnu en tant que commande interne ou externe`** | Python a été installé sans cocher la case **Add to PATH**. Relancez l'installateur Python, choisissez **Modify**, cochez **Add Python to environment variables** et redémarrez votre terminal. |
+| **`Le fichier Activate.ps1 ne peut pas être chargé car l'exécution de scripts est désactivée`** | Windows bloque les scripts PowerShell par défaut. Exécutez `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`, ou utilisez l'Invite de commandes (CMD) : `.\.venv\Scripts\activate.bat`. |
+| **`Error: That port is already in use`** | Le port 8000 est déjà utilisé par une autre application ou une session précédente. Démarrez sur un autre port : `python manage.py runserver 8080`. |
+| **`no such table: ...`** | La base de données n'est pas encore initialisée. Exécutez : `python manage.py migrate`. |
 
 ---
 

@@ -86,47 +86,98 @@ Switch languages at any time via the globe dropdown selector in the top navbar.
 
 ## 🚀 Quick Start Guide
 
-### 1. Activate Virtual Environment
+### 🔰 Prerequisites: Install Python (One-Time)
+
+This project requires **Python 3.11 or newer** (Python 3.11, 3.12, or 3.13 are all supported).
+
+1. Download the installer from the [official Python downloads page](https://www.python.org/downloads/).
+2. Run the installer. **CRITICAL STEP:** On the very first screen, check the box:  
+   ☑️ **Add python.exe to PATH**  
+   *(If you miss this step, your terminal won't recognize the `python` command!)*
+3. Click **Install Now**.
+4. Open your project folder in File Explorer. Click the address bar at the top, type `powershell` (or `cmd`), and press <kbd>Enter</kbd>. A terminal window will open directly in this folder.
+5. Verify your installation:
+   ```powershell
+   python --version
+   ```
+   *(It should display `Python 3.11.x`, `3.12.x`, or `3.13.x`)*.
+
+---
+
+### ⚡ First-Time Setup (5 Minutes)
+
+Run these steps once in your terminal from the project folder:
+
+#### 1. Create and Activate an Isolated Environment
 ```powershell
+# Create the virtual environment (.venv)
+python -m venv .venv
+
+# Activate it (Windows PowerShell):
 .\.venv\Scripts\Activate.ps1
 ```
+> **Tip for Windows:** If you see red text saying *`running scripts is disabled on this system`*, run this command once and try activating again:
+> ```powershell
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> .\.venv\Scripts\Activate.ps1
+> ```
+> *(Or use Command Prompt: `.\.venv\Scripts\activate.bat`, or macOS/Linux: `source .venv/bin/activate`)*.
 
-### 2. Configure Environment & AI Model Provider
-Copy `.env.example` to `.env` or run the automated interactive setup wizard:
+When activated, you will see `(.venv)` at the beginning of your command line prompt.
+
+#### 2. Install Dependencies
+```powershell
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+#### 3. Configure AI Assistant (Interactive Wizard)
+Run our multilingual setup wizard to choose your AI provider and configure your API key:
 ```powershell
 python setup_llm.py
 ```
-*(Supports English, Русский, Español, Nederlands, Français, Português, 简体中文, and 日本語)*.
+- Available in all 8 languages: English, Русский, Español, Nederlands, Français, Português, 简体中文, 日本語.
+- Works with **Google Gemini** (*free tier available at [Google AI Studio](https://aistudio.google.com/)*), **Ollama** (*100% free & local*), **OpenAI**, **Claude**, **DeepSeek**, or **Qwen**.
+- *(Optional)* You can also configure via Django CLI (`python manage.py configure_llm --list`) or the web UI at `/assistant/settings/`.
 
-You can also configure via Django management command or web dashboard at **`/assistant/settings/`**:
+#### 4. Initialize Database & Load Demo Data
 ```powershell
-# List available providers and credentials status
-python manage.py configure_llm --list
-
-# Configure and test non-interactively
-python manage.py configure_llm --provider deepseek --api-key sk-xxxx --model deepseek-chat --test
-```
-
-### 3. Apply Migrations & Seed Demo Data
-```powershell
+# Create database tables
 python manage.py migrate
-```
 
-if you want to create a superuser for admin access, run:
-```powershell
+# Seed demo data (recommended: populates invoices, inventory, counterparties & contracts)
+python manage.py seed_demo_data
+
+# (Optional) Create an admin user to access /admin/
 python manage.py createsuperuser
 ```
 
-if you want to populate the system with sample data for testing, run:
-```powershell
-python manage.py seed_demo_data
-```
+---
 
-### 4. Run Development Server
+### 🏃 Everyday Use (Starting the App Anytime)
+
+Whenever you want to use the application in the future, you **only** need to run:
+
 ```powershell
+# 1. Activate the environment (if not already active)
+.\.venv\Scripts\Activate.ps1
+
+# 2. Start the server
 python manage.py runserver
 ```
-Visit **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)** in your browser.
+
+Open your browser and navigate to: **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)** 🎉
+
+---
+
+### ❓ Troubleshooting & Common Issues
+
+| Issue | Cause & Easy Fix |
+| :--- | :--- |
+| **`python is not recognized as an internal or external command`** | Python was installed without the **Add to PATH** checkbox. Rerun the Python installer, choose **Modify**, check **Add Python to environment variables**, and restart your terminal. |
+| **`File ... Activate.ps1 cannot be loaded because running scripts is disabled`** | Windows blocks PowerShell scripts by default. Run `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`, or switch to Command Prompt and run `.\.venv\Scripts\activate.bat`. |
+| **`Error: That port is already in use`** | Another application (or previous Django session) is using port 8000. Start on a different port: `python manage.py runserver 8080`. |
+| **`no such table: ...`** | The database has not been initialized yet. Run `python manage.py migrate`. |
 
 ---
 
@@ -158,4 +209,3 @@ Visit **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)** in your browser.
 ## 📄 License
 
 This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
